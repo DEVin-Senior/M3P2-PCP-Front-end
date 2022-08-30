@@ -1,4 +1,4 @@
-export interface Class {
+export interface CourseClass {
   id?: string
   name: string
   user: { //verificar se a estrutura de user foi criada

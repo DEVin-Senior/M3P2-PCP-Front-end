@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClassCrudComponent } from './class-crud.component';
+import { ClassCrudComponent } from './courseclass-crud.component';
 
 describe('ClassCrudComponent', () => {
   let component: ClassCrudComponent;
