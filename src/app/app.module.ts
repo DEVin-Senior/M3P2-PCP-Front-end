@@ -11,6 +11,9 @@ import { ClassUpdateComponent } from './components/class/class-update/class-upda
 import { ClassReadComponent } from './components/class/class-read/class-read.component';
 import { ClassDeleteComponent } from './components/class/class-delete/class-delete.component';
 
+import { SidebarComponent } from './templates/sidebar/sidebar.component';
+import { HeaderComponent } from './templates/header/header.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,8 @@ import { ClassDeleteComponent } from './components/class/class-delete/class-dele
     ClassUpdateComponent,
     ClassReadComponent,
     ClassDeleteComponent,
+    HeaderComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
