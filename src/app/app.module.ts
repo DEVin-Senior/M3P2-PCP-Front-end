@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 
 import { AccordionModule } from 'primeng/accordion';
 
+import {MenuItem, PrimeIcons} from 'primeng/api';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +21,7 @@ import { AccordionModule } from 'primeng/accordion';
     AccordionModule,
     LayoutDefaultModule
   ],
-  providers: [],
+  providers: [PrimeIcons],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
