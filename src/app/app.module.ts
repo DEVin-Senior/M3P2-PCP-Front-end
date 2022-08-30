@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { LayoutFullwidthComponent } from './layouts/layout-fullwidth/layout-full
 import { SidebarComponent } from './templates/sidebar/sidebar.component';
 import { HeaderComponent } from './templates/header/header.component';
 
+import { AccordionModule } from 'primeng/accordion';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,9 @@ import { HeaderComponent } from './templates/header/header.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    AccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
