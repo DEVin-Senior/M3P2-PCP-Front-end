@@ -11,6 +11,7 @@ import { ClassUpdateComponent } from './components/class/class-update/class-upda
 import { ClassReadComponent } from './components/class/class-read/class-read.component';
 import { ClassDeleteComponent } from './components/class/class-delete/class-delete.component';
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
+import { LayoutFullwidthComponent } from './layouts/layout-fullwidth/layout-fullwidth.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.
     ClassReadComponent,
     ClassDeleteComponent,
     LayoutDefaultComponent,
+    LayoutFullwidthComponent,
   ],
   imports: [
     BrowserModule,
