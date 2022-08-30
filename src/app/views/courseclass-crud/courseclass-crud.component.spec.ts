@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClassCrudComponent } from './courseclass-crud.component';
+import { CourseClassCrudComponent } from './courseclass-crud.component';
 
-describe('ClassCrudComponent', () => {
-  let component: ClassCrudComponent;
-  let fixture: ComponentFixture<ClassCrudComponent>;
+describe('CourseClassCrudComponent', () => {
+  let component: CourseClassCrudComponent;
+  let fixture: ComponentFixture<CourseClassCrudComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ClassCrudComponent ]
+      declarations: [ CourseClassCrudComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ClassCrudComponent);
+    fixture = TestBed.createComponent(CourseClassCrudComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

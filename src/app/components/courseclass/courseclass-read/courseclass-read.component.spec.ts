@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClassReadComponent } from './courseclass-read.component';
+import { CourseClassReadComponent } from './courseclass-read.component';
 
-describe('ClassReadComponent', () => {
-  let component: ClassReadComponent;
-  let fixture: ComponentFixture<ClassReadComponent>;
+describe('CourseClassReadComponent', () => {
+  let component: CourseClassReadComponent;
+  let fixture: ComponentFixture<CourseClassReadComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ClassReadComponent ]
+      declarations: [ CourseClassReadComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ClassReadComponent);
+    fixture = TestBed.createComponent(CourseClassReadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
