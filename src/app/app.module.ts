@@ -13,6 +13,9 @@ import { ClassDeleteComponent } from './components/class/class-delete/class-dele
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
 import { LayoutFullwidthComponent } from './layouts/layout-fullwidth/layout-fullwidth.component';
 
+import { SidebarComponent } from './templates/sidebar/sidebar.component';
+import { HeaderComponent } from './templates/header/header.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +24,8 @@ import { LayoutFullwidthComponent } from './layouts/layout-fullwidth/layout-full
     ClassUpdateComponent,
     ClassReadComponent,
     ClassDeleteComponent,
+    HeaderComponent,
+    SidebarComponent,
     LayoutDefaultComponent,
     LayoutFullwidthComponent,
   ],
