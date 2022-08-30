@@ -4,12 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { ClassCrudComponent } from './views/class-crud/class-crud.component';
+import { CourseClassCrudComponent } from './views/courseclass-crud/courseclass-crud.component';
+import { CourseClassCreateComponent } from './components/courseclass/courseclass-create/courseclass-create.component';
+import { CourseClassUpdateComponent } from './components/courseclass/courseclass-update/courseclass-update.component';
+import { CourseClassReadComponent } from './components/courseclass/courseclass-read/courseclass-read.component';
+import { CourseClassDeleteComponent } from './components/courseclass/courseclass-delete/courseclass-delete.component';
 
-import { ClassCreateComponent } from './components/class/class-create/class-create.component';
-import { ClassUpdateComponent } from './components/class/class-update/class-update.component';
-import { ClassReadComponent } from './components/class/class-read/class-read.component';
-import { ClassDeleteComponent } from './components/class/class-delete/class-delete.component';
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
 import { LayoutFullwidthComponent } from './layouts/layout-fullwidth/layout-fullwidth.component';
 
@@ -19,11 +19,11 @@ import { HeaderComponent } from './templates/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ClassCrudComponent,
-    ClassCreateComponent,
-    ClassUpdateComponent,
-    ClassReadComponent,
-    ClassDeleteComponent,
+    CourseClassCrudComponent,
+    CourseClassCreateComponent,
+    CourseClassUpdateComponent,
+    CourseClassReadComponent,
+    CourseClassDeleteComponent,
     HeaderComponent,
     SidebarComponent,
     LayoutDefaultComponent,
@@ -31,7 +31,7 @@ import { HeaderComponent } from './templates/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
