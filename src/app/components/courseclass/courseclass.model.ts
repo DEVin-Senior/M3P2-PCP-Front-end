@@ -1,5 +1,5 @@
 export interface CourseClass {
-  id?: string
+  id?: number
   name: string
   user: { //verificar se a estrutura de user foi criada
        id: string
