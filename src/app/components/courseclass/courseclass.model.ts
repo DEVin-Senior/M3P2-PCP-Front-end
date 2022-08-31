@@ -11,4 +11,5 @@ export interface CourseClass {
   module: { // verificar se a estrutura de module foi criada
        id: string
   }
+  status: boolean
 }

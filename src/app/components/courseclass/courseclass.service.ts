@@ -15,12 +15,11 @@ export class CourseClassService {
     endDate: '',
     skills: '',
     matrixLink: '',
-    module: { id: '' }
+    module: { id: '' },
+    status: true
   }
 
   baseUrl = '';
-
-  //oi
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 

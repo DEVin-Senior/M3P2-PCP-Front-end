@@ -23,6 +23,6 @@ import { CourseClassDeleteComponent } from 'src/app/components/courseclass/cours
     RouterModule,
     TemplatesModule
   ],
-  
+
 })
 export class LayoutDefaultModule { }
