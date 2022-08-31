@@ -1,3 +1,4 @@
+/*
 const PROXY_CONFIG = [
     {
       context: ['/'],
@@ -8,3 +9,4 @@ const PROXY_CONFIG = [
   ];
   
   module.exports = PROXY_CONFIG;
+  */
