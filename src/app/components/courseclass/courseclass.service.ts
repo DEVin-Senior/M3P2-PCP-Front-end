@@ -20,6 +20,8 @@ export class CourseClassService {
 
   baseUrl = '';
 
+  //oi
+
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   msgErrorHandler() {
