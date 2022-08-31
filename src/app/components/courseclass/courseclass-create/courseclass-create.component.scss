@@ -1,0 +1,99 @@
+form {
+  position: relative;
+  padding-left: 56px;
+  height: 100%;
+  width: auto;
+}
+
+form .area-title {
+  position: relative;
+
+  width: auto;
+  height: 42px;
+
+  margin: 69px 0 0 0;
+  padding: 0;
+}
+
+form>.area-title>span {
+  position: relative;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+
+  color: #374557;
+}
+
+form .div-one {
+  margin-top: 51px;
+
+  border: 1px solid red;
+}
+
+.div-one>label {
+  margin-bottom: 36px;
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+
+  color: #53575D;
+
+  border-radius: 4px;
+}
+
+.div-one>input {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+
+  background: #FBFCFF;
+
+  border: 1px solid #53575D;
+  border-radius: 4px;
+}
+
+form .div-two {
+  margin-top: 162px;
+
+  border: 1px solid red;
+}
+
+.div-two>label {
+
+
+
+  margin-bottom: 36px;
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+
+  color: #53575D;
+
+  border-radius: 4px;
+}
+
+.div-two>input {
+
+
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+
+  background: #FBFCFF;
+
+  border: 1px solid #53575D;
+  border-radius: 4px;
+}
