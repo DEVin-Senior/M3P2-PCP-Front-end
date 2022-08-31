@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CourseClassReadComponent } from 'src/app/components/courseclass/courseclass-read/courseclass-read.component';
 import { CourseClassDeleteComponent } from 'src/app/components/courseclass/courseclass-delete/courseclass-delete.component';
-
+import {TableModule} from 'primeng/table';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { CourseClassDeleteComponent } from 'src/app/components/courseclass/cours
   imports: [
     CommonModule,
     RouterModule,
-    TemplatesModule
+    TemplatesModule,
+    TableModule
   ],
   
 })

@@ -1,0 +1,49 @@
+.container {
+    margin-top: 110px;
+    margin-left: 128px;
+}
+
+header h3 {
+    color: #374557;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+header {
+    margin-bottom: 49px;
+}
+
+.table-area {
+    width: 80%;
+    margin-left: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #E8E8E8;
+    color: #25282B;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 18px 0px 14px 20px;
+}
+
+table thead {
+    border-bottom: 1px solid #DBDDE0;
+}
+
+table tr {
+    border-bottom: 1px solid  #E8E8E8;
+}
+
