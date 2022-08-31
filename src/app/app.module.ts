@@ -1,3 +1,4 @@
+import { LayoutFullwidthModule } from './layouts/layout-fullwidth/layout-fullwidth.module';
 import { LayoutDefaultModule } from './layouts/layout-default/layout-default.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,8 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AccordionModule } from 'primeng/accordion';
-
-import {MenuItem, PrimeIcons} from 'primeng/api';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,12 @@ import {MenuItem, PrimeIcons} from 'primeng/api';
     BrowserAnimationsModule,
     AppRoutingModule,
     AccordionModule,
-    LayoutDefaultModule
+    MessagesModule,
+    MessageModule,
+    LayoutDefaultModule,
+    LayoutFullwidthModule,
   ],
-  providers: [PrimeIcons],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
