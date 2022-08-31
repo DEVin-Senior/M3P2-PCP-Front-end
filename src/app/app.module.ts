@@ -18,6 +18,8 @@ import { SidebarComponent } from './templates/sidebar/sidebar.component';
 import { HeaderComponent } from './templates/header/header.component';
 
 import { AccordionModule } from 'primeng/accordion';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AccordionModule } from 'primeng/accordion';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AccordionModule
+    AccordionModule,
+    MessagesModule,
+    MessageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
