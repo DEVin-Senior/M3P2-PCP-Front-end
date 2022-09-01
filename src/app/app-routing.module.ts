@@ -6,30 +6,69 @@ import { CourseClassReadComponent } from './components/courseclass/courseclass-r
 import { CourseClassUpdateComponent } from './components/courseclass/courseclass-update/courseclass-update.component';
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
 
-const routes: Routes = [{
-  path: '',
-  component: LayoutDefaultComponent,
-  children: [{
+const routes: Routes = [
+  {
     path: '',
-    component: CourseClassReadComponent
+    component: LayoutDefaultComponent,
+    children: [
+      // {
+      //   path: '',
+      //   //component: HomeComponent,
+      // },
+      // {
+      //   path: 'login',
+      //   //component: LoginComponent,
+      // },
+      // {
+      //   path: '**',
+      //   //component: PageNotFoundComponent,
+      // },
+      // {
+      //   path: 'docentes',
+      //   //component: TeacherClassReadComponent,
+      // },
+      // {
+      //   path: 'docentes/atualizar/:id',
+      //   //component: TeacherClassUpdateComponent,
+      // },
+      // {
+      //   path: 'docentes/adicionar',
+      //   //component: TeacherClassCreateComponent,
+      // },
+      // {
+      //   path: 'docentes/arquivar/:id',
+      //   //component: TeacherClassArchiveComponent,
+      // },
+      {
+        path: 'turmas',
+        component: CourseClassReadComponent,
+      },
+      {
+        path: 'turmas/atualizar/:id',
+        component: CourseClassUpdateComponent,
+      },
+      {
+        path: 'turmas/adicionar',
+        component: CourseClassCreateComponent,
+      },
+      {
+        path: 'turmas/deletar/:id',
+        component: CourseClassDeleteComponent,
+      },
+      // {
+      //   path: 'alocacoes',
+      //   //component: AllocationClassReadComponent,
+      // },
+      // {
+      //   path: 'alocacoes/adicionar/:id',
+      //   //component: AllocationClassCreateComponent,
+      // },
+    ],
   },
-  {
-    path: 'update',
-    component: CourseClassUpdateComponent,
-  },
-  {
-    path: 'add',
-    component: CourseClassCreateComponent,
-  },
-  {
-    path: 'delete',
-    component: CourseClassDeleteComponent,
-  }
-  ]
-}];
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
