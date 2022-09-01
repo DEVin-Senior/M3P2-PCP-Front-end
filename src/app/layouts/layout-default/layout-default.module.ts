@@ -8,6 +8,7 @@ import { CourseClassReadComponent } from 'src/app/components/courseclass/coursec
 import { CourseClassDeleteComponent } from 'src/app/components/courseclass/courseclass-delete/courseclass-delete.component';
 import {TableModule} from 'primeng/table';
 import {CalendarModule} from 'primeng/calendar';
+import { CourseClassCreateComponent } from 'src/app/components/courseclass/courseclass-create/courseclass-create.component';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import {CalendarModule} from 'primeng/calendar';
     CourseClassReadComponent,
     CourseClassDeleteComponent,
     CourseClassUpdateComponent,
-    // CourseClassCreateComponent,
+    CourseClassCreateComponent,
   ],
   imports: [
     CommonModule,

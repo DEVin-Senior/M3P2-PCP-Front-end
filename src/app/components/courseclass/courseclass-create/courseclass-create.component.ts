@@ -20,12 +20,16 @@ export class CourseClassCreateComponent implements OnInit {
     status: true
   }
 
-  constructor(private courseClassService: CourseClassService, private router: Router) { }
+  constructor(/*private courseClassService: CourseClassService, private router: Router*/) { }
 
   ngOnInit(): void {
   }
 
   /*
+  validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
+    return true
+  }
+
   createCourseClass(): void {
     // if (this.validatorInputs() == true) {
     //   this.courseClassService.create(this.courseClass).subscribe(() => {
@@ -36,9 +40,10 @@ export class CourseClassCreateComponent implements OnInit {
     //   this.courseClassService.msgErrorHandler();
     // }
   }
-  */
+
 
   cancel(): void {
     this.router.navigate(['']);
   }
+  */
 }
