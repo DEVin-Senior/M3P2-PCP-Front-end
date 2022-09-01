@@ -17,7 +17,8 @@ export class CourseClassUpdateComponent implements OnInit {
     endDate: '',
     skills: '',
     matrixLink: '',
-    module: { id: '' }
+    module: { id: '' },
+    status: true
   };
 
   constructor(
