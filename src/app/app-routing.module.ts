@@ -11,39 +11,38 @@ const routes: Routes = [
     path: '',
     component: LayoutDefaultComponent,
     children: [
-      {
-        path: '',
-        //component: HomeComponent,
-      },
-      {
-        path: 'login',
-        //component: LoginComponent,
-      },
-      {
-        path: '**',
-        //component: PageNotFoundComponent,
-      },
-      {
-        path: 'docentes',
-        //component: TeacherClassReadComponent,
-      },
-      {
-        path: 'docentes/atualizar/:id',
-        //component: TeacherClassUpdateComponent,
-      },
-      {
-        path: 'docentes/adicionar',
-        //component: TeacherClassCreateComponent,
-      },
-      {
-        path: 'docentes/arquivar/:id',
-        //component: TeacherClassArchiveComponent,
-      },
+      // {
+      //   path: '',
+      //   //component: HomeComponent,
+      // },
+      // {
+      //   path: 'login',
+      //   //component: LoginComponent,
+      // },
+      // {
+      //   path: '**',
+      //   //component: PageNotFoundComponent,
+      // },
+      // {
+      //   path: 'docentes',
+      //   //component: TeacherClassReadComponent,
+      // },
+      // {
+      //   path: 'docentes/atualizar/:id',
+      //   //component: TeacherClassUpdateComponent,
+      // },
+      // {
+      //   path: 'docentes/adicionar',
+      //   //component: TeacherClassCreateComponent,
+      // },
+      // {
+      //   path: 'docentes/arquivar/:id',
+      //   //component: TeacherClassArchiveComponent,
+      // },
       {
         path: 'turmas',
         component: CourseClassReadComponent,
       },
-      { path: 'turmas', component: CourseClassReadComponent },
       {
         path: 'turmas/atualizar/:id',
         component: CourseClassUpdateComponent,
@@ -56,14 +55,14 @@ const routes: Routes = [
         path: 'turmas/deletar/:id',
         component: CourseClassDeleteComponent,
       },
-      {
-        path: 'alocacoes',
-        //component: AllocationClassReadComponent,
-      },
-      {
-        path: 'alocacoes/adicionar/:id',
-        //component: AllocationClassCreateComponent,
-      },
+      // {
+      //   path: 'alocacoes',
+      //   //component: AllocationClassReadComponent,
+      // },
+      // {
+      //   path: 'alocacoes/adicionar/:id',
+      //   //component: AllocationClassCreateComponent,
+      // },
     ],
   },
 ];
