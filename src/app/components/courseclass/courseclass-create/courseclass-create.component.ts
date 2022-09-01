@@ -25,6 +25,10 @@ export class CourseClassCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
+    return true
+  }
+
   createCourseClass(): void {
     // if (this.validatorInputs() == true) {
     //   this.courseClassService.create(this.courseClass).subscribe(() => {
