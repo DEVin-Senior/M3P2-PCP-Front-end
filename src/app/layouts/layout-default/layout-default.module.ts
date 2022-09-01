@@ -1,7 +1,6 @@
 import { TemplatesModule } from './../../templates/templates.module';
 import { RouterModule } from '@angular/router';
-import { CourseClassUpdateComponent } from './../../components/courseclass/courseclass-update/courseclass-update.component';
-import { CourseClassCreateComponent } from './../../components/courseclass/courseclass-create/courseclass-create.component';
+import { CourseClassUpdateComponent } from 'src/app/components/courseclass/courseclass-update/courseclass-update.component';
 import { LayoutDefaultComponent } from './layout-default.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +13,6 @@ import {CalendarModule} from 'primeng/calendar';
 @NgModule({
   declarations: [
     LayoutDefaultComponent,
-    CourseClassCreateComponent,
     CourseClassReadComponent,
     CourseClassDeleteComponent,
     CourseClassUpdateComponent
@@ -26,6 +24,6 @@ import {CalendarModule} from 'primeng/calendar';
     TableModule,
     CalendarModule
   ],
-  
+
 })
 export class LayoutDefaultModule { }

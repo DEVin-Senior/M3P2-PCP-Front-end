@@ -3,29 +3,32 @@
     <header>
         <h3>Cadastradas</h3>
     </header>
-    <div class="field col-12 md:col-4">
-        <label for="icon">Icon</label>
-        <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
-    </div>
-
     <div class="table-area">
-        <p-table [value]="products" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+        <p-table [value]="courses" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
+                    <th>Turma</th>
+                    <th>Início</th>
+                    <th>Fim</th>
+                    <th>Linguagem/stacks</th>
+                    <th></th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-product>
+            <ng-template pTemplate="body" let-course>
                 <tr>
-                    <td>{{product.code}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.category}}</td>
-                    <td>{{product.quantity}}</td>
+                    <td>{{course.name}}</td>
+                    <td>{{course.init}}</td>
+                    <td>{{course.final}}</td>
+                    <td>{{course.skills}}</td>
+                    <td>
+                        <div class="buttons">
+                            <button class="history">Histórico</button>
+                            <button class="archive">Arquivar</button>  
+                        </div>
+                    </td>
                 </tr>
             </ng-template>
         </p-table>
     </div>
+    <button class="add-button">Nova Turma</button>
 </div>

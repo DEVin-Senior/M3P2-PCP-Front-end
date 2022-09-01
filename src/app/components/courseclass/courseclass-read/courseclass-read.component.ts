@@ -7,18 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseClassReadComponent implements OnInit {
     
-  products: {code: string, name: string, category: string, quantity: number}[] =  [
+  courses: {name: string, init: string, final: string, skills: string}[] =  [
     {
-      code: "132435",
-      name: "Detergente",
-      category: "Limpeza",
-      quantity: 1
+      name: "IST",
+      init: "15/10/2021",
+      final: "29/07/2022",
+      skills: "JAVA - Primefaces"
     },
     {
-        code: "132435",
-        name: "Detergente",
-        category: "Limpeza",
-        quantity: 1
+      name: "SENAI",
+      init: "29/11/2021",
+      final: "12/08/2022",
+      skills: "JAVA - Angular"
     }
   ];
   
