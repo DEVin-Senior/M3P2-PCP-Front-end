@@ -27,14 +27,14 @@ export class CourseClassCreateComponent implements OnInit {
 
   /*
   createCourseClass(): void {
-    if (this.validatorInputs() == true) {
-      this.courseClassService.create(this.courseClass).subscribe(() => {
-        this.courseClassService.msgSuccess();
-        this.router.navigate(['']);
-      });
-    } else {
-      this.courseClassService.msgErrorHandler();
-    }
+    // if (this.validatorInputs() == true) {
+    //   this.courseClassService.create(this.courseClass).subscribe(() => {
+    //     this.courseClassService.msgSuccess();
+    //     this.router.navigate(['']);
+    //   });
+    // } else {
+    //   this.courseClassService.msgErrorHandler();
+    // }
   }
   */
 

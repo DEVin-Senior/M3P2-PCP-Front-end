@@ -15,7 +15,8 @@ import {CalendarModule} from 'primeng/calendar';
     LayoutDefaultComponent,
     CourseClassReadComponent,
     CourseClassDeleteComponent,
-    CourseClassUpdateComponent
+    CourseClassUpdateComponent,
+    // CourseClassCreateComponent,
   ],
   imports: [
     CommonModule,
