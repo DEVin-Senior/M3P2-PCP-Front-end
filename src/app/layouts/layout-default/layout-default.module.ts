@@ -6,9 +6,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CourseClassReadComponent } from 'src/app/components/courseclass/courseclass-read/courseclass-read.component';
 import { CourseClassDeleteComponent } from 'src/app/components/courseclass/courseclass-delete/courseclass-delete.component';
-import {TableModule} from 'primeng/table';
-import {CalendarModule} from 'primeng/calendar';
+import { TableModule } from 'primeng/table';
+import { CalendarModule } from 'primeng/calendar';
 import { CourseClassCreateComponent } from 'src/app/components/courseclass/courseclass-create/courseclass-create.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { CourseClassCreateComponent } from 'src/app/components/courseclass/cours
     RouterModule,
     TemplatesModule,
     TableModule,
-    CalendarModule
+    CalendarModule,
+    DropdownModule
   ],
 
 })
