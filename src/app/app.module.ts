@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
-import {CalendarModule} from 'primeng/calendar';
+import { CalendarModule } from 'primeng/calendar';
+import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -28,7 +30,9 @@ import { MessageModule } from 'primeng/message';
     LayoutDefaultModule,
     LayoutFullwidthModule,
     InputTextModule,
-    CalendarModule
+    CalendarModule,
+    ButtonModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
