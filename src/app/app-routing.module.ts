@@ -12,7 +12,7 @@ const routes: Routes = [
     component: LayoutDefaultComponent,
     children: [
       // {
-      //   path: '',
+      //   path: 'home',
       //   //component: HomeComponent,
       // },
       // {

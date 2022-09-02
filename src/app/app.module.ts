@@ -1,8 +1,10 @@
 import { LayoutFullwidthModule } from './layouts/layout-fullwidth/layout-fullwidth.module';
 import { LayoutDefaultModule } from './layouts/layout-default/layout-default.module';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { ButtonModule } from 'primeng/button';
