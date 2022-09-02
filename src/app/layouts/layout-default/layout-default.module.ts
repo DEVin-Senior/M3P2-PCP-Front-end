@@ -10,7 +10,7 @@ import { TableModule } from 'primeng/table';
 import { CalendarModule } from 'primeng/calendar';
 import { CourseClassCreateComponent } from 'src/app/components/courseclass/courseclass-create/courseclass-create.component';
 import { DropdownModule } from 'primeng/dropdown';
-import { RegisterweekComponent } from 'src/app/views/registerweek/registerweek.component';
+import { RegisterweekViewComponent } from 'src/app/views/registerweek-view/registerweek-view.component';
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import { RegisterweekComponent } from 'src/app/views/registerweek/registerweek.c
     CourseClassDeleteComponent,
     CourseClassUpdateComponent,
     CourseClassCreateComponent,
-    RegisterweekComponent
+    RegisterweekViewComponent
   ],
   imports: [
     CommonModule,
