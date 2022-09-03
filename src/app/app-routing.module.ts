@@ -1,10 +1,13 @@
 import { CourseClassCreateComponent } from './components/courseclass/courseclass-create/courseclass-create.component';
+import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CourseClassDeleteComponent } from './components/courseclass/courseclass-delete/courseclass-delete.component';
 import { CourseClassReadComponent } from './components/courseclass/courseclass-read/courseclass-read.component';
 import { CourseClassUpdateComponent } from './components/courseclass/courseclass-update/courseclass-update.component';
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
+import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
+import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
 
 const routes: Routes = [
   {
@@ -27,14 +30,14 @@ const routes: Routes = [
       //   path: 'docentes',
       //   //component: TeacherClassReadComponent,
       // },
-      // {
-      //   path: 'docentes/atualizar/:id',
-      //   //component: TeacherClassUpdateComponent,
-      // },
-      // {
-      //   path: 'docentes/adicionar',
-      //   //component: TeacherClassCreateComponent,
-      // },
+      {
+        path: 'docente/adicionar',
+        component: TeacherCreateComponent,
+      },
+      {
+        path: 'docente/atualizar/:id',
+        component: TeacherUpdateComponent,
+      },
       // {
       //   path: 'docentes/arquivar/:id',
       //   //component: TeacherClassArchiveComponent,
@@ -63,6 +66,11 @@ const routes: Routes = [
       //   path: 'alocacoes/adicionar/:id',
       //   //component: AllocationClassCreateComponent,
       // },
+
+      {
+        path: 'turmas/modulo',
+        component: RegisterweekComponent,
+      },
     ],
   },
 ];
