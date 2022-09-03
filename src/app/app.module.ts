@@ -17,10 +17,18 @@ import { AppComponent } from './app.component';
 import { AccordionModule } from 'primeng/accordion';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { HomeCreateComponent } from './components/home-create/home-create.component';
+import { HomeComponent } from './views/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
+import { WeekService } from './components/home-create/service/week-service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeCreateComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +42,14 @@ import { MessageModule } from 'primeng/message';
     InputTextModule,
     CalendarModule,
     ButtonModule,
-    DropdownModule
+    DropdownModule,
+    HttpClientModule,
+    FormsModule,
+    TableModule
   ],
-  providers: [],
+  providers: [
+    WeekService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
