@@ -25,13 +25,15 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-form.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
+import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TeacherCreateComponent,
     TeacherFormComponent,
-    TeacherUpdateComponent
+    TeacherUpdateComponent,
+    RegisterweekComponent
   ],
   imports: [
     BrowserModule,

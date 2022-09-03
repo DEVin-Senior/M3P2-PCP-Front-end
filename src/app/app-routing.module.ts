@@ -7,6 +7,7 @@ import { CourseClassReadComponent } from './components/courseclass/courseclass-r
 import { CourseClassUpdateComponent } from './components/courseclass/courseclass-update/courseclass-update.component';
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
+import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,11 @@ const routes: Routes = [
       //   path: 'alocacoes/adicionar/:id',
       //   //component: AllocationClassCreateComponent,
       // },
+
+      {
+        path: 'turmas/modulo',
+        component: RegisterweekComponent,
+      },
     ],
   },
 ];
