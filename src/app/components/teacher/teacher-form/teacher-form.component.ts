@@ -40,8 +40,7 @@ export class TeacherFormComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      stacks: (new FormArray([])),
-      archived: new FormControl(false)
+      stacks: (new FormArray([]))
     });
 
     this.addCheckboxes();
@@ -121,7 +120,7 @@ export class TeacherFormComponent implements OnInit {
       phone: this.phone.value,
       email: this.email.value,
       skills: this.selectedStacksNames,
-      archived: this.archived.value
+      archived: false
     };
   }
 
