@@ -3,12 +3,48 @@
 
 <h3 align="center">***********🔧 INSTRUçÕES 🔧***********</h3>
 
-- Ao acessar o projeto pela primeira vez, antes de executar, execute o comando **npm install**
-- Após a instalação das dependências, para executar com a configuração do proxy de comunicação com o backend, execute **npm run start**
+🔧 Download Projeto Frontend (Github)
 
-<h4 align="center"> 🚧 Projeto em construção 🚧</h4>
+Em seu servidor local baixe o projeto usando o comando:
 
-<br><br>
+git clone https://github.com/DEVin-Senior/M3P2-PCP-Front-end
+
+🔧 Instalação Detalhada 🔧
+
+Um exemplo passo-a-passo para informar o que você deve executar para montar o ambiente de desenvolvimento e a aplicação completa.
+
+Abra seu Visual Studio Code, abra o terminal Git-Bash, selecione a pasta onde você deseja fazer o clone do projeto.
+
+Digite o comando:
+
+git clone https://github.com/DEVin-Senior/M3P2-PCP-Front-end
+
+Aguarde o download terminar.
+
+No terminal Gitbash dentro do Visual Studio Code, para instalar e iniciar a aplicação.
+
+Usando o comando:
+
+npm i ou npm install = instala o projeto.
+
+Aguarde terminar a instalação o projeto e inicie a aplicação com o comando:
+
+npm run start = inicia o projeto já instalado com Angular e executa com a configuração do proxy de comunicação com o backend.
+
+( Observação: O Backend deve estar instalado e rodando para funcionar a comunicação. )
+
+Abra seu navegado no link descrito no terminal da aplicação, geralmente:
+
+http://localhost:4200/
+
+Crie seu usuário e senha para entrar no sistema.
+
+Login: e-mail.
+
+Senha: >Defina sua senha!<.
+
+Bem-vindo ao pagina home do sistema.
+
 🛠️ Tecnologias utilizadas
 
 - Maven: 3.8.6 -> https://maven.apache.org/download.cgi
@@ -25,8 +61,12 @@
 
 Versão do projeto 1.0 
 
-✒️ Autores
+<br>
+<p align="center"> ✒️ Autores ✒️ </p>
 
-Todos aqueles que ajudaram a levantar o projeto desde o seu início.
+<p align="center"> Todos aqueles que ajudaram a levantar o projeto desde o seu início.</p>
 
 <p align="center"><a href="#"><img align="center" width="700" height="350"  src="src\assets\img\Desenvolvedores.jpg" /></a></p>
+
+<br>
+<h4 align="center"> 🚧 Projeto em construção 🚧</h4>
