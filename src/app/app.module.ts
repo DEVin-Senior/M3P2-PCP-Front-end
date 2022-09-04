@@ -26,6 +26,7 @@ import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RegisterweekComponent } from './components/courseclass/registerweek/reg
     TeacherCreateComponent,
     TeacherFormComponent,
     TeacherUpdateComponent,
-    RegisterweekComponent
+    RegisterweekComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,
