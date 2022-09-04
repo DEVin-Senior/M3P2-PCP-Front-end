@@ -33,7 +33,7 @@ import { RegisterweekComponent } from './components/courseclass/registerweek/reg
     TeacherCreateComponent,
     TeacherFormComponent,
     TeacherUpdateComponent,
-    RegisterweekComponent
+    RegisterweekComponent,
   ],
   imports: [
     BrowserModule,
