@@ -26,6 +26,7 @@ import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -50,9 +51,10 @@ import { RegisterweekComponent } from './components/courseclass/registerweek/reg
     DropdownModule,
     ReactiveFormsModule,
     CheckboxModule,
-    InputMaskModule
+    InputMaskModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
