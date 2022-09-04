@@ -39,41 +39,41 @@ export class TeacherFormComponent implements OnInit {
     this.formTeacher = new FormGroup({
       name: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       stacks: (new FormArray([])),
       archived: new FormControl(false),
       isPaid: new FormControl(true)
     });
 
     this.addCheckboxes();
+    this.getStacks();
   }
 
-  get name(){
+  get name() {
     return this.formTeacher.get('name')!;
   }
 
-  get phone(){
+  get phone() {
     return this.formTeacher.get('phone')!;
   }
 
-  get email(){
+  get email() {
     return this.formTeacher.get('email')!;
   }
 
-  get stacks(){
+  get stacks() {
     return this.formTeacher.get('stacks')!;
   }
 
-  get archived(){
+  get archived() {
     return this.formTeacher.get('archived')!;
   }
 
-  get isPaid(){
+  get isPaid() {
     return this.formTeacher.get('isPaid')!;
   }
 
-
-  salvar(): void {
+  getStacks() {
     this.selectedStacksNames = this.formTeacher.value.stacks
       .map((checked: any, i: any) => checked ? this.stackList[i].name : null)
       .filter((v: any) => v !== null);
@@ -83,8 +83,10 @@ export class TeacherFormComponent implements OnInit {
 
     this.selectedStacksNames = this.selectedStacksNames
       .map((stack: any, i: any) => stack == '.NET' ? 'DOT_NET' : stack);
+  }
 
-
+  salvar(): void {
+    this.getStacks();
     this.postTeacher(this.createNewTeacher());
   }
 
@@ -115,6 +117,7 @@ export class TeacherFormComponent implements OnInit {
       };
       this.alertService.showGenericAlert(this.alertMessage);
     }
+
   }
 
   createNewTeacher(): ITeacher {
