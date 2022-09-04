@@ -5,6 +5,5 @@ export interface ITeacher {
     email: string;
     skills: Array<any>;
     archived: boolean;
-    isPaid: boolean;
   } //? não obrigatório.
   

@@ -41,8 +41,7 @@ export class TeacherFormComponent implements OnInit {
       phone: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       stacks: (new FormArray([])),
-      archived: new FormControl(false),
-      isPaid: new FormControl(true)
+      archived: new FormControl(false)
     });
 
     this.addCheckboxes();
@@ -67,10 +66,6 @@ export class TeacherFormComponent implements OnInit {
 
   get archived() {
     return this.formTeacher.get('archived')!;
-  }
-
-  get isPaid() {
-    return this.formTeacher.get('isPaid')!;
   }
 
   getStacks() {
@@ -126,8 +121,7 @@ export class TeacherFormComponent implements OnInit {
       phone: this.phone.value,
       email: this.email.value,
       skills: this.selectedStacksNames,
-      archived: this.archived.value,
-      isPaid: this.isPaid.value
+      archived: this.archived.value
     };
   }
 
