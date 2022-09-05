@@ -34,7 +34,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     TeacherCreateComponent,
     TeacherFormComponent,
     TeacherUpdateComponent,
-    RegisterweekComponent
+    RegisterweekComponent,
   ],
   imports: [
     BrowserModule,
