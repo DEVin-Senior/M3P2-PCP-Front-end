@@ -1,24 +1,39 @@
 .container {
-  height: 100%;
-  width: 100%;
+  margin-top: 110px;
+  margin-left: 128px;
+  position: relative;
+}
+
+header h3 {
+  color: #374557;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+header {
+  margin-bottom: 49px;
+}
+
+.form-area{
+width: 100%;
+border-collapse: collapse;
+padding-right: 230px;
 }
 
 label {
   width: 369px;
   height: 17px;
-
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
-
+  font-size: 17px;
+  line-height: 17px;
   color: #53575D;
-
   border-radius: 4px;
 }
 
 input {
+  margin-top: 8px;
   padding: 14.58px 28.51px 9.79px 18.47px;
 }
 
@@ -29,7 +44,6 @@ input {
 .area-title span {
   width: 251px;
   height: 42px;
-
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
@@ -40,8 +54,7 @@ input {
 }
 
 .row-one {
-  margin-left: 56px;
-  display: flex;
+    display: flex;
 }
 
 .area-name {
@@ -51,7 +64,7 @@ input {
 
 .area-name input {
   width: 282.49px;
-  height: 57.36px;
+  height: 50px;
 
   background: #FBFCFF;
 
@@ -66,7 +79,7 @@ input {
 
 .area-link input {
   width: 574.97px;
-  height: 57.36px;
+  height: 50px;
 
   background: #FBFCFF;
 
@@ -75,7 +88,7 @@ input {
 }
 
 .row-two {
-  margin: 16px 0 0 56px;
+  margin-top: 16px;
   display: flex;
 }
 
@@ -86,7 +99,7 @@ input {
 
 .area-stack input {
   width: 574.97px;
-  height: 57.36px;
+  height: 50px;
 
   background: #FBFCFF;
 
@@ -95,10 +108,14 @@ input {
 }
 
 .row-three {
-  margin: 16px 0 0 56px;
+  margin-top: 16px;
   display: flex;
   width: 483px;
   height: 94.87px;
+}
+
+.row-three label{
+  margin-bottom: 30px;
 }
 
 .div-four {
@@ -110,18 +127,17 @@ input {
  }
 
 .row-four {
-  margin: 23px 0 0 56px;
+  margin-top: 23px;
 }
 
 .row-four span {
   width: 369px;
   height: 17px;
-
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 17px;
+  line-height: 17px;
 
   color: #53575D;
 
