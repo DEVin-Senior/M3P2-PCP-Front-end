@@ -19,14 +19,17 @@ import { AppComponent } from './app.component';
 
 
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputMaskModule } from 'primeng/inputmask';
 import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-form.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './_services/auth/auth.service';
+import { TokenInterceptor } from './_services/interceptor/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     TeacherFormComponent,
     TeacherUpdateComponent,
     RegisterweekComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,9 +56,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     CheckboxModule,
     InputMaskModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [HttpClient],
+  providers: [
+    AuthService,
+    HttpClient,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

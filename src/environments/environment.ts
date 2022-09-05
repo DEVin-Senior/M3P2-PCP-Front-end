@@ -1,21 +1,13 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 import { SweetAlertIcon } from "sweetalert2";
 
 export const environment = {
-  production: false
+  production: false,
+  apiBaseURL: 'http://localhost:8080/', 
+  clientId: 'b5ba8562-289a-11ed-a261-0242ac120002',
+  clientSecret: 'c7d119e6-7503-4693-8f92-0163f48cac49',
+  tokenUrl: 'oauth/token'
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 //Trocar para URL do Endpoint
 export const API_BASE = "http://localhost:8080";
 
