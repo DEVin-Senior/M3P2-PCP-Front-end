@@ -18,6 +18,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
+import { AccordionModule } from 'primeng/accordion';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { HomeCreateComponent } from './components/home-create/home-create.component';
+import { HomeComponent } from './views/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
+import { WeekService } from './components/home-create/service/week-service';
+
+
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -31,6 +42,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeCreateComponent,
+    HomeComponent,
     TeacherCreateComponent,
     TeacherFormComponent,
     TeacherUpdateComponent,
@@ -49,6 +62,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     CalendarModule,
     ButtonModule,
     DropdownModule,
+    HttpClientModule,
+    FormsModule,
+    TableModule
+  ],
+  providers: [
+    WeekService,
     ReactiveFormsModule,
     CheckboxModule,
     InputMaskModule,

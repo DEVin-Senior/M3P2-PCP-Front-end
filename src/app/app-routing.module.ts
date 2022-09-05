@@ -6,6 +6,7 @@ import { CourseClassDeleteComponent } from './components/courseclass/courseclass
 import { CourseClassReadComponent } from './components/courseclass/courseclass-read/courseclass-read.component';
 import { CourseClassUpdateComponent } from './components/courseclass/courseclass-update/courseclass-update.component';
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
+import { HomeComponent } from './views/home/home.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
 
@@ -14,10 +15,10 @@ const routes: Routes = [
     path: '',
     component: LayoutDefaultComponent,
     children: [
-      // {
-      //   path: 'home',
-      //   //component: HomeComponent,
-      // },
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
       // {
       //   path: 'login',
       //   //component: LoginComponent,
