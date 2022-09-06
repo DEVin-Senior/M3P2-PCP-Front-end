@@ -21,17 +21,16 @@
             pInputText
             placeholder="Conteúdo"
             [(ngModel)]="week.content"
-          />
+            required="true" [(ngModel)]="week.content"/>
 
           <button
             pButton
             pRipple
             type="button"
             icon="pi pi-plus"
-            class="p-button-rounded p-button-success {{
-              i > 0 ? 'invisible' : ' '
-            }}"
-          ></button>
+            class="p-button-rounded p-button-success {{ i > 0 ? 'invisible' : '' }}"
+            (click)="addWeek()">
+          </button>
 
           <button
             pButton

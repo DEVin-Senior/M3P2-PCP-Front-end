@@ -1,3 +1,4 @@
 export class Week {
-    content!: string;    
+    content!: string;  
+    isCompleted!: boolean;  
 }
