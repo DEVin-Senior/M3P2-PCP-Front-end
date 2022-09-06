@@ -22,9 +22,9 @@ export class CourseClassUpdateComponent implements OnInit {
   };
 
   constructor(
-    private classCourseService: CourseClassService,
+    /*private classCourseService: CourseClassService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute*/
   ) { }
 
   ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend
@@ -35,7 +35,7 @@ export class CourseClassUpdateComponent implements OnInit {
     });*/
   }
 
-  validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
+ /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
     return true
   }
 
@@ -52,6 +52,6 @@ export class CourseClassUpdateComponent implements OnInit {
   
   cancel(): void{
     this.router.navigate(['']);
-  }
+  }*/
 
 }

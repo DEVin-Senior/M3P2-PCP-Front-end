@@ -13,15 +13,15 @@ import { CourseClassDeleteComponent } from 'src/app/components/courseclass/cours
 @NgModule({
   declarations: [
     LayoutDefaultComponent,
-    // CourseClassCreateComponent,
-    // CourseClassReadComponent,
-    // CourseClassDeleteComponent,
-    // CourseClassUpdateComponent
+    CourseClassCreateComponent,
+    CourseClassReadComponent,
+    CourseClassDeleteComponent,
+    CourseClassUpdateComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    //TemplatesModule
+    TemplatesModule
   ],
 
 })
