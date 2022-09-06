@@ -17,14 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-
-import { AccordionModule } from 'primeng/accordion';
-import { MessagesModule } from 'primeng/messages';
-import { MessageModule } from 'primeng/message';
 import { HomeCreateComponent } from './components/home-create/home-create.component';
 import { HomeComponent } from './views/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { WeekService } from './components/home-create/service/week-service';
 
@@ -37,8 +32,7 @@ import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoginComponent } from './components/login/login.component';
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './_services/auth/auth.service';
 import { TokenInterceptor } from './_services/interceptor/token.interceptor';
 
@@ -50,8 +44,7 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     TeacherCreateComponent,
     TeacherFormComponent,
     TeacherUpdateComponent,
-    RegisterweekComponent,
-    LoginComponent,
+    RegisterweekComponent
   ],
   imports: [
     BrowserModule,
@@ -68,18 +61,17 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     DropdownModule,
     HttpClientModule,
     FormsModule,
-    TableModule
+    TableModule,
+    ReactiveFormsModule
   ],
   providers: [
+    AuthService,
     WeekService,
     ReactiveFormsModule,
     CheckboxModule,
     InputMaskModule,
     HttpClientModule,
-    FormsModule
-  ],
-  providers: [
-    AuthService,
+    FormsModule,
     HttpClient,
     {
       provide: HTTP_INTERCEPTORS,
