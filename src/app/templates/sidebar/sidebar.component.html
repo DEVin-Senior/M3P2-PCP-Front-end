@@ -10,7 +10,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="/docentes/" routerLinkActive="selected">
+            <a [routerLink]="['/docentes/']" routerLinkActive="selected">
                 <div class="selector">
                     <i class="pi pi-user"></i>
                     <span class="text">Docentes</span>
@@ -18,7 +18,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="/turmas/" routerLinkActive="selected">
+            <a [routerLink]="['/turmas/']" routerLinkActive="selected">
                 <div class="selector">
                     <i class="pi pi-desktop"></i>
                     <span class="text">Turmas</span>
@@ -26,7 +26,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="/alocacoes/" routerLinkActive="selected">
+            <a [routerLink]="['/alcocacoes/']" routerLinkActive="selected">
                 <div class="selector">
                     <i class="pi pi-check-square"></i>
                     <span class="text">Alocações</span>
@@ -35,7 +35,7 @@
         </li>
 
         <li class="logout">
-            <a routerLink="" routerLinkActive="selected">
+            <a>
                 <div class="selector">
                     <i class="pi pi-sign-out"></i>
                     <span class="text">LogOut</span>

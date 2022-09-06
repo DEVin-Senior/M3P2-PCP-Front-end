@@ -9,14 +9,15 @@ import { CourseClassService } from '../courseclass.service';
   styleUrls: ['./courseclass-create.component.scss']
 })
 export class CourseClassCreateComponent implements OnInit {
+  
   courseClass: CourseClass = {
     name: '',
-    user: { id: '' },
     initialDate: '',
     endDate: '',
     skills: '',
     matrixLink: '',
-    module: { id: '' },
+    week: { id: 0 },
+    module: { id: 0 },
     status: true
   }
 

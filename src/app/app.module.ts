@@ -48,7 +48,7 @@ import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-u
     DropdownModule,
     ReactiveFormsModule,
     CheckboxModule,
-    InputMaskModule
+    InputMaskModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

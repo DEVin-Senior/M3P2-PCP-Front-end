@@ -30,11 +30,11 @@ const routes: Routes = [
       //   //component: TeacherClassReadComponent,
       // },
       {
-        path: 'docente/adicionar',
+        path: 'docentes/adicionar',
         component: TeacherCreateComponent,
       },
       {
-        path: 'docente/atualizar/:id',
+        path: 'docentes/atualizar/:id',
         component: TeacherUpdateComponent,
       },
       // {

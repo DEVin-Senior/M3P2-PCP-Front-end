@@ -11,6 +11,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { CourseClassCreateComponent } from 'src/app/components/courseclass/courseclass-create/courseclass-create.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { RegisterweekViewComponent } from 'src/app/views/registerweek-view/registerweek-view.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RegisterweekViewComponent } from 'src/app/views/registerweek-view/regis
     TemplatesModule,
     TableModule,
     CalendarModule,
-    DropdownModule
+    DropdownModule,
+    FormsModule
   ],
 
 })

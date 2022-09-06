@@ -19,7 +19,7 @@ export class CourseClassService {
     status: true
   }
 
-  baseUrl = '';
+  baseUrl = '/turmas';
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
