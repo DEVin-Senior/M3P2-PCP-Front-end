@@ -1,12 +1,128 @@
-.content {
+// .content {
+//     height: 100%;
+//     width: 100%;
+
+//     margin-left: 56px;
+// }
+
+// .area-title {
+//     margin-top: 69px;
+// }
+
+// .area-title span {
+//     font-family: 'Poppins';
+//     font-style: normal;
+//     font-weight: 700;
+//     font-size: 28px;
+//     line-height: 42px;
+
+//     color: #374557;
+// }
+
+// label {
+//     font-family: 'Raleway';
+//     font-style: normal;
+//     font-weight: 700;
+//     font-size: 24px;
+//     line-height: 24px;
+
+//     color: #53575D;
+
+//     border-radius: 4px;
+// }
+
+// .total-week {
+//     // border: 1px solid red;
+
+//     width: 450px;
+//     height: 60.21px;
+
+//     margin: 29px 0 20px 0;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// }
+
+// .week-row {
+//     // border: 1px solid red;
+
+//     width: 450px;
+//     height: 57.36px;
+//     margin-bottom: 20px;
+
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// }
+
+// .week-row input {
+//     width: 282.50px;
+//     height: 57.36px;
+//     margin-left: 25px;
+//     padding: 14.58px 28.51px 9.79px 18.47px;
+// }
+
+// // .add-week {
+// //     border: 1px solid blue;
+
+// //     width: 450px;
+// //     height: 57.36px;
+
+// //     display: flex;
+// //     justify-content: space-between;
+// //     align-items: center;
+// // }
+
+// .add-week input {
+//     width: 282.50px;
+//     height: 57.36px;
+//     margin-left: 25px;
+//     padding: 14.58px 28.51px 9.79px 18.47px;
+// }
+
+// .button-row {
+//     width: 100%;
+//     height: 83px;
+
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .button-row .p-button {
+//     margin-top: 187.64px;
+//     padding: 16px 24px;
+//     gap: 24px;
+
+//     width: 327px;
+//     height: 83px;
+
+//     background: #EF3A7F;
+//     border: none;
+//     outline: none;
+
+//     box-shadow: 0px 20px 50px rgba(55, 69, 87, 0.1);
+//     border-radius: 20px;
+
+//     transition: 0.4s all ease;
+// }
+
+// .button-row .p-button:hover {
+//     background: #EF3A7F;
+
+//     transition: 0.4s all ease;
+//     transform: scale(1.05);
+// }
+
+.container {
     height: 100%;
     width: 100%;
 
-    margin-left: 56px;
+    position: relative;
 }
 
 .area-title {
-    margin-top: 69px;
+    margin: 69px 0 29px 56px;
 }
 
 .area-title span {
@@ -19,9 +135,17 @@
     color: #374557;
 }
 
-label {
+.content {
+    margin-left: 56px;
+
+    display: flex;
+    align-items: center;
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link {
     font-family: 'Raleway';
     font-style: normal;
+
     font-weight: 700;
     font-size: 24px;
     line-height: 24px;
@@ -31,85 +155,63 @@ label {
     border-radius: 4px;
 }
 
-.total-week {
-    // border: 1px solid red;
-
-    width: 450px;
-    height: 60.21px;
-
-    margin: 29px 0 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.p-accordion .p-accordion-content {
+    padding: 1.25rem;
+    border: 1px solid #dee2e6;
+    background: #ffffff;
+    color: #495057;
+    border-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 
-.week-row {
-    // border: 1px solid red;
-
-    width: 450px;
-    height: 57.36px;
+.add-week{
     margin-bottom: 20px;
+}
 
-    display: flex;
-    justify-content: space-between;
+label {
+    margin-right: 25px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #53575D;
+
+    border-radius: 4px;
+}
+
+input {
+    width: 282.49px;
+    height: 50px;
+
+    background: #FBFCFF;
+
+    border: 1px solid #53575D;
+    border-radius: 4px;
+}
+
+.p-button.p-button-success,
+.p-buttonset.p-button-success>.p-button,
+.p-splitbutton.p-button-success>.p-button {
+    margin-left: 10px;
+    margin-bottom: 5px;
     align-items: center;
+    transition: all 0.4s ease;
 }
 
-.week-row input {
-    width: 282.50px;
-    height: 57.36px;
-    margin-left: 25px;
-    padding: 14.58px 28.51px 9.79px 18.47px;
-}
-
-// .add-week {
-//     border: 1px solid blue;
-
-//     width: 450px;
-//     height: 57.36px;
-
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-
-.add-week input {
-    width: 282.50px;
-    height: 57.36px;
-    margin-left: 25px;
-    padding: 14.58px 28.51px 9.79px 18.47px;
-}
-
-.button-row {
-    width: 100%;
-    height: 83px;
-
-    display: flex;
-    justify-content: center;
+.p-button.p-button-danger,
+.p-buttonset.p-button-danger>.p-button,
+.p-splitbutton.p-button-danger>.p-button {
+    margin-left: 10px;
+    margin-bottom: 5px;
     align-items: center;
+    transition: all 0.4s ease;
 }
 
-.button-row .p-button {
-    margin-top: 187.64px;
-    padding: 16px 24px;
-    gap: 24px;
-
-    width: 327px;
-    height: 83px;
-
-    background: #EF3A7F;
-    border: none;
-    outline: none;
-
-    box-shadow: 0px 20px 50px rgba(55, 69, 87, 0.1);
-    border-radius: 20px;
-
-    transition: 0.4s all ease;
-}
-
-.button-row .p-button:hover {
-    background: #EF3A7F;
-
-    transition: 0.4s all ease;
-    transform: scale(1.05);
+.invisible {
+    display: none;
 }

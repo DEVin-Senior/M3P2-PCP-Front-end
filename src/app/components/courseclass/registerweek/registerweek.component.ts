@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-// interface Week {
-//     numb: String
-// }
+import { Week } from './registerweek.model';
 
 @Component({
   selector: 'app-registerweek',
@@ -11,18 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterweekComponent implements OnInit {
 
-  // numberOfWeek: Week[];
+  weeks: Week[] = [{content:"", isCompleted:false}];
+  newWeek: string = "";
+  // weeks: Week[] = [{content:""}, {content:""}, {content:""}];
 
-  constructor() {
-    // this.numberOfWeek = [
-    //   { numb: '01' },
-    //   { numb: '02' },
-    //   { numb: '03' },
-    //   { numb: '04' }
-    // ];
+  constructor() { }
+
+  ngOnInit(): void { }
+
+  addWeek() {
+    if (this.newWeek.trim() != "") {
+      let week = new Week();
+      week.content = this.newWeek;
+      week.isCompleted = true;
+      this.weeks.push(week);
+    } else {
+      alert("Preenchimento do campo obrigatório!");
+    }
   }
-
-  ngOnInit(): void {
-  }
-
 }
