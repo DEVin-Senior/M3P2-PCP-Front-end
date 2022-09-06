@@ -8,6 +8,7 @@ import { CourseClassUpdateComponent } from './components/courseclass/courseclass
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
 import { HomeComponent } from './views/home/home.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
+import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
 
 const routes: Routes = [
@@ -27,10 +28,10 @@ const routes: Routes = [
       //   path: '**',
       //   //component: PageNotFoundComponent,
       // },
-      // {
-      //   path: 'docentes',
-      //   //component: TeacherClassReadComponent,
-      // },
+      {
+      path: 'docentes',
+      component: TeacherListComponent,
+      },
       {
         path: 'docente/adicionar',
         component: TeacherCreateComponent,
