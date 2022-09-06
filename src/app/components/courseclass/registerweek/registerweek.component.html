@@ -1,26 +1,49 @@
-<div class="content">
-    <div class="area-title">
-        <span>Cadastrar semanas do módulo 1</span>
-    </div>
+<div class="container">
+  <div class="area-title">
+    <span>Cadastrar semanas do módulo 1</span>
+  </div>
 
-    <div class="total-week">
-        <label>Total de semanas:</label>
-        
-        <p-dropdown optionLabel="numb" [style]="{'width':'206.36px', 'height':'60.21px', 'padding':'10px 0 0 16px', 'font-size':'16px', 'font-weight':'400'}" ></p-dropdown>
-        <!-- <p-dropdown optionLabel="numb" [options]="numberOfWeek" [style]="{'width':'206.36px', 'height':'60.21px', 'padding':'10px 0 0 16px', 'font-size':'16px', 'font-weight':'400'}"></p-dropdown> -->
-    </div>
+  <div class="content">
+    <p-accordion [style]="{ width: '1463px' }">
+      <p-accordionTab
+        header="Módulo 1"
+        [style]="{
+          'font-weight': '700',
+          'font-size': '20px',
+          'line-height': '24px'
+        }"
+      >
+        <div class="add-week" *ngFor="let week of weeks; let i = index">
+          
+          <label>Semana {{ i + 1 }}</label>
+          <input
+            type="text"
+            pInputText
+            placeholder="Conteúdo"
+            [(ngModel)]="week.content"
+          />
 
-    <div class="week-row">
-        <label>Semana 01</label>
-        <input type="text" pInputText placeholder="Conteúdo" />
-    </div>
+          <button
+            pButton
+            pRipple
+            type="button"
+            icon="pi pi-plus"
+            class="p-button-rounded p-button-success {{
+              i > 0 ? 'invisible' : ' '
+            }}"
+          ></button>
 
-    <!-- <div class="add-week">
-        <label>Semana 02</label>
-        <input type="text" pInputText placeholder="Conteúdo"/>
-    </div> -->
-
-    <div class="button-row">
-        <button pButton type="button" label="Cadastrar próximo módulo"></button>
-    </div>
+          <button
+            pButton
+            pRipple
+            type="button"
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-danger {{
+              i == 0 ? 'invisible' : ' '
+            }}"
+          ></button>
+        </div>
+      </p-accordionTab>
+    </p-accordion>
+  </div>
 </div>

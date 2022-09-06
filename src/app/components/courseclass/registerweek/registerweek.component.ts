@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-// interface Week {
-//     numb: String
-// }
+import { Week } from './registerweek.model';
 
 @Component({
   selector: 'app-registerweek',
@@ -11,15 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterweekComponent implements OnInit {
 
-  // numberOfWeek: Week[];
+  weeks: Week[] = [{content:""}, {content:""}, {content:""}];
 
   constructor() {
-    // this.numberOfWeek = [
-    //   { numb: '01' },
-    //   { numb: '02' },
-    //   { numb: '03' },
-    //   { numb: '04' }
-    // ];
+
   }
 
   ngOnInit(): void {
