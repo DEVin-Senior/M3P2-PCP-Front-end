@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
 
@@ -8,7 +8,7 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./app.component.scss'],
   providers: [MessageService]
 })
-export class AppComponent {
+export class AppComponent{
   title = 'pcp-frontend';
 
   constructor(private primengConfig: PrimeNGConfig) {}

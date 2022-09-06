@@ -40,6 +40,7 @@ export class CourseClassCreateComponent implements OnInit {
     // }
   }
 
+
   cancel(): void {
     this.router.navigate(['']);
   }*/
