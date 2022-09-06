@@ -1,0 +1,56 @@
+// TODO: criar classe global para botões e cores para o projeto
+.table-home-card {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: flex-start;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #0064FA;
+  }
+}
+
+.table-home-content {
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  th,
+  td {
+    text-align: center;
+  }
+}
+
+.table-home-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.7rem;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.141);
+  cursor: pointer;
+}
+
+.table-home-btn-edit {
+  background-color: #ef3a7f;
+  margin-right: 30px;
+}
+
+.table-home-btn-edit:hover {
+  background-color: #cf2264;
+}

@@ -1,60 +1,57 @@
 <div class="container">
-  <div class="area-title">
-    <span>Cadastrar Turma</span>
-  </div>
+  <header>
+    <h3>Cadastrar Turma</h3>
+  </header>
 
-  <div class="row-one">
-    <div class="div-one">
-      <div class="area-name">
-        <label>Nome</label> <br />
-        <br />
-        <input type="text" pInputText placeholder="Nome da turma" />
+  <div class="form-area">
+    <div class="row-one">
+      <div class="div-one">
+        <div class="area-name">
+          <label>Nome</label> <br />
+          <input type="text" pInputText placeholder="Nome da turma" />
+        </div>
+      </div>
+      <div class="div-two">
+        <div class="area-link">
+          <label>Link da Matriz</label> <br />
+          <input type="text" pInputText placeholder="Link da Matriz" />
+        </div>
       </div>
     </div>
-    <div class="div-two">
-      <div class="area-link">
-        <label>Link da Matriz</label> <br />
-        <br />
-        <input type="text" pInputText placeholder="Link da Matriz" />
+
+    <div class="row-two">
+      <div class="div-three">
+        <div class="area-stack">
+          <label>Stack/Linguagens</label> <br />
+          <input type="text" pInputText placeholder="Front-End/Back-End" />
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row-two">
-    <div class="div-three">
-      <div class="area-stack">
-        <label>Stack/Linguagens</label> <br />
-        <br />
-        <input type="text" pInputText placeholder="Front-End/Back-End" />
+    <div class="row-three">
+      <div class="div-four">
+        <div class="date-start">
+          <label>Início</label> <br />
+          <p-calendar [showIcon]="true" inputId="icon" dateFormat="dd/mm/yy" styleClass="calendar"></p-calendar>
+        </div>
+      </div>
+      <div class="div-five">
+        <div class="date-end">
+          <label>Fim</label> <br />
+          <p-calendar [showIcon]="true" inputId="icon" dateFormat="dd/mm/yy"></p-calendar>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row-three">
-    <div class="div-four">
-      <div class="date-start">
-        <label>Início</label> <br />
-        <br />
-        <p-calendar [showIcon]="true" inputId="icon" dateFormat="dd/mm/yy" styleClass="calendar"></p-calendar>
-      </div>
+    <div class="row-four">
+      <span>Total de módulos: </span>
+      <p-dropdown optionLabel="name"></p-dropdown>
     </div>
-    <div class="div-five">
-      <div class="date-end">
-        <label>Fim</label> <br />
-        <br />
-        <p-calendar [showIcon]="true" inputId="icon" dateFormat="dd/mm/yy"></p-calendar>
+
+    <div class="row five">
+      <div class="row-five">
+        <button pButton type="button" label="Avançar"></button>
       </div>
-    </div>
-  </div>
-
-  <div class="row-four">
-    <span>Total de módulos: </span>
-    <p-dropdown optionLabel="name"></p-dropdown>
-  </div>
-
-  <div class="row five">
-    <div class="row-five">
-      <button pButton type="button" label="Avançar"></button>
     </div>
   </div>
 </div>
