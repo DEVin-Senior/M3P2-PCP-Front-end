@@ -7,6 +7,7 @@ import { CourseClassReadComponent } from './components/courseclass/courseclass-r
 import { CourseClassUpdateComponent } from './components/courseclass/courseclass-update/courseclass-update.component';
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
+import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
 
 const routes: Routes = [
   {
@@ -25,10 +26,10 @@ const routes: Routes = [
       //   path: '**',
       //   //component: PageNotFoundComponent,
       // },
-      // {
-      //   path: 'docentes',
-      //   //component: TeacherClassReadComponent,
-      // },
+      {
+      path: 'docentes',
+      component: TeacherListComponent,
+      },
       {
         path: 'docente/adicionar',
         component: TeacherCreateComponent,
