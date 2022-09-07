@@ -12,6 +12,7 @@ import { CourseClassCreateComponent } from 'src/app/components/courseclass/cours
 import { DropdownModule } from 'primeng/dropdown';
 import { RegisterweekViewComponent } from 'src/app/views/registerweek-view/registerweek-view.component';
 import { FormsModule } from '@angular/forms';
+import { TeacherListComponent } from 'src/app/components/teacher/teacher-list/teacher-list.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     CourseClassDeleteComponent,
     CourseClassUpdateComponent,
     CourseClassCreateComponent,
+    TeacherListComponent,
     RegisterweekViewComponent
   ],
   imports: [

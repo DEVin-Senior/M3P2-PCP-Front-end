@@ -26,8 +26,7 @@ export class CourseClassCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /*
-  validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
+ /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
     return true
   }
 
@@ -45,6 +44,5 @@ export class CourseClassCreateComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate(['']);
-  }
-  */
+  }*/
 }

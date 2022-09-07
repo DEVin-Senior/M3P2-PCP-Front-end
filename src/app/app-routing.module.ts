@@ -6,17 +6,20 @@ import { CourseClassDeleteComponent } from './components/courseclass/courseclass
 import { CourseClassReadComponent } from './components/courseclass/courseclass-read/courseclass-read.component';
 import { CourseClassUpdateComponent } from './components/courseclass/courseclass-update/courseclass-update.component';
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
+import { HomeComponent } from './views/home/home.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
+import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
+import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutDefaultComponent,
     children: [
-      // {
-      //   path: 'home',
-      //   //component: HomeComponent,
-      // },
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
       // {
       //   path: 'login',
       //   //component: LoginComponent,
@@ -25,10 +28,10 @@ const routes: Routes = [
       //   path: '**',
       //   //component: PageNotFoundComponent,
       // },
-      // {
-      //   path: 'docentes',
-      //   //component: TeacherClassReadComponent,
-      // },
+      {
+      path: 'docentes',
+      component: TeacherListComponent,
+      },
       {
         path: 'docentes/adicionar',
         component: TeacherCreateComponent,
@@ -65,6 +68,11 @@ const routes: Routes = [
       //   path: 'alocacoes/adicionar/:id',
       //   //component: AllocationClassCreateComponent,
       // },
+
+      {
+        path: 'turmas/modulo',
+        component: RegisterweekComponent,
+      },
     ],
   },
 ];
