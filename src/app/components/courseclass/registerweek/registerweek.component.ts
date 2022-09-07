@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseclassContextService } from '../courseclass-context.service';
+import { CourseClass } from '../courseclass.model';
+import { CourseClassCreateDto } from '../dto/courseclass-create.model';
 import { Week } from './registerweek.model';
 
 @Component({
@@ -12,12 +15,31 @@ export class RegisterweekComponent implements OnInit {
   newWeek: string = "";
   // weeks: Week[] = [{content:""}, {content:""}, {content:""}];
 
-  constructor() { }
+  courseClassDto: CourseClassCreateDto = {
+    name: '',
+    initialDate: '',
+    endDate: '',
+    stack: '',
+    matrixLink: '',
+    archive: false,
+    moduleEntityList: [{
+         name: '',
+         weekEntityList: [{
+              content: '',
+              initialDate: '',
+         }]
+   }]
+ }
 
-  ngOnInit(): void { }
+  constructor(private courseClassService: CourseclassContextService) { }
+
+  ngOnInit(): void { 
+    this.courseClassDto = this.courseClassService.getCourseClass();
+    console.log(this.courseClassDto);    
+  }
 
   addWeek() {
-    if (this.newWeek.trim() != "") {
+    if (this.newWeek) {
       let week = new Week();
       week.content = this.newWeek;
       week.isCompleted = true;
