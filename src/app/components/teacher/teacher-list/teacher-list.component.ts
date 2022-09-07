@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
+import { TeacherService } from 'src/app/_services/teacher/teacher.service';
 
 @Component({
   selector: 'app-teacher-list',
@@ -7,30 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeacherListComponent implements OnInit {
 
-  teachers: {name: string, phone: string, mail: string, stacks: string}[] =  [
-    {
-      name: "Marcola",
-      phone: "(32)98811-9292",
-      mail: "marcola@dev.com",
-      stacks: "teste2"
-    },
-    {
-      name: "Francisco Santana",
-      phone: "(32)98811-9292",
-      mail: "francisco@dev.com",
-      stacks: "teste"
-    },
-    {
-      name: "Franciscão Santana",
-      phone: "(32)98811-9292",
-      mail: "francisco@dev.com",
-      stacks: "teste"
-    }
-  ];
+  teachers: ITeacher[] = [];
 
-  constructor() { }
+  constructor(
+    private teacherService: TeacherService
+  ) { }
 
   ngOnInit(): void {
+    this.getAll();
   }
+  
+  getAll(){
+   this.teacherService.getAll().subscribe(
+    (result: any) => {
+      for (let i = 0; i < result.length; i++){
+        let teacher = result[i] as ITeacher;
+        this.teachers?.push(teacher);
+      }
+    },
+    error => {
+      console.log(error);
+    })
+   }
 
 }

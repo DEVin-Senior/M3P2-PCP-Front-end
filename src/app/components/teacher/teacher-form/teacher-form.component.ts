@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Input } from '@angular/core';
-import { TeacherService } from 'src/app/_services/teacher.service';
+import { TeacherService } from 'src/app/_services/teacher/teacher.service';
 import { IAlert } from 'src/app/_interfaces/alert/iAlert';
 import { ERROR, SUCCESS } from 'src/environments/environment';
 import { AlertService } from 'src/app/_shared/alert/alert.service';

@@ -10,10 +10,16 @@ import { API_BASE } from 'src/environments/environment';
 })
 export class TeacherService {
 
+  listTeachers: any[] = [];
+
   constructor(private http: HttpClient) { }
 
   insertTeacher(teacher: ITeacher): Observable<ITeacher> {
     return this.http.post<ITeacher>(`${API_BASE}/teacher`, teacher);
+  }
+
+  getAll(): Observable<any> {
+    return this.http.get(`${API_BASE}/teacher/list`); 
   }
 
 }
