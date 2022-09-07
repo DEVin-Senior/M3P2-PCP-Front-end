@@ -17,22 +17,22 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { HomeCreateComponent } from './components/home-create/home-create.component';
-import { HomeComponent } from './views/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
+import { HomeCreateComponent } from './components/home-create/home-create.component';
 import { WeekService } from './components/home-create/service/week-service';
+import { HomeComponent } from './views/home/home.component';
 
 
 
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputMaskModule } from 'primeng/inputmask';
+import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
 import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-form.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
-import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
-import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './_services/auth/auth.service';
 import { TokenInterceptor } from './_services/interceptor/token.interceptor';
 
@@ -62,7 +62,8 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     HttpClientModule,
     FormsModule,
     TableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputMaskModule
   ],
   providers: [
     AuthService,
