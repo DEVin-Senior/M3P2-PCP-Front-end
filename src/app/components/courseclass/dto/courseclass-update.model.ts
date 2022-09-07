@@ -7,10 +7,10 @@ export interface CourseClassUpdateDto {
     matrixLink: string,
     archive: boolean,
     moduleEntityList: [{
-        id: number,
+        id?: number,
         name: string,
         weekEntityList: [{
-            id: number,
+            id?: number,
             content: string,
             initialDate: string,
         }]

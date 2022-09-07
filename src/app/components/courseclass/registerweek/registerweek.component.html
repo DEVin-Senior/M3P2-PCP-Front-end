@@ -6,12 +6,13 @@
   <div class="content">
     <p-accordion [style]="{ width: '1463px' }">
       <p-accordionTab
-        header="Módulo 1"
+        header="Módulo {{i + 1}}"
         [style]="{
           'font-weight': '700',
           'font-size': '20px',
           'line-height': '24px'
         }"
+        *ngFor="let module of courseClassDto.moduleEntityList; let i = index"
       >
         <div class="add-week" *ngFor="let week of weeks; let i = index">
           
@@ -21,7 +22,7 @@
             pInputText
             placeholder="Conteúdo"
             [(ngModel)]="week.content"
-            required="true" [(ngModel)]="week.content"/>
+            required="true" />
 
           <button
             pButton
