@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CourseClassUpdateComponent } from 'src/app/components/courseclass/courseclass-update/courseclass-update.component';
 import { LayoutDefaultComponent } from './layout-default.component';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CourseClassReadComponent } from 'src/app/components/courseclass/courseclass-read/courseclass-read.component';
 import { CourseClassDeleteComponent } from 'src/app/components/courseclass/courseclass-delete/courseclass-delete.component';
@@ -30,7 +31,9 @@ import { TeacherListComponent } from 'src/app/components/teacher/teacher-list/te
     TemplatesModule,
     TableModule,
     CalendarModule,
-    DropdownModule
+    DropdownModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
 })
