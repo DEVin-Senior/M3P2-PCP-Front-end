@@ -18,11 +18,11 @@
                 <tr>
                     <td>{{teacher.name}}</td>
                     <td>{{teacher.phone}}</td>
-                    <td>{{teacher.mail}}</td>
-                    <td>{{teacher.stacks}}</td>
+                    <td>{{teacher.email}}</td>
+                    <td>{{teacher.skills}}</td>
                     <td>
                         <div class="buttons">
-                            <button class="edit">Editar</button>
+                            <button [routerLink]="['../docente/atualizar', teacher.id]"  class="edit">Editar</button>
                             <button class="archive">Arquivar</button>  
                         </div>
                     </td>
@@ -30,5 +30,5 @@
             </ng-template>
         </p-table>
     </div>
-    <button class="add-button">Novo Docente</button>
+    <button routerLink="/docente/adicionar" class="add-button">Novo Docente</button>
 </div>
