@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
 import { Observable } from 'rxjs';
+import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
 import { API_BASE } from 'src/environments/environment';
 
 
@@ -19,7 +19,12 @@ export class TeacherService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get(`${API_BASE}/teacher/list`); 
+    return this.http.get(`${API_BASE}/teacher/list`);
   }
+
+  getTeacherById(teacherId: string): Observable<ITeacher> {
+    return this.http.get<ITeacher>(`${API_BASE}/teacher/list/${teacherId}`);
+  }
+
 
 }

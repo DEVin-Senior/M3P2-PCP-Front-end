@@ -1,23 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Input } from '@angular/core';
-import { TeacherService } from 'src/app/_services/teacher/teacher.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 import { IAlert } from 'src/app/_interfaces/alert/iAlert';
-import { ERROR, SUCCESS } from 'src/environments/environment';
-import { AlertService } from 'src/app/_shared/alert/alert.service';
 import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
+import { TeacherService } from 'src/app/_services/teacher/teacher.service';
+import { AlertService } from 'src/app/_shared/alert/alert.service';
+import { ERROR, SUCCESS } from 'src/environments/environment';
 
 @Component({
   selector: 'app-teacher-form',
   templateUrl: './teacher-form.component.html',
-  styleUrls: ['./teacher-form.component.scss']
+  styleUrls: ['./teacher-form.component.scss'],
 })
 export class TeacherFormComponent implements OnInit {
   alertMessage!: IAlert;
   selectedStacksNames!: Array<any>;
 
   formTeacher!: FormGroup;
-  @Input() buttonText: string = "";
+  @Input() buttonText: string = '';
+  @Input() teacherToUpdate: ITeacher = {
+    id: '',
+    name: '',
+    phone: '',
+    email: '',
+    skills: [],
+    archived: false,
+  };
+  @Output() stacksOutput = new EventEmitter();
   // TODO analizar se é possível passar por aqui um objeto teacher, para que no update possa ser reaproveitado esse componente
 
   stackList: Array<any> = [
@@ -30,17 +44,21 @@ export class TeacherFormComponent implements OnInit {
     { id: 7, name: 'HTML' },
     { id: 8, name: 'CSS' },
     { id: 9, name: 'JAVASCRIPT' },
-  ]
+  ];
 
-  constructor(private formBuilder: FormBuilder, private teacherService: TeacherService, private alertService: AlertService,) {
-  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private teacherService: TeacherService,
+    private alertService: AlertService
+  ) {}
 
   ngOnInit(): void {
+    this.stacksOutput.emit({stacks: this.stackList});
     this.formTeacher = new FormGroup({
       name: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      stacks: (new FormArray([]))
+      stacks: new FormArray([]),
     });
 
     this.addCheckboxes();
@@ -69,14 +87,16 @@ export class TeacherFormComponent implements OnInit {
 
   getStacks() {
     this.selectedStacksNames = this.formTeacher.value.stacks
-      .map((checked: any, i: any) => checked ? this.stackList[i].name : null)
+      .map((checked: any, i: any) => (checked ? this.stackList[i].name : null))
       .filter((v: any) => v !== null);
 
-    this.selectedStacksNames = this.selectedStacksNames
-      .map((stack: any, i: any) => stack == 'C#' ? 'C_SHARP' : stack);
+    this.selectedStacksNames = this.selectedStacksNames.map(
+      (stack: any, i: any) => (stack == 'C#' ? 'C_SHARP' : stack)
+    );
 
-    this.selectedStacksNames = this.selectedStacksNames
-      .map((stack: any, i: any) => stack == '.NET' ? 'DOT_NET' : stack);
+    this.selectedStacksNames = this.selectedStacksNames.map(
+      (stack: any, i: any) => (stack == '.NET' ? 'DOT_NET' : stack)
+    );
   }
 
   salvar(): void {
@@ -85,7 +105,9 @@ export class TeacherFormComponent implements OnInit {
   }
 
   addCheckboxes(): void {
-    this.stackList.forEach(() => this.stackFormArray.push(new FormControl(false)))
+    this.stackList.forEach(() =>
+      this.stackFormArray.push(new FormControl(false))
+    );
   }
 
   get stackFormArray() {
@@ -98,10 +120,10 @@ export class TeacherFormComponent implements OnInit {
         this.teacherService.insertTeacher(iTeacher).subscribe({
           next: (v) => this.messagePostTeacher(v),
           error: (e) => this.messageErrorPostTeacher(),
-          complete: () => this.formTeacher.reset()
-        })
+          complete: () => this.formTeacher.reset(),
+        });
       } catch (error) {
-        this.messageErrorPostTeacher()
+        this.messageErrorPostTeacher();
       }
     } else {
       this.alertMessage = {
@@ -111,7 +133,6 @@ export class TeacherFormComponent implements OnInit {
       };
       this.alertService.showGenericAlert(this.alertMessage);
     }
-
   }
 
   createNewTeacher(): ITeacher {
@@ -120,7 +141,7 @@ export class TeacherFormComponent implements OnInit {
       phone: this.phone.value,
       email: this.email.value,
       skills: this.selectedStacksNames,
-      archived: false
+      archived: false,
     };
   }
 
@@ -132,7 +153,6 @@ export class TeacherFormComponent implements OnInit {
         typeAlert: SUCCESS,
       };
       this.alertService.showGenericAlert(this.alertMessage);
-
     } else {
       this.alertMessage = {
         title: 'Ocorreu um erro ao cadastrar o Docente',
@@ -150,5 +170,4 @@ export class TeacherFormComponent implements OnInit {
     };
     this.alertService.showGenericAlert(this.alertMessage);
   }
-
 }

@@ -63,7 +63,8 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     FormsModule,
     TableModule,
     ReactiveFormsModule,
-    InputMaskModule
+    InputMaskModule,
+    CheckboxModule,
   ],
   providers: [
     AuthService,
