@@ -26,6 +26,8 @@ import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { AllocationClassReadComponent } from './components/allocation-class-read/allocation-class-read.component';
+import { AllocationClassCreateComponent } from './components/allocation-class-create/allocation-class-create.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { RegisterweekComponent } from './components/courseclass/registerweek/reg
     TeacherFormComponent,
     TeacherUpdateComponent,
     RegisterweekComponent,
+    
   ],
   imports: [
     BrowserModule,

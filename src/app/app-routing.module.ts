@@ -8,6 +8,8 @@ import { CourseClassUpdateComponent } from './components/courseclass/courseclass
 import { LayoutDefaultComponent } from './layouts/layout-default/layout-default.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { AllocationClassCreateComponent } from './components/allocation-class-create/allocation-class-create.component';
+import { AllocationClassReadComponent } from './components/allocation-class-read/allocation-class-read.component';
 
 const routes: Routes = [
   {
@@ -58,14 +60,14 @@ const routes: Routes = [
         path: 'turmas/deletar/:id',
         component: CourseClassDeleteComponent,
       },
-      // {
-      //   path: 'alocacoes',
-      //   //component: AllocationClassReadComponent,
-      // },
-      // {
-      //   path: 'alocacoes/adicionar/:id',
-      //   //component: AllocationClassCreateComponent,
-      // },
+      {
+       path: 'alocacoes',
+       component: AllocationClassReadComponent,
+      },
+      {
+        path: 'alocacoes/adicionar/:id',
+        component: AllocationClassCreateComponent,
+      },
 
       {
         path: 'turmas/modulo',
