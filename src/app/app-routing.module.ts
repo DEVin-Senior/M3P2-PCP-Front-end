@@ -10,20 +10,26 @@ import { HomeComponent } from './views/home/home.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'login/register',
+    component: LoginRegisterComponent,
+  },
+  { 
+    path: 'layout',
     component: LayoutDefaultComponent,
     children: [
       {
         path: 'home',
         component: HomeComponent,
       },
-      // {
-      //   path: 'login',
-      //   //component: LoginComponent,
-      // },
       // {
       //   path: '**',
       //   //component: PageNotFoundComponent,
