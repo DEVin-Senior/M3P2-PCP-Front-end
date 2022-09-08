@@ -1,0 +1,84 @@
+body {
+  background-color: #f5f5f5;
+  height: 100vh;
+  width: 100vw;
+}
+
+.welcome {
+  position: absolute;
+  width: 257.48px;
+  height: 48.75px;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #374557;
+}
+
+.box {
+  box-sizing: border-box;
+  position: absolute;
+  width: 518px;
+  height: 85.32px;
+  background: #FAFAFA;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.loginButton {
+  width: 100%;
+  height: 4rem;
+  background: #EF3A7F;
+  border-radius: 10px;
+  border-color: #EF3A7F;
+  box-shadow: none;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #FFFFFF !important;
+}
+
+.signupButton {
+  width: 100%;
+  height: 4rem;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border-color: #EF3A7F;
+  box-shadow: none;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #EF3A7F !important;
+}
+
+.normal {
+  max-width: 50vw !important;
+}
+
+.lista {
+  max-width: 85vw !important;
+}
+
+.smartphone {
+  max-width: 100vw !important;
+}
+
+@media screen and (min-width: 576px) {
+  .sm\:normal {
+    max-width: 50vw !important;
+  }
+
+  .sm\:lista {
+    max-width: 40vw !important;
+  }
+
+  .sm\:smartphone {
+    max-width: 100vw !important;
+  }
+}
