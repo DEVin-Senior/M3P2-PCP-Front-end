@@ -1,42 +1,47 @@
-// TODO: criar classe global para botões e cores para o projeto
-.table-home-card {
-  padding: 100px;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-end;
-  justify-content: flex-start;
-  align-items: center;
-
-  h1 {
-    margin-bottom: 10px;
-  }
-
-  a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #0064FA;
-  }
+.container {
+  margin-top: 110px;
+  margin-left: 128px;
+  position: relative;
 }
 
-.table-home-content {
-  text-align: center;
-  display: flex;
-  align-items: center;
-
-  th,
-  td {
-    text-align: center;
-  }
+header h3 {
+  color: #374557;
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
-.table-home-buttons {
+header {
+  margin-bottom: 49px;
+}
+
+.table-area {
+  width: 100%;
+  border-collapse: collapse;
+  padding-right: 230px;
+}
+
+th, td {
+  font-size: 0.9rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+th {
+  font-weight: 900;
+  color: #25282B;
+}
+
+tr {
+  height: 56px;
+}
+
+.buttons {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
 button {
-  color: #fff;
+  color: #FFF;
   font-weight: 600;
   font-size: 0.7rem;
   border: none;
@@ -47,10 +52,32 @@ button {
 }
 
 .table-home-btn-edit {
-  background-color: #ef3a7f;
+  background-color: #EF3A7F;
   margin-right: 30px;
 }
 
 .table-home-btn-edit:hover {
+  background-color: #cf2264;
+}
+
+.archive {
+  background-color: #1638DF;
+}
+
+.archive:hover {
+  background-color: #0823ac;
+}
+
+.add-button {
+  background-color: #EF3A7F;
+  padding: 16px 50px;
+  border-radius: 15px;
+  position: fixed;
+  right: 0;
+  margin-top: 200px;
+  margin-right: 230px;
+}
+
+.add-button:hover {
   background-color: #cf2264;
 }

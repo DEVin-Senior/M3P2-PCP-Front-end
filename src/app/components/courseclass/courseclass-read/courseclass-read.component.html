@@ -16,14 +16,15 @@
             </ng-template>
             <ng-template pTemplate="body" let-course>
                 <tr>
-                    <td>{{course.name}}</td>
-                    <td>{{course.init}}</td>
-                    <td>{{course.final}}</td>
-                    <td>{{course.skills}}</td>
+                  <td>{{courseClassReadDto.id}}</td>
+                  <td>{{courseClassReadDto.name}}</td>
+                  <td>{{courseClassReadDto.initialDate}}</td>
+                  <td>{{courseClassReadDto.endDate}}</td>
+                  <td>{{courseClassReadDto.stack}}</td>
                     <td>
                         <div class="buttons">
                             <button class="history">Histórico</button>
-                            <button class="archive">Arquivar</button>  
+                            <button class="archive">Arquivar</button>
                         </div>
                     </td>
                 </tr>
