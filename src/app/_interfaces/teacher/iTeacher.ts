@@ -6,4 +6,9 @@ export interface ITeacher {
     skills: Array<any>;
     archived: boolean;
   } //? não obrigatório.
+
+  export interface IPatchTeacher{
+    teacherId: string;
+    archived: boolean;
+  }
   

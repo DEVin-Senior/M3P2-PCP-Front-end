@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
+import { IPatchTeacher, ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
 import { TeacherService } from 'src/app/_services/teacher/teacher.service';
 
 @Component({
@@ -10,6 +10,10 @@ import { TeacherService } from 'src/app/_services/teacher/teacher.service';
 export class TeacherListComponent implements OnInit {
 
   teachers: ITeacher[] = [];
+  patchTeacher: IPatchTeacher = {
+    teacherId: '',
+    archived: false
+  }
 
   constructor(
     private teacherService: TeacherService
@@ -32,5 +36,16 @@ export class TeacherListComponent implements OnInit {
       console.log(error);
     })
    }
+
+
+  setArchived(id: string, data: boolean):void{
+    this.patchTeacher.teacherId = id;
+    this.patchTeacher.archived = !data;
+    this.teacherService
+            .patchTeacherById(id, this.patchTeacher)
+            .subscribe((response: any) => 
+                location.reload());
+
+  }
 
 }

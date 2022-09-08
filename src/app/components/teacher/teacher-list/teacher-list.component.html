@@ -15,7 +15,7 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-teacher>
-                <tr>
+                <tr [ngClass]="{'bg-bluegray-300':teacher.archived}">
                     <td>{{teacher.name}}</td>
                     <td>{{teacher.phone}}</td>
                     <td>{{teacher.email}}</td>
@@ -23,7 +23,10 @@
                     <td>
                         <div class="buttons">
                             <button [routerLink]="['../docente/atualizar', teacher.id]"  class="edit">Editar</button>
-                            <button class="archive">Arquivar</button>  
+                            <button  class="archive" (click)="setArchived(teacher.id, teacher.archived)">
+                                <span *ngIf="!teacher.archived">Arquivar</span>
+                                <span *ngIf="teacher.archived">Desarquivar</span>
+                            </button>  
                         </div>
                     </td>
                 </tr>
