@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CourseClass } from '../courseclass.model';
 import { CourseClassService } from '../courseclass.service';
-import { CourseClassUpdateDto } from '../dto/courseclass-update.model';
+import {CourseClassUpdateDto} from '../dto/courseclass-update.model'
 
 @Component({
   selector: 'app-courseclass-update',
@@ -11,21 +10,21 @@ import { CourseClassUpdateDto } from '../dto/courseclass-update.model';
 })
 export class CourseClassUpdateComponent implements OnInit {
 
-  courseClassDto: CourseClassUpdateDto  = {
+  courseClass: CourseClassUpdateDto =   {
     name: '',
     initialDate: '',
     endDate: '',
-    stack: '',
+    stack:'',    
     matrixLink: '',
-    archive: false,
+    archive:false,
     moduleEntityList: [{
       name: '',
       weekEntityList: [{
-        content: '',
+        content:'',
         initialDate: '',
       }]
     }]
-  }
+  };
 
   constructor(
     /*private classCourseService: CourseClassService,

@@ -8,16 +8,6 @@ import { Message, MessageService } from 'primeng/api';
   providedIn: 'root'
 })
 export class CourseClassService {
-  courseClass: CourseClass = {
-    name: '',
-    user: { id: '' },
-    initialDate: '',
-    endDate: '',
-    skills: '',
-    matrixLink: '',
-    module: { id: '' },
-    status: true
-  }
 
   baseUrl = '/turmas';
 
