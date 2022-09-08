@@ -9,6 +9,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
+import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
@@ -30,6 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputMaskModule } from 'primeng/inputmask';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
+import { LoginComponent } from './components/login/login.component';
 import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-form.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
@@ -44,7 +47,9 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     TeacherCreateComponent,
     TeacherFormComponent,
     TeacherUpdateComponent,
-    RegisterweekComponent
+    RegisterweekComponent,
+    LoginComponent,
+    LoginRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +68,7 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     FormsModule,
     TableModule,
     ReactiveFormsModule,
+    ImageModule,
     InputMaskModule,
     CheckboxModule,
   ],
