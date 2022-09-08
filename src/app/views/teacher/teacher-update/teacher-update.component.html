@@ -3,7 +3,7 @@
 
   <app-teacher-form
     [buttonText]="salvar"
-    [teacherToUpdate]="teacherToUpdate"
-    (stacksOutput)="checkStacks($event)"
+    [teacherToUpdate]="teacher"
+    (skillsToAddCheckboxesOnUpdate)="skillsBuilderToUpdate($event)"
   ></app-teacher-form>
 </div>

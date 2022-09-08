@@ -9,7 +9,7 @@
         placeholder="Nome"
         pInputText
         formControlName="name"
-        [value]="teacherToUpdate.name"
+        [(ngModel)]="teacherToUpdate.name"
       />
       <div *ngIf="name.invalid && formDir.submitted">
         <small *ngIf="name.errors?.['required']" class="alert-required"
@@ -26,7 +26,7 @@
         mask="(99) 99999-9999"
         formControlName="phone"
         placeholder="(99) 99999-9999"
-        [ngModel]="teacherToUpdate.phone"
+        [(ngModel)]="teacherToUpdate.phone"
       ></p-inputMask>
       <div *ngIf="phone.invalid && formDir.submitted">
         <small *ngIf="phone.errors?.['required']" class="alert-required"
@@ -45,7 +45,7 @@
         placeholder="E-mail"
         pInputText
         formControlName="email"
-        [value]="teacherToUpdate.email"
+        [(ngModel)]="teacherToUpdate.email"
       />
       <div *ngIf="email.invalid && formDir.submitted">
         <small *ngIf="email.errors?.['required']" class="alert-required"
@@ -57,24 +57,18 @@
       </div>
     </div>
     <div class="col-12 mt-2 w-12 grid mt-4">
-      <!-- <label class="col-4" formArrayName="stacks" *ngFor="let stack of stackFormArray.controls; let i = index">
-        <input class="mr-1" type="checkbox" [formControlName]="i">
-        {{stackList[i].name}}
-      </label> -->
-
       <div
-        *ngFor="let stack of stackList; let i = index"
+        *ngFor="let stack of stackFormArray.controls; let i = index"
         class="field-checkbox"
         formArrayName="stacks"
         class="col-4"
       >
         <p-checkbox class="mr-1"
           name="group2"
-          value="stack"
           [value]="stack"
-          [(ngModel)]="teacherToUpdate.skills"
           [inputId]="stackList[i].id"
           [formControlName]="i"
+          [binary]="true"
         ></p-checkbox>
         <label [for]="stackList[i].id">{{ stackList[i].name }}</label>
       </div>

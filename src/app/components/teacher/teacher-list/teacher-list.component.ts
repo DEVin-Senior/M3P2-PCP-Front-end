@@ -18,12 +18,13 @@ export class TeacherListComponent implements OnInit {
   ngOnInit(): void {
     this.getAll();
   }
-  
+
   getAll(){
    this.teacherService.getAll().subscribe(
     (result: any) => {
       for (let i = 0; i < result.length; i++){
         let teacher = result[i] as ITeacher;
+        teacher.skills = this.teacherService.convertSkillFromEnumToString(teacher.skills).join(', ');
         this.teachers?.push(teacher);
       }
     },
