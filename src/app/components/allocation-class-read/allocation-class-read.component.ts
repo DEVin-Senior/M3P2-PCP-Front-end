@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Alocacao } from './data/data';
+import { location } from './interface/date';
 
 @Component({
   selector: 'app-allocation-class-read',
@@ -7,45 +7,41 @@ import { Alocacao } from './data/data';
   styleUrls: ['./allocation-class-read.component.scss']
 })
 export class AllocationClassReadComponent implements OnInit {
-  datas:string[] = ["04/07","11/07","18/07","25/07","01/08","08/08"]
-  alocacoes: Alocacao[] = [
+  dates:string[] = ["04/07","11/07","18/07","25/07","01/08","08/08"]
+  alocation: location[] = [
     {
-      data: "14/08",
-      docente: "alan",
-      turma: "Dev In House"
+      date: "14/08",
+      teacher: "alan",
+      class: "Dev In House"
     },
     {
-      data: "14/08",
-      docente: "adan",
-      turma: "Dev In House"
+      date: "14/08",
+      teacher: "adan",
+      class: "Dev In House"
     },
     {
-      data: "14/08",
-      docente: "carlos",
-      turma: "Dev In House"
+      date: "14/08",
+      teacher: "carlos",
+      class: "Dev In House"
     },
     {
-      data: "14/08",
-      docente: "carlos",
-      turma: "Dev In House"
+      date: "14/08",
+      teacher: "carlos",
+      class: "Dev In House"
     },
     {
-      data: "14/08",
-      docente: "carlos",
-      turma: "Dev In House"
+      date: "14/08",
+      teacher: "carlos",
+      class: "Dev In House"
     },
     {
-      data: "14/08",
-      docente: "carlos",
-      turma: "Dev In House"
+      date: "14/08",
+      teacher: "carlos",
+      class: "Dev In House"
     },
-    
   ]
-  
   constructor() { }
 
   ngOnInit(): void {
   }
-
-
 }

@@ -1,28 +1,24 @@
-
-
-
 <div class="container">
     <header>
         <h3>Tabela</h3>
     </header>
     <div class="table-area">
-        <p-table [value]="alocacoes" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
-            <ng-template pTemplate="header" let-alocacao>
+        <p-table [value]="alocation" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <ng-template pTemplate="header" let-location>
                 <tr>
                     <th>Turma</th>
-                    <th>{{datas[0]}}</th>
-                    <th>{{datas[1]}}</th>
-                    <th>{{datas[2]}}</th>
-                    <th>{{datas[3]}}</th>
-                    <th>{{datas[4]}}</th>
+                    <th>{{dates[0]}}</th>
+                    <th>{{dates[1]}}</th>
+                    <th>{{dates[2]}}</th>
+                    <th>{{dates[3]}}</th>
+                    <th>{{dates[4]}}</th>
                     <th></th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-alocacao>
+            <ng-template pTemplate="body" let-location>
                 <tr>
-                    <td>{{alocacao.turma}}</td>
-                    <td>{{alocacao.docente}}</td>
-
+                    <td>{{location.teacher}}</td>
+                    <td>{{location.class}}</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -32,10 +28,7 @@
                             <button class="history">Alocar Docente</button>
                         </div>
                     </td>
-                    
                 </tr>
-                
-                
             </ng-template>
         </p-table>
     </div>
