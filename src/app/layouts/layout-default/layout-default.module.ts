@@ -14,7 +14,9 @@ import { RegisterweekViewComponent } from 'src/app/views/registerweek-view/regis
 import { AllocationClassReadComponent } from 'src/app/components/allocation-class-read/allocation-class-read.component';
 import { TeacherListComponent } from 'src/app/components/teacher/teacher-list/teacher-list.component';
 import { CourseClassCrudComponent } from 'src/app/views/courseclass-crud/courseclass-crud.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {ConfirmationService} from 'primeng/api';
 
 
 @NgModule({
@@ -37,12 +39,15 @@ import { FormsModule } from '@angular/forms';
     TableModule,
     CalendarModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    ConfirmPopupModule
   ],
   exports: [
     CourseClassReadComponent,
     CourseClassCrudComponent
-  ]
+  ],
+  providers: [ConfirmationService]
 
 })
 export class LayoutDefaultModule { }
