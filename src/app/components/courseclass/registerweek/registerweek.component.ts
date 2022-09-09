@@ -25,6 +25,7 @@ export class RegisterweekComponent implements OnInit {
       weekEntityList: [{
         content: '',
         initialDate: '',
+        paid: false
       }]
     }]
   }
@@ -71,7 +72,8 @@ export class RegisterweekComponent implements OnInit {
       if (index == moduleIndex) {
         course.weekEntityList.push({
           content: content,
-          initialDate: '2022-01-01'
+          initialDate: '2022-01-01',
+          paid: false
         })
       }
 
