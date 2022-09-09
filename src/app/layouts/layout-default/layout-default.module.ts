@@ -14,12 +14,14 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RegisterweekViewComponent } from 'src/app/views/registerweek-view/registerweek-view.component';
 import { AllocationClassReadComponent } from 'src/app/components/allocation-class-read/allocation-class-read.component';
 import { TeacherListComponent } from 'src/app/components/teacher/teacher-list/teacher-list.component';
+import { CourseClassCrudComponent } from 'src/app/views/courseclass-crud/courseclass-crud.component';
 
 
 @NgModule({
   declarations: [
     LayoutDefaultComponent,
     CourseClassReadComponent,
+    CourseClassCrudComponent,
     CourseClassDeleteComponent,
     CourseClassUpdateComponent,
     CourseClassCreateComponent,
@@ -38,6 +40,10 @@ import { TeacherListComponent } from 'src/app/components/teacher/teacher-list/te
     FormsModule,
     ReactiveFormsModule
   ],
+  exports: [
+    CourseClassReadComponent,
+    CourseClassCrudComponent
+  ]
 
 })
 export class LayoutDefaultModule { }
