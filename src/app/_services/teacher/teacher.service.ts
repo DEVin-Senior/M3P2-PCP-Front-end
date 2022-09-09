@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IPatchTeacher, ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
 import { API_BASE } from 'src/environments/environment';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -48,6 +47,20 @@ export class TeacherService {
 
     selectedStacksNames = selectedStacksNames.map((stack: any) =>
       stack == 'DOT_NET' ? '.NET' : stack
+    );
+
+    return selectedStacksNames;
+  }
+
+  convertSkillFromStringToEnum(teacherSkills: any){
+    let selectedStacksNames = teacherSkills;
+
+    selectedStacksNames.map(
+      (stack: any, i: any) => (stack == 'C#' ? 'C_SHARP' : stack)
+    );
+
+    selectedStacksNames.map(
+      (stack: any, i: any) => (stack == '.NET' ? 'DOT_NET' : stack)
     );
 
     return selectedStacksNames;

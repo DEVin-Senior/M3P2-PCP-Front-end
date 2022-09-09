@@ -108,13 +108,7 @@ export class TeacherFormComponent implements OnInit {
       .map((checked: any, i: any) => (checked ? this.stackList[i].name : null))
       .filter((v: any) => v !== null);
 
-    this.selectedStacksNames = this.selectedStacksNames.map(
-      (stack: any, i: any) => (stack == 'C#' ? 'C_SHARP' : stack)
-    );
-
-    this.selectedStacksNames = this.selectedStacksNames.map(
-      (stack: any, i: any) => (stack == '.NET' ? 'DOT_NET' : stack)
-    );
+    this.selectedStacksNames = this.teacherService.convertSkillFromStringToEnum(this.selectedStacksNames);
   }
 
   salvar(): void {
