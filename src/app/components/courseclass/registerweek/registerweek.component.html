@@ -6,16 +6,21 @@
   <div class="content">
     <p-accordion [multiple]="true" [style]="{ width: '1463px' }">
       <p-accordionTab
-        header="Módulo {{moduleIndex + 1}}"
+        header="Módulo {{ moduleIndex + 1 }}"
         [style]="{
           'font-weight': '700',
           'font-size': '20px',
           'line-height': '24px'
         }"
-        *ngFor="let module of courseClassDto.moduleEntityList; let moduleIndex = index"
+        *ngFor="
+          let module of courseClassDto.moduleEntityList;
+          let moduleIndex = index
+        "
       >
-        <div class="add-week" *ngFor="let week of module.weekEntityList; let i = index;">
-          
+        <div
+          class="add-week"
+          *ngFor="let week of module.weekEntityList; let i = index"
+        >
           <label>Semana {{ i + 1 }}</label>
           <input
             type="text"
@@ -23,16 +28,19 @@
             class="inpute"
             placeholder="Conteúdo"
             [(ngModel)]="week.content"
-            required="true" />
+            required="true"
+          />
 
           <button
             pButton
             pRipple
             type="button"
             icon="pi pi-plus"
-            class="p-button-rounded p-button-success {{ i > 0 ? 'invisible' : '' }}"
-            (click)="addWeek(moduleIndex, week.content)">
-          </button>
+            class="p-button-rounded p-button-success {{
+              i > 0 ? 'invisible' : ''
+            }}"
+            (click)="addWeek(moduleIndex, week.content)"
+          ></button>
 
           <p-confirmPopup></p-confirmPopup>
           <button
@@ -44,12 +52,19 @@
               i == 0 ? 'invisible' : ' '
             }}"
             (click)="confirm($event, week, moduleIndex)"
-          >
-        </button>
+          ></button>
         </div>
       </p-accordionTab>
     </p-accordion>
 
+    <div class="row-btn">
+      <button
+        pButton
+        type="button"
+        label="Cadastrar"
+        (click)="saveModule()"
+      ></button>
+    </div>
 
   </div>
 </div>
