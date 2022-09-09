@@ -12,6 +12,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { CourseClassCreateComponent } from 'src/app/components/courseclass/courseclass-create/courseclass-create.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { RegisterweekViewComponent } from 'src/app/views/registerweek-view/registerweek-view.component';
+import { AllocationClassReadComponent } from 'src/app/components/allocation-class-read/allocation-class-read.component';
 import { TeacherListComponent } from 'src/app/components/teacher/teacher-list/teacher-list.component';
 
 
@@ -22,6 +23,8 @@ import { TeacherListComponent } from 'src/app/components/teacher/teacher-list/te
     CourseClassDeleteComponent,
     CourseClassUpdateComponent,
     CourseClassCreateComponent,
+    RegisterweekViewComponent,
+    AllocationClassReadComponent,
     TeacherListComponent,
     RegisterweekViewComponent
   ],
