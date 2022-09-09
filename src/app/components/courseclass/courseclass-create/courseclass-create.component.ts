@@ -69,8 +69,9 @@ nextForm() {
     console.log(typeof this.courseClassDto.moduleEntityList.length);
     this.numberOfWeek = this.selectedModule;
     console.log(this.selectedModule);
+    
     this.courseClassContextService.setCourseClass(this.courseClassDto);
-    this.router.navigate(['turmas/modulo']);
+    this.router.navigate(['layout/turmas/modulo']);
   }
 
   /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
