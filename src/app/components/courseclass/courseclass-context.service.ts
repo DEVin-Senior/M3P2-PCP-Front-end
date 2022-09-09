@@ -19,7 +19,6 @@ export class CourseclassContextService {
          weekEntityList: [{
               content: '',
               initialDate: '',
-              paid: false
          }]
    }]
  }

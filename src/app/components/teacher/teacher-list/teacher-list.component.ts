@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderService } from 'src/app/templates/header/header.service';
+import { IPatchTeacher, ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
+import { TeacherService } from 'src/app/_services/teacher/teacher.service';
 
 @Component({
   selector: 'app-teacher-list',
@@ -8,35 +9,42 @@ import { HeaderService } from 'src/app/templates/header/header.service';
 })
 export class TeacherListComponent implements OnInit {
 
-  teachers: {name: string, phone: string, mail: string, stacks: string}[] =  [
-    {
-      name: "Marcola",
-      phone: "(32)98811-9292",
-      mail: "marcola@dev.com",
-      stacks: "teste2"
-    },
-    {
-      name: "Francisco Santana",
-      phone: "(32)98811-9292",
-      mail: "francisco@dev.com",
-      stacks: "teste"
-    },
-    {
-      name: "Franciscão Santana",
-      phone: "(32)98811-9292",
-      mail: "francisco@dev.com",
-      stacks: "teste"
-    }
-  ];
-
-  constructor(private headerService: HeaderService) {
-    headerService.headerData = {
-      title: 'Docentes',
-      routerUrl: 'layout/docentes'
-    }
+  teachers: ITeacher[] = [];
+  patchTeacher: IPatchTeacher = {
+    teacherId: '',
+    archived: false
   }
 
+  constructor(
+    private teacherService: TeacherService
+  ) { }
+
   ngOnInit(): void {
+    this.getAll();
+  }
+
+  getAll(){
+   this.teacherService.getAll().subscribe(
+    (result: any) => {
+      for (let i = 0; i < result.length; i++){
+        let teacher = result[i] as ITeacher;
+        this.teachers?.push(teacher);
+      }
+    },
+    error => {
+      console.log(error);
+    })
+   }
+
+
+  setArchived(id: string, data: boolean):void{
+    this.patchTeacher.teacherId = id;
+    this.patchTeacher.archived = !data;
+    this.teacherService
+            .patchTeacherById(id, this.patchTeacher)
+            .subscribe((response: any) => 
+                location.reload());
+
   }
 
 }

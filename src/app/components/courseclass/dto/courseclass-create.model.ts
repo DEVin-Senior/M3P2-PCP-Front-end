@@ -13,7 +13,6 @@ export interface CourseClassCreateDto {
                 id?: number,
                 content: string,
                 initialDate: string,
-                paid: boolean
           }]
    }]
 }

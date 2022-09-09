@@ -12,23 +12,16 @@ import { CalendarModule } from 'primeng/calendar';
 import { CourseClassCreateComponent } from 'src/app/components/courseclass/courseclass-create/courseclass-create.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { RegisterweekViewComponent } from 'src/app/views/registerweek-view/registerweek-view.component';
-import { AllocationClassReadComponent } from 'src/app/components/allocation-class-read/allocation-class-read.component';
 import { TeacherListComponent } from 'src/app/components/teacher/teacher-list/teacher-list.component';
-import { CourseClassCrudComponent } from 'src/app/views/courseclass-crud/courseclass-crud.component';
-import {ConfirmPopupModule} from 'primeng/confirmpopup';
-import {ConfirmationService} from 'primeng/api';
 
 
 @NgModule({
   declarations: [
     LayoutDefaultComponent,
     CourseClassReadComponent,
-    CourseClassCrudComponent,
     CourseClassDeleteComponent,
     CourseClassUpdateComponent,
     CourseClassCreateComponent,
-    RegisterweekViewComponent,
-    AllocationClassReadComponent,
     TeacherListComponent,
     RegisterweekViewComponent
   ],
@@ -40,14 +33,8 @@ import {ConfirmationService} from 'primeng/api';
     CalendarModule,
     DropdownModule,
     FormsModule,
-    ReactiveFormsModule,
-    ConfirmPopupModule
+    ReactiveFormsModule
   ],
-  exports: [
-    CourseClassReadComponent,
-    CourseClassCrudComponent
-  ],
-  providers: [ConfirmationService]
 
 })
 export class LayoutDefaultModule { }

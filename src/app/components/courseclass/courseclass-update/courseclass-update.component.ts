@@ -22,7 +22,6 @@ export class CourseClassUpdateComponent implements OnInit {
       weekEntityList: [{
         content:'',
         initialDate: '',
-        paid: false
       }]
     }]
   };
