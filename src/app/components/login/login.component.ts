@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       }, errorResponse => {
         this.loginError = true;
       })
-    console.log(`Name: ${this.user.name} User LOGIN: ${this.user.email}, Password: ${this.user.password}`);
+    console.log(`User LOGIN -> Email: ${this.user.email}, Password: ${this.user.password}`);
   }
 
   

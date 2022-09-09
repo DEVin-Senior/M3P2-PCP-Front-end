@@ -1,3 +1,4 @@
+import { CourseClassService } from './../courseclass.service';
 import { Component, OnInit } from '@angular/core';
 import { CourseclassContextService } from '../courseclass-context.service';
 import { CourseClassCreateDto } from '../dto/courseclass-create.model';
@@ -28,7 +29,7 @@ export class RegisterweekComponent implements OnInit {
     }]
   }
 
-  constructor(private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService) { 
+  constructor(private courseClassServiceDto: CourseClassService, private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService) { 
     headerService.headerData = {
       title: 'Turmas',
       routerUrl: 'layout/turmas/modulo'
@@ -87,5 +88,11 @@ export class RegisterweekComponent implements OnInit {
         course.weekEntityList.splice(course.weekEntityList.indexOf(week), 1);
       }
     })
+  }
+
+  saveModule() {
+    localStorage.setItem('courseClassDto', JSON.stringify(this.courseClassDto));
+    this.courseClassServiceDto.create(this.courseClassDto);
+    console.log(this.courseClassDto);    
   }
 }
