@@ -1,4 +1,3 @@
-
 <div class="container">
     <header>
         <h3>Cadastradas</h3>
@@ -7,20 +6,21 @@
         <p-table [value]="courses" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>Turma</th>
+                    <th>Id</th>
+                    <th>Nome</th>
                     <th>Início</th>
-                    <th>Fim</th>
+                    <th>Final</th>
                     <th>Linguagem/stacks</th>
                     <th></th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-course>
+            <ng-template pTemplate="body" *ngFor="let course of coursesClassReadDto">
                 <tr>
-                  <td>{{courseClassReadDto.id}}</td>
-                  <td>{{courseClassReadDto.name}}</td>
-                  <td>{{courseClassReadDto.initialDate}}</td>
-                  <td>{{courseClassReadDto.endDate}}</td>
-                  <td>{{courseClassReadDto.stack}}</td>
+                  <td>{{course.id}}</td>
+                  <td>{{course.name}}</td>
+                  <td>{{course.initialDate}}</td>
+                  <td>{{course.endDate}}</td>
+                  <td>{{course.stack}}</td>
                     <td>
                         <div class="buttons">
                             <button class="history">Histórico</button>

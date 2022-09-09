@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseClassService } from '../courseclass.service';
 import { CourseClassReadDto } from '../dto/courseclass-read.model';
 
 @Component({
@@ -7,34 +8,39 @@ import { CourseClassReadDto } from '../dto/courseclass-read.model';
   styleUrls: ['./courseclass-read.component.scss']
 })
 export class CourseClassReadComponent implements OnInit {
+// TODO: Follow the DevInAgro (READ) Documentation 
+  coursesClassReadDto!: CourseClassReadDto[];
+//   courseClassReadDto: CourseClassReadDto = {
+//     name: '',
+//     initialDate: '',
+//     endDate: '',
+//     stack: '',
+//     archive: false,
+//  }
 
+  courses: {name: string, initialDate: string, endDate: string, stack: string, archive: boolean}[] =  [];
 
-  courseClassReadDto: CourseClassReadDto = {
-    name: '',
-    initialDate: '',
-    endDate: '',
-    stack: '',
-    archive: false,
- }
-
-  courses: {name: string, init: string, final: string, skills: string}[] =  [
-    {
-      name: "IST",
-      init: "15/10/2021",
-      final: "29/07/2022",
-      skills: "JAVA - Primefaces"
-    },
-    {
-      name: "SENAI",
-      init: "29/11/2021",
-      final: "12/08/2022",
-      skills: "JAVA - Angular"
-    }
-  ];
-
-  constructor() { }
+  constructor(/*private courseClassService: CourseClassService*/) {
+   }
 
   ngOnInit(): void {
+  //   this.graoService.read().subscribe((graos) => {
+  //     this.graos = graos;
+  //   });
+  //   this.fazendaService.read().subscribe((fazendas) => {
+  //     this.fazendas = fazendas;
+  //     fazendas.forEach((fazenda) => {
+  //       this.graos.forEach((grao) => {
+  //         {
+  //           if (fazenda.grao == grao.nome) {
+  //             fazenda.previsaoColheita = grao.previsao_colheita;
+  //           }
+  //         }
+  //       });
+  //     });
+  //   });
+  // }
+    //this.courses.push(this.coursesClassReadDto);
   }
 
 }
