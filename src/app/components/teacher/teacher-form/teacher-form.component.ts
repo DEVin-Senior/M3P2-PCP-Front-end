@@ -11,7 +11,7 @@ import { IAlert } from 'src/app/_interfaces/alert/iAlert';
 import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
 import { TeacherService } from 'src/app/_services/teacher/teacher.service';
 import { AlertService } from 'src/app/_shared/alert/alert.service';
-import { ERROR, SUCCESS } from 'src/environments/environment';
+import { ERROR, ROTA_LISTA_DOCENTES, SUCCESS } from 'src/environments/environment';
 
 @Component({
   selector: 'app-teacher-form',
@@ -166,7 +166,7 @@ export class TeacherFormComponent implements OnInit {
       this.teacherService.insertTeacher(iTeacher).subscribe({
         next: (v) => this.messagePostTeacher(v),
         error: (e) => this.messageErrorPostTeacher(),
-        complete: () => this.redirectRouter.navigate(['/docentes']),
+        complete: () => this.redirectRouter.navigate([ROTA_LISTA_DOCENTES]),
       });
     } catch (error) {
       this.messageErrorPostTeacher();
@@ -188,7 +188,7 @@ export class TeacherFormComponent implements OnInit {
       this.teacherService.updateTeacher(teacherToUpdate).subscribe({
         next: (v) => this.messagePostTeacher(v),
         error: (e) => this.messageErrorPostTeacher(),
-        complete: () => this.redirectRouter.navigate(['/docentes']),
+        complete: () => this.redirectRouter.navigate([ROTA_LISTA_DOCENTES]),
       });
     } catch (error) {
       this.messageErrorPostTeacher();
