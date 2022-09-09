@@ -40,6 +40,7 @@ import { AuthService } from './_services/auth/auth.service';
 import { TokenInterceptor } from './_services/interceptor/token.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { LoginRegisterComponent } from './components/login/login-register/login-
     HttpClientModule,
     FormsModule,
     HttpClient,
+    MessageService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

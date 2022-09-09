@@ -14,6 +14,7 @@ import { AllocationClassCreateComponent } from './components/allocation-class-cr
 import { AllocationClassReadComponent } from './components/allocation-class-read/allocation-class-read.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
+import { CourseClassCrudComponent } from './views/courseclass-crud/courseclass-crud.component';
 
 const routes: Routes = [
   {
@@ -54,7 +55,7 @@ const routes: Routes = [
       // },
       {
         path: 'turmas',
-        component: CourseClassReadComponent,
+        component: CourseClassCrudComponent,
       },
       {
         path: 'turmas/atualizar/:id',
