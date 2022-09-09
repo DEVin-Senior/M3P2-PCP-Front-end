@@ -55,11 +55,11 @@ export class TeacherService {
   convertSkillFromStringToEnum(teacherSkills: any){
     let selectedStacksNames = teacherSkills;
 
-    selectedStacksNames.map(
+    selectedStacksNames = selectedStacksNames.map(
       (stack: any, i: any) => (stack == 'C#' ? 'C_SHARP' : stack)
     );
 
-    selectedStacksNames.map(
+    selectedStacksNames = selectedStacksNames.map(
       (stack: any, i: any) => (stack == '.NET' ? 'DOT_NET' : stack)
     );
 
