@@ -9,6 +9,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
+import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
@@ -32,9 +33,14 @@ import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { AllocationClassReadComponent } from './components/allocation-class-read/allocation-class-read.component';
+import { AllocationClassCreateComponent } from './components/allocation-class-create/allocation-class-create.component';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './_services/auth/auth.service';
 import { TokenInterceptor } from './_services/interceptor/token.interceptor';
+import { LoginComponent } from './components/login/login.component';
+import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,9 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     TeacherCreateComponent,
     TeacherFormComponent,
     TeacherUpdateComponent,
-    RegisterweekComponent
+    RegisterweekComponent,    
+    LoginComponent,
+    LoginRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +70,8 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     HttpClientModule,
     FormsModule,
     TableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ImageModule
   ],
   providers: [
     AuthService,
@@ -73,6 +82,7 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     HttpClientModule,
     FormsModule,
     HttpClient,
+    MessageService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

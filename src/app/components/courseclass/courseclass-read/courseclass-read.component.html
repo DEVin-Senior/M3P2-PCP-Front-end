@@ -2,25 +2,26 @@
     <header>
         <h3>Cadastradas</h3>
     </header>
-    <div class="table-area">
-        <p-table [value]="courses" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+    <div *ngIf="courseClassReadDto$ | async as courseClassReadDto"  class="table-area">
+        <p-table
+            [value]="courseClassReadDto" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Id</th>
-                    <th>Nome</th>
+                    <th>Turma</th>
                     <th>Início</th>
                     <th>Final</th>
                     <th>Linguagem/stacks</th>
                     <th></th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" *ngFor="let course of coursesClassReadDto">
+            <ng-template let-course pTemplate="body">
                 <tr>
-                  <td>{{course.id}}</td>
-                  <td>{{course.name}}</td>
-                  <td>{{course.initialDate}}</td>
-                  <td>{{course.endDate}}</td>
-                  <td>{{course.stack}}</td>
+                  <td>{{ course.id }}</td>
+                  <td>{{ course.name }}</td>
+                  <td>{{ course.initialDate }}</td>
+                  <td>{{ course.endDate }}</td>
+                  <td>{{ course.stack }}</td>
                     <td>
                         <div class="buttons">
                             <button class="history">Histórico</button>
@@ -30,6 +31,9 @@
                 </tr>
             </ng-template>
         </p-table>
+        <!-- <p *ngIf="courseClassReadDto$ | async as courseClassReadDto">
+            {{ courseClassReadDto | json }}
+        </p> -->
     </div>
     <button routerLink="/turmas/adicionar" class="add-button">Nova Turma</button>
 </div>

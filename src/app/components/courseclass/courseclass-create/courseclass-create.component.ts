@@ -38,7 +38,7 @@ export class CourseClassCreateComponent implements OnInit {
   selectedModule: number = 0;
   numberOfWeek: number = 0;
 
-  constructor(/*private courseClassService: CourseClassService,*/ private router: Router, private courseClassContextService: CourseclassContextService) {
+  constructor(private courseClassService: CourseClassService, private router: Router, private courseClassContextService: CourseclassContextService) {
     this.quatityModule = [
       { label: '1', value: 1 },
       { label: '2', value: 2 },
@@ -69,6 +69,7 @@ nextForm() {
     console.log(typeof this.courseClassDto.moduleEntityList.length);
     this.numberOfWeek = this.selectedModule;
     console.log(this.selectedModule);
+    
     this.courseClassContextService.setCourseClass(this.courseClassDto);
     this.router.navigate(['turmas/modulo']);
   }

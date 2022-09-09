@@ -4,17 +4,17 @@
   </div>
 
   <div class="content">
-    <p-accordion [style]="{ width: '1463px' }">
+    <p-accordion [multiple]="true" [style]="{ width: '1463px' }">
       <p-accordionTab
-        header="Módulo {{i + 1}}"
+        header="Módulo {{moduleIndex + 1}}"
         [style]="{
           'font-weight': '700',
           'font-size': '20px',
           'line-height': '24px'
         }"
-        *ngFor="let module of courseClassDto.moduleEntityList; let i = index"
+        *ngFor="let module of courseClassDto.moduleEntityList; let moduleIndex = index"
       >
-        <div class="add-week" *ngFor="let week of weeks; let i = index">
+        <div class="add-week" *ngFor="let week of module.weekEntityList; let i = index">
           
           <label>Semana {{ i + 1 }}</label>
           <input
@@ -30,7 +30,7 @@
             type="button"
             icon="pi pi-plus"
             class="p-button-rounded p-button-success {{ i > 0 ? 'invisible' : '' }}"
-            (click)="addWeek()">
+            (click)="addWeek(moduleIndex, week.content)">
           </button>
 
           <button
