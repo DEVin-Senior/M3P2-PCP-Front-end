@@ -14,12 +14,13 @@
         }"
         *ngFor="let module of courseClassDto.moduleEntityList; let moduleIndex = index"
       >
-        <div class="add-week" *ngFor="let week of module.weekEntityList; let i = index">
+        <div class="add-week" *ngFor="let week of module.weekEntityList; let i = index;">
           
           <label>Semana {{ i + 1 }}</label>
           <input
             type="text"
             pInputText
+            class="inpute"
             placeholder="Conteúdo"
             [(ngModel)]="week.content"
             required="true" />
@@ -33,6 +34,7 @@
             (click)="addWeek(moduleIndex, week.content)">
           </button>
 
+          <!-- <p-confirmPopup></p-confirmPopup> -->
           <button
             pButton
             pRipple
@@ -41,7 +43,9 @@
             class="p-button-rounded p-button-danger {{
               i == 0 ? 'invisible' : ' '
             }}"
-          ></button>
+            (click)="removeWeek(week, moduleIndex)"
+          >
+        </button>
         </div>
       </p-accordionTab>
     </p-accordion>

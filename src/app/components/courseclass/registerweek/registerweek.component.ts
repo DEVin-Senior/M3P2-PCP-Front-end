@@ -1,8 +1,10 @@
+import { LoginComponent } from './../../login/login.component';
 import { Component, OnInit } from '@angular/core';
 import { CourseclassContextService } from '../courseclass-context.service';
 import { CourseClass } from '../courseclass.model';
 import { CourseClassCreateDto } from '../dto/courseclass-create.model';
 import { Week } from './registerweek.model';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-registerweek',
@@ -31,7 +33,21 @@ export class RegisterweekComponent implements OnInit {
     }]
   }
 
-  constructor(private courseClassService: CourseclassContextService) { }
+  constructor(private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService) { }
+
+//   confirm(event: Event, week: any, moduleIndex: number) {
+//     this.confirmationService.confirm({
+//         target: event.target as EventTarget,
+//         message: 'Are you sure that you want to proceed?',
+//         icon: 'pi pi-exclamation-triangle',
+//         accept: () => {
+//             this.removeWeek(week, moduleIndex);
+//         },
+//         reject: () => {
+//             reject action
+//         }
+//     });
+// }
 
   ngOnInit(): void {
     this.courseClassDto = this.courseClassService.getCourseClass();
@@ -43,19 +59,10 @@ export class RegisterweekComponent implements OnInit {
   }
 
   addWeek(moduleIndex: number, content: string) {
-    // if (this.newWeek) {
-    //   let week = new Week();
-    //   week.content = this.newWeek;
-    //   week.isCompleted = true;
-    //   this.weeks.push(week);
-    // } else {
-    //   alert("Preenchimento do campo obrigatório!");
-    // }
-
     const module = this.courseClassDto.moduleEntityList.findIndex((m, index) => {
       return index == moduleIndex;
     })
-    //Setar o objeto Week dentro da lista de weeks do módulo encontrado
+
     this.courseClassDto.moduleEntityList.forEach((course, index) => {
       if (index == moduleIndex) {
         course.weekEntityList.push({
@@ -63,7 +70,19 @@ export class RegisterweekComponent implements OnInit {
           initialDate: '2022-01-01'
         })
       }
+
       return course;
+    })
+    console.log(this.courseClassDto);
+  }
+
+  removeWeek(week: any, moduleIndex: number) {
+    this.courseClassDto.moduleEntityList.forEach((course, index) => {
+      console.log(week);
+
+      if (index == moduleIndex) {
+        course.weekEntityList.splice(course.weekEntityList.indexOf(week), 1);
+      }
     })
   }
 }
