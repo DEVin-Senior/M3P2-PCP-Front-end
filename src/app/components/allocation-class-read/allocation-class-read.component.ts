@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from 'src/app/templates/header/header.service';
 import { location } from './interface/date';
 
 @Component({
@@ -40,7 +41,12 @@ export class AllocationClassReadComponent implements OnInit {
       class: "Dev In House"
     },
   ]
-  constructor() { }
+  constructor( private headerService: HeaderService) { 
+    headerService.headerData = {
+      title: 'Alocações',
+      routerUrl: 'layout/alocacoes'
+    }
+  }
 
   ngOnInit(): void {
   }

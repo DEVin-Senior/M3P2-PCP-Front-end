@@ -5,6 +5,7 @@ import { CourseclassContextService } from '../courseclass-context.service';
 import { CourseClass } from '../courseclass.model';
 import { CourseClassCreateDto } from '../dto/courseclass-create.model';
 import { CourseClassService } from '../courseclass.service';
+import { HeaderService } from 'src/app/templates/header/header.service';
 
 // interface courseModule {
 //   named: string;
@@ -38,13 +39,17 @@ export class CourseClassCreateComponent implements OnInit {
   selectedModule: number = 0;
   numberOfWeek: number = 0;
 
-  constructor(/*private courseClassService: CourseClassService,*/ private router: Router, private courseClassContextService: CourseclassContextService) {
+  constructor(/*private courseClassService: CourseClassService,*/ private headerService: HeaderService, private router: Router, private courseClassContextService: CourseclassContextService) {
     this.quatityModule = [
       { label: '1', value: 1 },
       { label: '2', value: 2 },
       { label: '3', value: 3 },
       { label: '4', value: 4 }
     ]
+    headerService.headerData = {
+      title: 'Turmas',
+      routerUrl: 'layout/turmas/adicionar'
+    }
   }
 
   ngOnInit(): void {
