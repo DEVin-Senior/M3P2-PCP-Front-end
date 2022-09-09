@@ -1,6 +1,6 @@
 <div class="container">
   <div class="area-title">
-    <span>Cadastrar semanas do módulo 1</span>
+    <span>Cadastrar Semanas dos Módulos</span>
   </div>
 
   <div class="content">
@@ -34,7 +34,7 @@
             (click)="addWeek(moduleIndex, week.content)">
           </button>
 
-          <!-- <p-confirmPopup></p-confirmPopup> -->
+          <p-confirmPopup></p-confirmPopup>
           <button
             pButton
             pRipple
@@ -43,11 +43,13 @@
             class="p-button-rounded p-button-danger {{
               i == 0 ? 'invisible' : ' '
             }}"
-            (click)="removeWeek(week, moduleIndex)"
+            (click)="confirm($event, week, moduleIndex)"
           >
         </button>
         </div>
       </p-accordionTab>
     </p-accordion>
+
+
   </div>
 </div>

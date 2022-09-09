@@ -41,6 +41,8 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
 import { MessageService } from 'primeng/api';
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {ConfirmationService} from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,8 @@ import { MessageService } from 'primeng/api';
     FormsModule,
     TableModule,
     ReactiveFormsModule,
-    ImageModule
+    ImageModule,
+    ConfirmPopupModule
   ],
   providers: [
     AuthService,
@@ -83,6 +86,7 @@ import { MessageService } from 'primeng/api';
     FormsModule,
     HttpClient,
     MessageService,
+    ConfirmationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

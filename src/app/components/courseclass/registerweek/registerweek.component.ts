@@ -1,21 +1,15 @@
-import { LoginComponent } from './../../login/login.component';
 import { Component, OnInit } from '@angular/core';
 import { CourseclassContextService } from '../courseclass-context.service';
-import { CourseClass } from '../courseclass.model';
 import { CourseClassCreateDto } from '../dto/courseclass-create.model';
-import { Week } from './registerweek.model';
-import { ConfirmationService } from 'primeng/api';
+import {ConfirmationService, MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-registerweek',
   templateUrl: './registerweek.component.html',
-  styleUrls: ['./registerweek.component.scss']
+  styleUrls: ['./registerweek.component.scss'],
+  providers: [ConfirmationService, MessageService]
 })
 export class RegisterweekComponent implements OnInit {
-
-  weeks: Week[] = [{ content: "", isCompleted: false }];
-  newWeek: string = "";
-  // weeks: Week[] = [{content:""}, {content:""}, {content:""}];
 
   courseClassDto: CourseClassCreateDto = {
     name: '',
@@ -35,19 +29,20 @@ export class RegisterweekComponent implements OnInit {
 
   constructor(private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService) { }
 
-//   confirm(event: Event, week: any, moduleIndex: number) {
-//     this.confirmationService.confirm({
-//         target: event.target as EventTarget,
-//         message: 'Are you sure that you want to proceed?',
-//         icon: 'pi pi-exclamation-triangle',
-//         accept: () => {
-//             this.removeWeek(week, moduleIndex);
-//         },
-//         reject: () => {
-//             reject action
-//         }
-//     });
-// }
+  confirm(event: Event, week: any, moduleIndex: number) {
+    this.confirmationService.confirm({
+        target: event.target as EventTarget,
+        message: 'Are you sure that you want to proceed?',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => {
+            //this.messageService.add({severity:'info', summary:'Confirmed', detail:'You have accepted'});
+            this.removeWeek(week, moduleIndex)
+        },
+        reject: () => {
+            //this.messageService.add({severity:'error', summary:'Rejected', detail:'You have rejected'});
+        }
+    });
+}
 
   ngOnInit(): void {
     this.courseClassDto = this.courseClassService.getCourseClass();
