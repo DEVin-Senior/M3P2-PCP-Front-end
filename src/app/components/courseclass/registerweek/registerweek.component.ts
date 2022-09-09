@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseclassContextService } from '../courseclass-context.service';
 import { CourseClassCreateDto } from '../dto/courseclass-create.model';
 import {ConfirmationService, MessageService} from 'primeng/api';
+import { HeaderService } from 'src/app/templates/header/header.service';
 
 @Component({
   selector: 'app-registerweek',
@@ -28,7 +29,12 @@ export class RegisterweekComponent implements OnInit {
     }]
   }
 
-  constructor(private courseClassServiceDto: CourseClassService ,private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService) { }
+  constructor(private courseClassServiceDto: CourseClassService, private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService) { 
+    headerService.headerData = {
+      title: 'Turmas',
+      routerUrl: 'layout/turmas/modulo'
+    }
+  }
 
   confirm(event: Event, week: any, moduleIndex: number) {
     this.confirmationService.confirm({
@@ -43,6 +49,8 @@ export class RegisterweekComponent implements OnInit {
             //this.messageService.add({severity:'error', summary:'Rejected', detail:'You have rejected'});
         }
     });
+
+    
 }
 
   ngOnInit(): void {
