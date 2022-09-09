@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseClassReadDto } from '../dto/courseclass-read.model';
 
 @Component({
   selector: 'app-courseclass-read',
@@ -6,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courseclass-read.component.scss']
 })
 export class CourseClassReadComponent implements OnInit {
-    
+
+
+  courseClassReadDto: CourseClassReadDto = {
+    name: '',
+    initialDate: '',
+    endDate: '',
+    stack: '',
+    archive: false,
+ }
+
   courses: {name: string, init: string, final: string, skills: string}[] =  [
     {
       name: "IST",
@@ -21,7 +31,7 @@ export class CourseClassReadComponent implements OnInit {
       skills: "JAVA - Angular"
     }
   ];
-  
+
   constructor() { }
 
   ngOnInit(): void {

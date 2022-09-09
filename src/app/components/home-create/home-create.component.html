@@ -1,0 +1,44 @@
+
+<div class="container">
+    <header>
+        <h3>Conteúdos da semana</h3>
+    </header>
+    <div class="table-area">
+        <p-table [value]="weeks" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Turma</th>
+                    <th>Conteúdo</th>
+                    <th>Docente</th>
+                    <th>Matriz</th>
+                    <th>Módulo</th>
+                    <th>Lançamento</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-week>
+                <tr>
+                    <td>{{week.turma}}</td>
+                    <td>{{week.conteudo}}</td>
+                    <td>{{week.docente}}</td>
+                    <td><a href="#">Link</a></td>
+                    <td>{{week.modulo}}</td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                    <div class="table-home-buttons">
+                        <button class="table-home-btn-edit">Editar</button>
+                    </div>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CourseClassUpdateComponent } from 'src/app/components/courseclass/courseclass-update/courseclass-update.component';
 import { LayoutDefaultComponent } from './layout-default.component';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CourseClassReadComponent } from 'src/app/components/courseclass/courseclass-read/courseclass-read.component';
 import { CourseClassDeleteComponent } from 'src/app/components/courseclass/courseclass-delete/courseclass-delete.component';
@@ -12,6 +13,7 @@ import { CourseClassCreateComponent } from 'src/app/components/courseclass/cours
 import { DropdownModule } from 'primeng/dropdown';
 import { RegisterweekViewComponent } from 'src/app/views/registerweek-view/registerweek-view.component';
 import { AllocationClassReadComponent } from 'src/app/components/allocation-class-read/allocation-class-read.component';
+import { TeacherListComponent } from 'src/app/components/teacher/teacher-list/teacher-list.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { AllocationClassReadComponent } from 'src/app/components/allocation-clas
     CourseClassCreateComponent,
     RegisterweekViewComponent,
     AllocationClassReadComponent,
+    TeacherListComponent,
+    RegisterweekViewComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +34,9 @@ import { AllocationClassReadComponent } from 'src/app/components/allocation-clas
     TemplatesModule,
     TableModule,
     CalendarModule,
-    DropdownModule
+    DropdownModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
 })

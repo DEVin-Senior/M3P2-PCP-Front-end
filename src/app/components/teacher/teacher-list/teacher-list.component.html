@@ -1,0 +1,34 @@
+
+<div class="container">
+    <header>
+        <h3>Cadastrados</h3>
+    </header>
+    <div class="table-area">
+        <p-table [value]="teachers" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Linguagem/stacks</th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-teacher>
+                <tr>
+                    <td>{{teacher.name}}</td>
+                    <td>{{teacher.phone}}</td>
+                    <td>{{teacher.mail}}</td>
+                    <td>{{teacher.stacks}}</td>
+                    <td>
+                        <div class="buttons">
+                            <button class="edit">Editar</button>
+                            <button class="archive">Arquivar</button>  
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <button class="add-button">Novo Docente</button>
+</div>

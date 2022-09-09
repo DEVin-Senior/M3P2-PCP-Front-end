@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CourseClass } from '../courseclass.model';
 import { CourseClassService } from '../courseclass.service';
+import {CourseClassUpdateDto} from '../dto/courseclass-update.model'
 
 @Component({
   selector: 'app-courseclass-update',
@@ -10,22 +10,27 @@ import { CourseClassService } from '../courseclass.service';
 })
 export class CourseClassUpdateComponent implements OnInit {
 
-  courseClass: CourseClass  = {
+  courseClass: CourseClassUpdateDto =   {
     name: '',
-    user: { id: '' },
     initialDate: '',
     endDate: '',
-    skills: '',
+    stack:'',    
     matrixLink: '',
-    module: { id: '' },
-    status: true
+    archive:false,
+    moduleEntityList: [{
+      name: '',
+      weekEntityList: [{
+        content:'',
+        initialDate: '',
+      }]
+    }]
   };
 
-  constructor(/*
-    private classCourseService: CourseClassService,
+  constructor(
+    /*private classCourseService: CourseClassService,
     private router: Router,
-    private route: ActivatedRoute
-    */) { }
+    private route: ActivatedRoute*/
+  ) { }
 
   ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend
   
@@ -35,9 +40,7 @@ export class CourseClassUpdateComponent implements OnInit {
     });*/
   }
 
-  /*
-
-  validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
+ /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
     return true
   }
 
@@ -54,7 +57,6 @@ export class CourseClassUpdateComponent implements OnInit {
   
   cancel(): void{
     this.router.navigate(['']);
-  }
-  */
+  }*/
 
 }
