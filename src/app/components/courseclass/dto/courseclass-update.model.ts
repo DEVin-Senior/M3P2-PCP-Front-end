@@ -13,7 +13,7 @@ export interface CourseClassUpdateDto {
             id?: number,
             content: string,
             initialDate: string,
-            paid?: boolean
+            paid: boolean
         }]
    }]
 }

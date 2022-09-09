@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SelectItem } from 'primeng/api';
 import { CourseclassContextService } from '../courseclass-context.service';
-import { CourseClass } from '../courseclass.model';
 import { CourseClassCreateDto } from '../dto/courseclass-create.model';
 import { CourseClassService } from '../courseclass.service';
 
@@ -30,6 +29,7 @@ export class CourseClassCreateComponent implements OnInit {
       weekEntityList: [{
         content: '',
         initialDate: '',
+        paid: false
       }]
     }]
   }
@@ -59,6 +59,7 @@ nextForm() {
           weekEntityList: [{
             content: '',
             initialDate: '',
+            paid: false
           }]
         });
       }
