@@ -17,3 +17,9 @@ export const SUCCESS = <SweetAlertIcon>'success';
 export const ERROR = <SweetAlertIcon>'error';
 export const WARNING = <SweetAlertIcon>'warning';
 export const QUESTION = <SweetAlertIcon>'question';
+
+//Rotas
+export const ROTA_LISTA_DOCENTES = "../layout/docentes";
+export const ROTA_ATUALIZA_DOCENTE = "../docente/atualizar";
+export const ROTA_CADASTRA_DOCENTE = "../docente/adicionar";
+

@@ -39,9 +39,9 @@ export class CourseClassService {
     );
   }
 
-  readById(id: number): Observable<CourseClassReadDto> {
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.get<CourseClassReadDto>(url).pipe(
+  readById(id: number): Observable<CourseClassUpdateDto> {
+    const url = `${this.baseUrl}/listar/${id}`;
+    return this.http.get<CourseClassUpdateDto>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
@@ -55,12 +55,12 @@ export class CourseClassService {
     );
   }
 
-  archive(id: number, courseClass: CourseClassArchiveDto): Observable<CourseClassArchiveDto> {
-    const url = `${this.baseUrl}/${id}/arquivar`;
-    return this.http.put<CourseClassArchiveDto>(url, courseClass.archive).pipe(
-      map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
-    );
+  archive(courseClass: CourseClassArchiveDto){
+    const body = {
+      classId: courseClass.classId,
+      archived: courseClass.archive
+    };
+    return this.http.patch(`${this.baseUrl}/arquivar`, body);
   }
 
   delete(id: number): Observable<CourseClassReadDto> {
