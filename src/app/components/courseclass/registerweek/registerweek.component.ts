@@ -4,6 +4,8 @@ import { CourseclassContextService } from '../courseclass-context.service';
 import { CourseClassCreateDto } from '../dto/courseclass-create.model';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import { Router } from '@angular/router';
+import { HeaderService } from 'src/app/templates/header/header.service';
+
 @Component({
   selector: 'app-registerweek',
   templateUrl: './registerweek.component.html',
@@ -24,11 +26,17 @@ export class RegisterweekComponent implements OnInit {
       weekEntityList: [{
         content: '',
         initialDate: '',
+        paid: false
       }]
     }]
   }
 
-  constructor(private courseClassServiceDto: CourseClassService ,private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService,  private router: Router) { }
+  constructor(private courseClassServiceDto: CourseClassService, private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) { 
+    headerService.headerData = {
+      title: 'Turmas',
+      routerUrl: 'layout/turmas/modulo'
+    }
+  }
 
   confirm(event: Event, week: any, moduleIndex: number) {
     this.confirmationService.confirm({
@@ -43,6 +51,8 @@ export class RegisterweekComponent implements OnInit {
             //this.messageService.add({severity:'error', summary:'Rejected', detail:'You have rejected'});
         }
     });
+
+    
 }
 
   ngOnInit(): void {
@@ -75,7 +85,8 @@ export class RegisterweekComponent implements OnInit {
       if (index == moduleIndex) {
         course.weekEntityList.push({
           content: content,
-          initialDate: '2022-02-02'
+          initialDate: '2022-01-01',
+          paid: false
         })
       }
 

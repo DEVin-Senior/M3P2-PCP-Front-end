@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from 'src/app/templates/header/header.service';
 
 @Component({
   selector: 'app-teacher-list',
@@ -28,7 +29,12 @@ export class TeacherListComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Docentes',
+      routerUrl: 'layout/docentes'
+    }
+  }
 
   ngOnInit(): void {
   }

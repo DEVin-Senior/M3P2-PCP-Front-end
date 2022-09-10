@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   saveUser(user: User) : Observable<any>{
-    console.log(`Name: ${this.user.name} User AUTHSERVICE: ${user.email}, Password: ${user.password}`);
+    console.log(`Name: ${user.name} User AUTHSERVICE: ${user.email}, Password: ${user.password}`);
       let bodyString = JSON.stringify(user);
       let headers = new HttpHeaders({ 'Content-Type': 'application/JSON' });
       return this.http.post<any>(this.apiURL, bodyString, { headers: headers });
