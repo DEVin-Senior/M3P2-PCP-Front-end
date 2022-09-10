@@ -1,3 +1,4 @@
+import { CourseClassArchiveDto } from './dto/courseclass-archive.model';
 import { CourseClassUpdateDto } from './dto/courseclass-update.model';
 import { CourseClassCreateDto } from './dto/courseclass-create.model';
 import { CourseClassReadDto } from './dto/courseclass-read.model';
@@ -32,7 +33,7 @@ export class CourseClassService {
   }
 
   read(): Observable<CourseClassReadDto[]> {
-    return this.http.get<CourseClassReadDto[]>(this.baseUrl+'/list').pipe(
+    return this.http.get<CourseClassReadDto[]>(this.baseUrl+'/listar').pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
@@ -49,6 +50,14 @@ export class CourseClassService {
   update(courseClasses: CourseClassUpdateDto): Observable<CourseClassUpdateDto> {
     const url = `${this.baseUrl}/${courseClasses.id}`;
     return this.http.put<CourseClassUpdateDto>(url, courseClasses).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  archive(id: number, courseClass: CourseClassArchiveDto): Observable<CourseClassArchiveDto> {
+    const url = `${this.baseUrl}/${id}/arquivar`;
+    return this.http.put<CourseClassArchiveDto>(url, courseClass.archive).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );

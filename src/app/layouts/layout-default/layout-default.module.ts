@@ -17,6 +17,7 @@ import { CourseClassCrudComponent } from 'src/app/views/courseclass-crud/coursec
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {ConfirmationService} from 'primeng/api';
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {ConfirmationService} from 'primeng/api';
     DropdownModule,
     FormsModule,
     ReactiveFormsModule,
-    ConfirmPopupModule
+    ConfirmPopupModule,
+    DialogModule
   ],
   exports: [
     CourseClassReadComponent,
