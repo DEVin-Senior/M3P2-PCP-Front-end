@@ -1,50 +1,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <div class="grid grid-nogutter">
-  <div class="col-12 sm:col-6 flex-order-1 sm:flex-order-0 w-screen sm:normal h-screen align-self-center flex align-items-center justify-content-center">
+  <div class="col-12 sm:col-6 flex-order-1 sm:flex-order-0 w-screen sm:normal h-screen flex center-justify">
     <div class="card">
       <div class="card-container overflow-hidden">
-        <div class="w-screen h-screen bg-cover bg-center bg-no-repeat flex align-items-center justify-content-center smartphone sm:normal" style="background-image: url('../assets/img/Astronauta.png')"></div>
+        <div class="w-screen h-screen bg-cover bg-center bg-no-repeat flex center-justify smartphone sm:normal" style="background-image: url('../assets/img/Astronauta.png')"></div>
       </div>
     </div>
   </div>
-  <div class="col-12 sm:col-6 flex-order-0 sm:flex-order-1 w-screen sm:normal h-screen align-self-center flex align-items-center justify-content-center">
-    <div class="form grid align-self-center flex align-items-center justify-content-center">
+  <div class="col-12 sm:col-6 flex-order-0 sm:flex-order-1 w-screen sm:normal h-screen flex center-justify">
+    <div class="form grid flex center-justify">
       <div class="card">
-        <div class="col-12 field align-self-center flex align-items-center justify-content-center">
-          <div class="card-container overflow-hidden align-self-center flex align-items-center justify-content-center">
+        <div class="col-12 field flex center-justify">
+          <div class="card-container overflow-hidden flex center-justify">
             <div class="bg-contain bg-no-repeat bg-center border-round w-screen lista sm:lista" style="min-height: 116px; height: 10vw; background-image: url('../assets/img/LAB365.png');"></div>
           </div>
         </div>
-        <div class="col-12 field align-self-center flex align-items-center justify-content-center">
+        <div class="col-12 field flex center-justify">
           <p class="welcome text-2xl sm:text-3xl pb-3">Cadastrar usuário</p>
           <p></p>
         </div>
-        <div class="col-12 field align-self-center flex align-items-center justify-content-center">
+        <div class="col-12 field flex center-justify">
           <span class="p-input-icon-left w-screen lista sm:lista">          
             <i class="pi pi-user"></i>
             <input type="text" pInputText [(ngModel)]="entryUser" pInputText class="p-inputtext-lg" placeholder="Nome" style="width: 100% !important;"> 
           </span>
         </div>
-        <div class="col-12 field align-self-center flex align-items-center justify-content-center">
+        <div class="col-12 field flex center-justify">
           <span class="p-input-icon-left w-screen lista sm:lista">          
             <i class="pi pi-at"></i>
             <input type="text" pInputText [(ngModel)]="entryMail" pInputText class="p-inputtext-lg" placeholder="E-mail" style="width: 100% !important;"> 
           </span>
         </div>
-        <div class="col-12 field align-self-center flex align-items-center justify-content-center">
+        <div class="col-12 field flex center-justify">
           <span class="p-input-icon-left w-screen lista sm:lista">
             <i class="pi pi-lock"></i>
             <input type="password" pPassword [(ngModel)]="entryPassword1" [feedback]="false" class="p-inputtext-lg" placeholder="Senha" style="width: 100% !important;">     
           </span>
         </div>
-        <div class="col-12 field align-self-center flex align-items-center justify-content-center">
+        <div class="col-12 field flex center-justify">
           <span class="p-input-icon-left w-screen lista sm:lista">
             <i class="pi pi-lock"></i>
             <input type="password" pPassword [(ngModel)]="entryPassword2" [feedback]="false" class="p-inputtext-lg" placeholder="Confirmar senha" style="width: 100% !important;">     
           </span>
         </div>
-        <div class="col-12 field align-self-center flex align-items-center justify-content-center">
+        <div class="col-12 field flex center-justify">
           <button pButton pRipple type="button" (click)="registerUser()" label="Cadastrar" class="p-button-danger loginButton"></button>
         </div>
       </div>
