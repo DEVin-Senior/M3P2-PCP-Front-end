@@ -34,7 +34,6 @@ import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-c
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
 import { AllocationClassReadComponent } from './components/allocation-class-read/allocation-class-read.component';
-import { AllocationClassCreateComponent } from './components/allocation-class-create/allocation-class-create.component';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './_services/auth/auth.service';
 import { TokenInterceptor } from './_services/interceptor/token.interceptor';
@@ -44,6 +43,8 @@ import { MessageService } from 'primeng/api';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {ConfirmationService} from 'primeng/api';
 import {DialogModule} from 'primeng/dialog';
+import { AllocationService } from './_services/allocation/allocation-service';
+import { AllocateTeacherComponent } from './components/allocate-teacher/allocate-teacher/allocate-teacher.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {DialogModule} from 'primeng/dialog';
     TeacherUpdateComponent,
     RegisterweekComponent,    
     LoginComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    AllocateTeacherComponent
   ],
   imports: [
     BrowserModule,
@@ -89,6 +91,7 @@ import {DialogModule} from 'primeng/dialog';
     HttpClient,
     MessageService,
     ConfirmationService,
+    AllocationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

@@ -1,10 +1,11 @@
 <div class="container">
     <header>
-        <h3>Tabela</h3>
+        <h3>Alocações</h3>
     </header>
-    <div class="table-area">
-        <p-table [value]="alocation" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
-            <ng-template pTemplate="header" let-location>
+    <div class="table-area" >
+        <p-dropdown [options]="monthNames" [(ngModel)]="selectedDate" optionLabel="name"></p-dropdown>
+        <p-table [value]="allocationData" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <ng-template pTemplate="header" let-allocationData>
                 <tr>
                     <th>Turma</th>
                     <th>{{dates[0]}}</th>
@@ -12,20 +13,22 @@
                     <th>{{dates[2]}}</th>
                     <th>{{dates[3]}}</th>
                     <th>{{dates[4]}}</th>
-                    <th></th>
                 </tr>
+                
             </ng-template>
-            <ng-template pTemplate="body" let-location>
+            
+            <ng-template pTemplate="body" let-allocation>
                 <tr>
-                    <td>{{location.teacher}}</td>
-                    <td>{{location.class}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{allocation.className}}</td>
+                    <td>{{allocation.weeksTeachersNames[0]}}</td>
+                    <td>{{allocation.weeksTeachersNames[1]}}</td>
+                    <td>{{allocation.weeksTeachersNames[2]}}</td>
+                    <td>{{allocation.weeksTeachersNames[3]}}</td>
+                    <td>{{allocation.weeksTeachersNames[4]}}</td>
+                    <td>{{allocation.weeksTeachersNames[5]}}</td>
                     <td>
-                        <div class="buttons">
-                            <button class="history">Alocar Docente</button>
+                        <div class="buttons" >
+                            <button  (click)="allocateTeacher(allocation.idClass)"  class="history">Alocar Docente</button>
                         </div>
                     </td>
                 </tr>

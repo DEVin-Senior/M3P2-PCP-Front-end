@@ -3,16 +3,13 @@ import { Router } from '@angular/router';
 import { HeaderService } from 'src/app/templates/header/header.service';
 import { iAllocation } from 'src/app/_interfaces/allocation/iAllocation';
 import { AllocationService } from 'src/app/_services/allocation/allocation-service';
-import { location } from './interface/date';
 
 @Component({
-  selector: 'app-allocation-class-read',
-  templateUrl: './allocation-class-read.component.html',
-  styleUrls: ['./allocation-class-read.component.scss']
+  selector: 'app-allocate-teacher',
+  templateUrl: './allocate-teacher.component.html',
+  styleUrls: ['./allocate-teacher.component.scss']
 })
-export class AllocationClassReadComponent implements OnInit {
-  dates:string[] = ["S/A","S/A","S/A","S/A","S/A","S/A"]
-  teachers: location[] = []
+export class AllocateTeacherComponent implements OnInit {
 
   public allocationData: iAllocation | any;
 
@@ -45,10 +42,6 @@ export class AllocationClassReadComponent implements OnInit {
       var mydate = new Date(this.allocationData[5].weekInitialDates[0]);
       console.log(mydate.getDay());
     },2000)
-  }
-
-  allocateTeacher(id : string){
-    this.router.navigate(['layout/adicionar'])
   }
 
 }
