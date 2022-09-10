@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
 
   onClickCadastrar(){
-    this.router.navigate(['login/register']);
+    this.router.navigate(['/login/register']);
   }
 
   cancelMessages: boolean = true;
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         }
         console.log("Token: " + JSON.stringify(response));
         console.log(response);
-        this.router.navigate(['/layout/home'])
+        this.router.navigate(['layout/home'])
       }, errorResponse => {
         this.loginError = true;
       })

@@ -34,7 +34,7 @@ export class RegisterweekComponent implements OnInit {
   constructor(private courseClassServiceDto: CourseClassService, private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) { 
     headerService.headerData = {
       title: 'Turmas',
-      routerUrl: 'layout/turmas/modulo'
+      routerUrl: '/layout/turmas/modulo'
     }
   }
 
@@ -108,7 +108,7 @@ export class RegisterweekComponent implements OnInit {
   saveModule() {
     //localStorage.setItem('courseClassDto', JSON.stringify(this.courseClassDto));
     this.courseClassServiceDto.create(this.courseClassDto).subscribe(() => {
-      this.router.navigate(['turmas']);
+      this.router.navigate(['/layout/turmas']);
     });
 
   }
