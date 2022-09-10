@@ -51,6 +51,15 @@ button {
     cursor: pointer;
 }
 
+.edit {
+    background-color: #1b9a15;
+    margin-right: 30px;
+}
+
+.edit:hover {
+    background-color: #157410;
+}
+
 .history {
     background-color: #EF3A7F;
     margin-right: 30px;

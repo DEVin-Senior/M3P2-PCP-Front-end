@@ -2,7 +2,7 @@
     <header>
         <h3>Cadastradas</h3>
     </header>
-    <p-dialog header="History" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [maximizable]="true"
+    <p-dialog header="{{headerModalText}}" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [maximizable]="true"
     [draggable]="false" [resizable]="false">
 
     <div *ngIf="eventList | async as eventList"  class="table-in-modal">
@@ -53,7 +53,8 @@
                   <td>{{ course.stack }}</td>
                     <td>
                         <div class="buttons">
-                            <button class="history" (click)="openHistoryModal(course.id)">Histórico</button>
+                            <button class="edit" routerLink="/layout/turmas/atualizar/{{ course.id }}">Editar</button>
+                            <button class="history" (click)="openHistoryModal(course.id, course.name)">Histórico</button>
                             <button class="archive" (click)="archive(course.id, course.archive)">{{(!course.archive)? "Arquivar": "Desarquivar"}}</button>
                         </div>
                     </td>
