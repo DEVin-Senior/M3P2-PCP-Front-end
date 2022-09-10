@@ -58,7 +58,17 @@ button {
 }
 
 .edit:hover {
-    background-color: #cf2264;
+  background-color: #cf2264;
+}
+
+.edit:disabled {
+  background-color: rgb(190, 190, 190);
+  cursor: not-allowed;
+}
+
+.edit:disabled:hover {
+  background-color: rgb(190, 190, 190);
+  cursor: not-allowed;
 }
 
 .archive {
