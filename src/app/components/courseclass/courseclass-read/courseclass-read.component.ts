@@ -1,7 +1,11 @@
+import { CourseClassUpdateDto } from './../dto/courseclass-update.model';
+import { CourseClassArchiveDto } from './../dto/courseclass-archive.model';
+import { content } from './../dto/event-read.model';
 import { CourseClassService } from './../courseclass.service';
 import { Component } from '@angular/core';
 import { CourseClassReadDto } from '../dto/courseclass-read.model';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { EventService } from '../dto/event.service';
 import { HeaderService } from 'src/app/templates/header/header.service';
 
 @Component({
@@ -12,11 +16,24 @@ import { HeaderService } from 'src/app/templates/header/header.service';
 export class CourseClassReadComponent {
 
   courseClassReadDto$: Observable<CourseClassReadDto[]> = this.service.read();
-  constructor(private service: CourseClassService, private headerService: HeaderService) { 
+
+  eventList: Observable<content[]> = this.eventService.read();
+  constructor(private service: CourseClassService, private eventService: EventService, private headerService: HeaderService) {
+
     headerService.headerData = {
       title: 'Turmas',
       routerUrl: 'layout/turmas'
     }
+   }
+  display: boolean = false;
+
+  openHistoryModal(courseId: number) { 
+    this.eventList = this.eventService.readById(courseId);
+    this.display = true;
+  }
+
+  archive(courseId: number, courseArchive: boolean) {
+    
   }
 
 }

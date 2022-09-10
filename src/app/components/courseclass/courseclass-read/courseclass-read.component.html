@@ -1,8 +1,36 @@
-
 <div class="container">
     <header>
         <h3>Cadastradas</h3>
     </header>
+    <p-dialog header="History" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [maximizable]="true"
+    [draggable]="false" [resizable]="false">
+
+    <div *ngIf="eventList | async as eventList"  class="table-in-modal">
+        <p-table
+            [value]="eventList" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Tipo</th>
+                    <th>Usuário</th>
+                    <th>Data</th>
+                </tr>
+            </ng-template>
+            <ng-template let-event pTemplate="body">
+                <tr>
+                  <td>{{ event.eventType }}</td>
+                  <td>{{ event.userContext }}</td>
+                  <td>{{ event.timeStamp }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <!-- <p *ngIf="courseClassReadDto$ | async as courseClassReadDto">
+            {{ courseClassReadDto | json }}
+        </p> -->
+    </div>
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" label="Ok" (click)="display=false" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-dialog>
     <div *ngIf="courseClassReadDto$ | async as courseClassReadDto"  class="table-area">
         <p-table
             [value]="courseClassReadDto" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
@@ -11,7 +39,7 @@
                     <th>Id</th>
                     <th>Turma</th>
                     <th>Início</th>
-                    <th>Fim</th>
+                    <th>Final</th>
                     <th>Linguagem/stacks</th>
                     <th></th>
                 </tr>
@@ -25,8 +53,8 @@
                   <td>{{ course.stack }}</td>
                     <td>
                         <div class="buttons">
-                            <button class="history">Histórico</button>
-                            <button class="archive">Arquivar</button>
+                            <button class="history" (click)="openHistoryModal(course.id)">Histórico</button>
+                            <button class="archive" (click)="archive(course.id, course.archive)">{{(!course.archive)? "Arquivar": "Desarquivar"}}</button>
                         </div>
                     </td>
                 </tr>
@@ -36,5 +64,5 @@
             {{ courseClassReadDto | json }}
         </p> -->
     </div>
-    <button class="add-button">Nova Turma</button>
+    <button routerLink="/turmas/adicionar" class="add-button">Nova Turma</button>
 </div>

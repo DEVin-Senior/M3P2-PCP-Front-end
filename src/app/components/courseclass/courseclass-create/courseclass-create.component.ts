@@ -77,7 +77,7 @@ nextForm() {
     console.log(this.selectedModule);
     
     this.courseClassContextService.setCourseClass(this.courseClassDto);
-    this.router.navigate(['layout/turmas/modulo']);
+    this.router.navigate(['turmas/modulo']);
   }
 
   /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass

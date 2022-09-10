@@ -43,6 +43,7 @@ import { LoginRegisterComponent } from './components/login/login-register/login-
 import { MessageService } from 'primeng/api';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {ConfirmationService} from 'primeng/api';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import {ConfirmationService} from 'primeng/api';
     TableModule,
     ReactiveFormsModule,
     ImageModule,
-    ConfirmPopupModule
+    ConfirmPopupModule,
+    DialogModule
   ],
   providers: [
     AuthService,

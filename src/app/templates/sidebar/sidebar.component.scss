@@ -21,6 +21,10 @@ img{
     font-weight: 500;
 }
 
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
 .sidebar ul li a {
     color: #A098AE
 }
@@ -37,6 +41,11 @@ img{
 }
 
 .sidebar .selector:hover * {
+    color: white;
+}
+
+.sidebar .selected *{
+    background-color: #EF3A7F;
     color: white;
 }
 
