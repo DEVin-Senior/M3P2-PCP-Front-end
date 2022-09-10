@@ -1,6 +1,6 @@
 .container {
-    margin-top: 4rem;
-    margin-left: 4rem;
+    margin-top: 110px;
+    margin-left: 128px;
     position: relative;
 }
 
@@ -17,7 +17,7 @@ header {
 .table-area {
     width: 100%;
     border-collapse: collapse;
-    padding-right: 3rem;
+    padding-right: 230px;
 }
 
 th, td {
@@ -33,7 +33,6 @@ th {
 tr {
     height: 56px;
 }
-
 
 .buttons {
     width: 100%;
@@ -63,7 +62,6 @@ button {
 
 .archive {
     background-color: #1638DF;
-    width: 7rem;
 }
 
 .archive:hover {
@@ -76,8 +74,8 @@ button {
     border-radius: 15px;
     position: fixed;
     right: 0;
-    margin-top: 3rem;
-    margin-right: 4rem;
+    margin-top: 200px;
+    margin-right: 230px;
 }
 
 .add-button:hover {

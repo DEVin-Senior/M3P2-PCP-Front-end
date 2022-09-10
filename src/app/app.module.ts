@@ -33,11 +33,16 @@ import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { AllocationClassReadComponent } from './components/allocation-class-read/allocation-class-read.component';
+import { AllocationClassCreateComponent } from './components/allocation-class-create/allocation-class-create.component';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './_services/auth/auth.service';
 import { TokenInterceptor } from './_services/interceptor/token.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
+import { MessageService } from 'primeng/api';
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {ConfirmationService} from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,7 @@ import { LoginRegisterComponent } from './components/login/login-register/login-
     TeacherCreateComponent,
     TeacherFormComponent,
     TeacherUpdateComponent,
-    RegisterweekComponent,
+    RegisterweekComponent,    
     LoginComponent,
     LoginRegisterComponent
   ],
@@ -68,7 +73,8 @@ import { LoginRegisterComponent } from './components/login/login-register/login-
     FormsModule,
     TableModule,
     ReactiveFormsModule,
-    ImageModule
+    ImageModule,
+    ConfirmPopupModule
   ],
   providers: [
     AuthService,
@@ -79,6 +85,8 @@ import { LoginRegisterComponent } from './components/login/login-register/login-
     HttpClientModule,
     FormsModule,
     HttpClient,
+    MessageService,
+    ConfirmationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
