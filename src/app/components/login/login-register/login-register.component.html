@@ -13,7 +13,7 @@
       <div class="card">
         <div class="col-12 field align-self-center flex align-items-center justify-content-center">
           <div class="card-container overflow-hidden align-self-center flex align-items-center justify-content-center">
-            <div class="bg-contain bg-no-repeat bg-center border-round w-screen lista sm:lista" style="min-height: 116px; height: 10vw; background-image: url('../assets/imgLAB365.png');"></div>
+            <div class="bg-contain bg-no-repeat bg-center border-round w-screen lista sm:lista" style="min-height: 116px; height: 10vw; background-image: url('../assets/img/LAB365.png');"></div>
           </div>
         </div>
         <div class="col-12 field align-self-center flex align-items-center justify-content-center">
@@ -35,13 +35,13 @@
         <div class="col-12 field align-self-center flex align-items-center justify-content-center">
           <span class="p-input-icon-left w-screen lista sm:lista">
             <i class="pi pi-lock"></i>
-            <input type="text" pInputText [(ngModel)]="entryPassword1" pInputText class="p-inputtext-lg" placeholder="Senha" style="width: 100% !important;">     
+            <input type="text" pPassword [(ngModel)]="entryPassword1" [feedback]="false" class="p-inputtext-lg" placeholder="Senha" style="width: 100% !important;">     
           </span>
         </div>
         <div class="col-12 field align-self-center flex align-items-center justify-content-center">
           <span class="p-input-icon-left w-screen lista sm:lista">
             <i class="pi pi-lock"></i>
-            <input type="text" pInputText [(ngModel)]="entryPassword2" pInputText class="p-inputtext-lg" placeholder="Confirmar senha" style="width: 100% !important;">     
+            <input type="text" pPassword [(ngModel)]="entryPassword2" [feedback]="false" class="p-inputtext-lg" placeholder="Confirmar senha" style="width: 100% !important;">     
           </span>
         </div>
         <div class="col-12 field align-self-center flex align-items-center justify-content-center">

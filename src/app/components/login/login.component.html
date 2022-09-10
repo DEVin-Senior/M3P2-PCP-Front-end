@@ -16,7 +16,7 @@
             <div class="bg-contain bg-no-repeat bg-center border-round w-screen lista sm:lista" style="min-height: 116px; height: 10vw; background-image: url('../assets/img/LAB365.png');"></div>
           </div>
         </div>
-        <div class="col-12 field  flex center-justify">
+        <div class="col-12 field flex center-justify">
           <p class="welcome text-2xl sm:text-4xl pb-3">Seja bem vindo</p>
           <p></p>
         </div>
@@ -29,7 +29,7 @@
         <div class="col-12 field flex center-justify">
           <span class="p-input-icon-left w-screen lista sm:lista">
             <i class="pi pi-lock"></i>
-            <input type="text" pInputText [(ngModel)]="user.password" name="password" InputText class="p-inputtext-lg" placeholder="Senha" style="width: 100% !important;">     
+            <input type="password" pPassword [(ngModel)]="user.password" [feedback]="false" name="password" InputText class="p-inputtext-lg" placeholder="Senha" style="width: 100% !important;">     
           </span>
         </div>
         <div class="col-12 field flex center-justify">
