@@ -1,6 +1,6 @@
 import { CourseClassCreateComponent } from './components/courseclass/courseclass-create/courseclass-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CourseClassDeleteComponent } from './components/courseclass/courseclass-delete/courseclass-delete.component';
 import { CourseClassReadComponent } from './components/courseclass/courseclass-read/courseclass-read.component';
@@ -10,8 +10,12 @@ import { HomeComponent } from './views/home/home.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { AllocationClassCreateComponent } from './components/allocation-class-create/allocation-class-create.component';
+import { AllocationClassReadComponent } from './components/allocation-class-read/allocation-class-read.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
+import { CourseClassCrudComponent } from './views/courseclass-crud/courseclass-crud.component';
+import { RegisterweekupdateComponent } from './components/courseclass/registerweekupdate/registerweekupdate.component';
 
 const routes: Routes = [
   {
@@ -52,7 +56,7 @@ const routes: Routes = [
       // },
       {
         path: 'turmas',
-        component: CourseClassReadComponent,
+        component: CourseClassCrudComponent,
       },
       {
         path: 'turmas/atualizar/:id',
@@ -66,19 +70,24 @@ const routes: Routes = [
         path: 'turmas/deletar/:id',
         component: CourseClassDeleteComponent,
       },
-      // {
-      //   path: 'alocacoes',
-      //   //component: AllocationClassReadComponent,
-      // },
-      // {
-      //   path: 'alocacoes/adicionar/:id',
-      //   //component: AllocationClassCreateComponent,
-      // },
+      {
+       path: 'alocacoes',
+       component: AllocationClassReadComponent,
+      },
+      {
+        path: 'alocacoes/adicionar/:id',
+        component: AllocationClassCreateComponent,
+      },
 
       {
         path: 'turmas/modulo',
         component: RegisterweekComponent,
       },
+
+      {
+        path: 'turmas/atualizar/:id/modulo', 
+        component: RegisterweekupdateComponent,
+      }
     ],
   },
 ];

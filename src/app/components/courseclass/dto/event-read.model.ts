@@ -1,6 +1,5 @@
-export interface EventReadDto {
-    id?: number,
+export interface content {
     eventType: string,
     userContext: string,
-    timeStamp: string,
+    timeStamp: string
 }

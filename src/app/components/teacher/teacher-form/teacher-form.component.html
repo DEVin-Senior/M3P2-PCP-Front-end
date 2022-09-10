@@ -1,38 +1,82 @@
 <form [formGroup]="formTeacher" (ngSubmit)="salvar()" #formDir="ngForm">
   <div class="p-fluid grid formgrid w-6">
     <div class="col-12 my-2 w-6">
-      <label for="name" class="text-color-secondary text-lg font-semibold">Nome</label>
-      <input type="text" placeholder="Nome" pInputText formControlName="name" />
+      <label for="name" class="text-color-secondary text-lg font-semibold"
+        >Nome</label
+      >
+      <input
+        type="text"
+        placeholder="Nome"
+        pInputText
+        formControlName="name"
+        [(ngModel)]="teacherToUpdate.name"
+      />
       <div *ngIf="name.invalid && formDir.submitted">
-        <small *ngIf="name.errors?.['required']" class="alert-required">O Nome é obrigatório. </small>
+        <small *ngIf="name.errors?.['required']" class="alert-required"
+          >O Nome é obrigatório.
+        </small>
       </div>
     </div>
 
     <div class="col-12 my-2 w-10">
-      <label for="phone" class="text-color-secondary text-lg font-semibold">Telefone</label>
-      <p-inputMask mask="(99) 99999-9999" formControlName="phone" placeholder="(99) 99999-9999"></p-inputMask>
+      <label for="phone" class="text-color-secondary text-lg font-semibold"
+        >Telefone</label
+      >
+      <p-inputMask
+        mask="(99) 99999-9999"
+        formControlName="phone"
+        placeholder="(99) 99999-9999"
+        [(ngModel)]="teacherToUpdate.phone"
+      ></p-inputMask>
       <div *ngIf="phone.invalid && formDir.submitted">
-        <small *ngIf="phone.errors?.['required']" class="alert-required">O Telefone é obrigatório. </small>
+        <small *ngIf="phone.errors?.['required']" class="alert-required"
+          >O Telefone é obrigatório.
+        </small>
       </div>
     </div>
     <div class="col-12 mt-2 w-10">
-      <label for="email" class="text-color-secondary text-lg font-semibold block">E-mail</label>
-      <input type="email" placeholder="E-mail" pInputText formControlName="email" />
+      <label
+        for="email"
+        class="text-color-secondary text-lg font-semibold block"
+        >E-mail</label
+      >
+      <input
+        type="email"
+        placeholder="E-mail"
+        pInputText
+        formControlName="email"
+        [(ngModel)]="teacherToUpdate.email"
+      />
       <div *ngIf="email.invalid && formDir.submitted">
-        <small *ngIf="email.errors?.['required']" class="alert-required">É necessário informar um e-mail.
+        <small *ngIf="email.errors?.['required']" class="alert-required"
+          >É necessário informar um e-mail.
         </small>
-        <small *ngIf="email.errors?.['email']" class="alert-required">O e-mail informado é inválido. </small>
+        <small *ngIf="email.errors?.['email']" class="alert-required"
+          >O e-mail informado é inválido.
+        </small>
       </div>
     </div>
     <div class="col-12 mt-2 w-12 grid mt-4">
-      <label class="col-4" formArrayName="stacks" *ngFor="let stack of stackFormArray.controls; let i = index">
-        <input class="mr-1" type="checkbox" [formControlName]="i">
-        {{stackList[i].name}}
-      </label>
+      <div
+        *ngFor="let stack of stackFormArray.controls; let i = index"
+        class="field-checkbox"
+        formArrayName="stacks"
+        class="col-4"
+      >
+        <p-checkbox class="mr-1"
+          name="group2"
+          [value]="stack"
+          [inputId]="stackList[i].id"
+          [formControlName]="i"
+          [binary]="true"
+        ></p-checkbox>
+        <label [for]="stackList[i].id">{{ stackList[i].name }}</label>
+      </div>
+
       <div *ngIf="formDir.submitted">
-        <small *ngIf="selectedStacksNames.length <=0" class="alert-required">É obrigatório
-          selecionar
-          ao menos uma Tecnologia.</small>
+        <small *ngIf="selectedStacksNames.length <= 0" class="alert-required"
+          >É obrigatório selecionar ao menos uma Tecnologia.</small
+        >
       </div>
     </div>
   </div>
