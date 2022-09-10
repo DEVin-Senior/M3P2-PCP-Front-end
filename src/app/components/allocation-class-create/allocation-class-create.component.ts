@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from 'src/app/templates/header/header.service';
 
 @Component({
   selector: 'app-allocation-class-create',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllocationClassCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor( private headerService: HeaderService) { 
+    headerService.headerData = {
+      title: 'Alocações',
+      routerUrl: 'layout/alocacoes/adicionar/{id}'
+    }
+  }
 
   ngOnInit(): void {
   }

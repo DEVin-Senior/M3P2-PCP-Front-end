@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from 'src/app/templates/header/header.service';
 import { IPatchTeacher, ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
-import { TeacherService } from 'src/app/_services/teacher/teacher.service';
+import { TeacherService } from 'src/app/_services/teacher.service';
+
 
 @Component({
   selector: 'app-teacher-list',
@@ -15,9 +17,12 @@ export class TeacherListComponent implements OnInit {
     archived: false
   }
 
-  constructor(
-    private teacherService: TeacherService
-  ) { }
+  constructor(private headerService: HeaderService, private teacherService: TeacherService) {
+    headerService.headerData = {
+      title: 'Docentes',
+      routerUrl: 'layout/docente/adicionar'
+    }
+  }
 
   ngOnInit(): void {
     this.getAll();

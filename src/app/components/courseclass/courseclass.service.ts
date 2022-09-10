@@ -1,3 +1,7 @@
+import { CourseClassArchiveDto } from './dto/courseclass-archive.model';
+import { CourseClassUpdateDto } from './dto/courseclass-update.model';
+import { CourseClassCreateDto } from './dto/courseclass-create.model';
+import { CourseClassReadDto } from './dto/courseclass-read.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, catchError, Observable, EMPTY } from 'rxjs';
@@ -8,18 +12,8 @@ import { Message, MessageService } from 'primeng/api';
   providedIn: 'root'
 })
 export class CourseClassService {
-  courseClass: CourseClass = {
-    name: '',
-    user: { id: '' },
-    initialDate: '',
-    endDate: '',
-    skills: '',
-    matrixLink: '',
-    module: { id: '' },
-    status: true
-  }
 
-  baseUrl = '';
+  baseUrl = '/api/turmas';
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
@@ -31,39 +25,47 @@ export class CourseClassService {
     this.messageService.add({severity:'success', summary:'Success', detail:'Message Content'})
   }
 
-  create(courseClass: CourseClass): Observable<CourseClass> {
-    return this.http.post<CourseClass>(this.baseUrl, courseClass).pipe(
+  create(courseClass: CourseClassCreateDto): Observable<CourseClassCreateDto> {
+    return this.http.post<CourseClassCreateDto>(this.baseUrl, courseClass).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  read(): Observable<CourseClass[]> {
-    return this.http.get<CourseClass[]>(this.baseUrl).pipe(
+  read(): Observable<CourseClassReadDto[]> {
+    return this.http.get<CourseClassReadDto[]>(this.baseUrl+'/listar').pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  readById(id: number): Observable<CourseClass> {
+  readById(id: number): Observable<CourseClassReadDto> {
     const url = `${this.baseUrl}/${id}`;
-    return this.http.get<CourseClass>(url).pipe(
+    return this.http.get<CourseClassReadDto>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  update(courseClasses: CourseClass): Observable<CourseClass> {
+  update(courseClasses: CourseClassUpdateDto): Observable<CourseClassUpdateDto> {
     const url = `${this.baseUrl}/${courseClasses.id}`;
-    return this.http.put<CourseClass>(url, courseClasses).pipe(
+    return this.http.put<CourseClassUpdateDto>(url, courseClasses).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  delete(id: number): Observable<CourseClass> {
+  archive(id: number, courseClass: CourseClassArchiveDto): Observable<CourseClassArchiveDto> {
+    const url = `${this.baseUrl}/${id}/arquivar`;
+    return this.http.put<CourseClassArchiveDto>(url, courseClass.archive).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  delete(id: number): Observable<CourseClassReadDto> {
     const url = `${this.baseUrl}/${id}`;
-    return this.http.delete<CourseClass>(url).pipe(
+    return this.http.delete<CourseClassReadDto>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );

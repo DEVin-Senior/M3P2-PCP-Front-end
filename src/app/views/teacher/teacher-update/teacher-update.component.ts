@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
-import { TeacherService } from 'src/app/_services/teacher/teacher.service';
+import { TeacherService } from 'src/app/_services/teacher.service';
 
 @Component({
   selector: 'app-teacher-update',

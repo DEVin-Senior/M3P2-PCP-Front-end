@@ -1,15 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {
-  FormArray,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators
-} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Input } from '@angular/core';
+import { TeacherService } from 'src/app/_services/teacher.service';
 import { IAlert } from 'src/app/_interfaces/alert/iAlert';
 import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
-import { TeacherService } from 'src/app/_services/teacher/teacher.service';
 import { AlertService } from 'src/app/_shared/alert/alert.service';
 import { ERROR, ROTA_LISTA_DOCENTES, SUCCESS } from 'src/environments/environment';
 

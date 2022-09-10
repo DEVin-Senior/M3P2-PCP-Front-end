@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Week } from './interfaces/week';
 import { WeekData } from './data/week-data';
+import { HeaderService } from 'src/app/templates/header/header.service';
 
 @Component({
   selector: 'app-home-create',
@@ -12,7 +13,12 @@ export class HomeCreateComponent implements OnInit {
   first = 0;
   rows = 10;
 
-  constructor() {}
+  constructor(private headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'DashBoard',
+      routerUrl: 'layout/home'
+    }
+  }
 
   ngOnInit(): void {
   }

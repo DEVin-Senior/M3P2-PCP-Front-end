@@ -24,8 +24,6 @@ import { HomeCreateComponent } from './components/home-create/home-create.compon
 import { WeekService } from './components/home-create/service/week-service';
 import { HomeComponent } from './views/home/home.component';
 
-
-
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -38,6 +36,11 @@ import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-c
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
 import { AuthService } from './_services/auth/auth.service';
 import { TokenInterceptor } from './_services/interceptor/token.interceptor';
+import { MessageService } from 'primeng/api';
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {ConfirmationService} from 'primeng/api';
+import {DialogModule} from 'primeng/dialog';
+
 
 @NgModule({
   declarations: [
@@ -71,6 +74,8 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     ImageModule,
     InputMaskModule,
     CheckboxModule,
+    ConfirmPopupModule,
+    DialogModule
   ],
   providers: [
     AuthService,
@@ -81,6 +86,8 @@ import { TokenInterceptor } from './_services/interceptor/token.interceptor';
     HttpClientModule,
     FormsModule,
     HttpClient,
+    MessageService,
+    ConfirmationService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
