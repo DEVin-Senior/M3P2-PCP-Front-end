@@ -39,9 +39,9 @@ export class CourseClassService {
     );
   }
 
-  readById(id: number): Observable<CourseClassReadDto> {
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.get<CourseClassReadDto>(url).pipe(
+  readById(id: number): Observable<CourseClassUpdateDto> {
+    const url = `${this.baseUrl}/listar/${id}`;
+    return this.http.get<CourseClassUpdateDto>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
