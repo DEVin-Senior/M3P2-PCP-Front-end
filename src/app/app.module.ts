@@ -40,6 +40,7 @@ import { MessageService } from 'primeng/api';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {ConfirmationService} from 'primeng/api';
 import {DialogModule} from 'primeng/dialog';
+import { RegisterweekupdateComponent } from './components/courseclass/registerweekupdate/registerweekupdate.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import {DialogModule} from 'primeng/dialog';
     TeacherUpdateComponent,
     RegisterweekComponent,
     LoginComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    RegisterweekupdateComponent
   ],
   imports: [
     BrowserModule,
