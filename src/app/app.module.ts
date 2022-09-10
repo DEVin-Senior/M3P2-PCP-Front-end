@@ -13,6 +13,8 @@ import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
+import { PasswordModule } from 'primeng/password';
+
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -77,7 +79,8 @@ import { RegisterweekupdateComponent } from './components/courseclass/registerwe
     InputMaskModule,
     CheckboxModule,
     ConfirmPopupModule,
-    DialogModule
+    DialogModule,
+    PasswordModule
   ],
   providers: [
     AuthService,
