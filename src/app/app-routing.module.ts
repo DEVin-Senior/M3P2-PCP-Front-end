@@ -18,15 +18,15 @@ import { CourseClassCrudComponent } from './views/courseclass-crud/courseclass-c
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
   },
   {
-    path: 'register',
+    path: 'login/register',
     component: LoginRegisterComponent,
   },
   { 
-    path: '',
+    path: 'layout',
     component: LayoutDefaultComponent,
     children: [
       {
@@ -42,11 +42,11 @@ const routes: Routes = [
       component: TeacherListComponent,
       },
       {
-        path: 'docentes/adicionar',
+        path: 'docente/adicionar',
         component: TeacherCreateComponent,
       },
       {
-        path: 'docentes/atualizar/:id',
+        path: 'docente/atualizar/:id',
         component: TeacherUpdateComponent,
       },
       // {

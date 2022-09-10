@@ -48,7 +48,7 @@ export class CourseClassCreateComponent implements OnInit {
     ]
     headerService.headerData = {
       title: 'Turmas',
-      routerUrl: 'layout/turmas/adicionar'
+      routerUrl: '/layout/turmas/adicionar'
     }
   }
 
@@ -77,7 +77,7 @@ nextForm() {
     console.log(this.selectedModule);
     
     this.courseClassContextService.setCourseClass(this.courseClassDto);
-    this.router.navigate(['turmas/modulo']);
+    this.router.navigate(['/layout/turmas/modulo']);
   }
 
   /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
