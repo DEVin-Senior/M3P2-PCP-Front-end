@@ -76,7 +76,8 @@ import {DialogModule} from 'primeng/dialog';
     ReactiveFormsModule,
     ImageModule,
     ConfirmPopupModule,
-    DialogModule
+    DialogModule,
+    InputMaskModule
   ],
   providers: [
     AuthService,

@@ -1,4 +1,3 @@
-
 <div class="container">
     <header>
         <h3>Cadastrados</h3>
@@ -15,20 +14,23 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-teacher>
-                <tr>
+                <tr [ngClass]="{'bg-bluegray-300':teacher.archived}">
                     <td>{{teacher.name}}</td>
                     <td>{{teacher.phone}}</td>
-                    <td>{{teacher.mail}}</td>
-                    <td>{{teacher.stacks}}</td>
+                    <td>{{teacher.email}}</td>
+                    <td>{{teacher.skills}}</td>
                     <td>
                         <div class="buttons">
-                            <button class="edit">Editar</button>
-                            <button class="archive">Arquivar</button>  
+                            <button [routerLink]="['../docente/atualizar', teacher.id]"  class="edit">Editar</button>
+                            <button  class="archive" (click)="setArchived(teacher.id, teacher.archived)">
+                                <span *ngIf="!teacher.archived">Arquivar</span>
+                                <span *ngIf="teacher.archived">Desarquivar</span>
+                            </button>  
                         </div>
                     </td>
                 </tr>
             </ng-template>
         </p-table>
     </div>
-    <button class="add-button">Novo Docente</button>
+    <button routerLink="/layout/docente/adicionar" class="add-button">Novo Docente</button>
 </div>
