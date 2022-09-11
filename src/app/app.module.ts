@@ -13,6 +13,8 @@ import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
+import { PasswordModule } from 'primeng/password';
+
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -40,6 +42,7 @@ import { MessageService } from 'primeng/api';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {ConfirmationService} from 'primeng/api';
 import {DialogModule} from 'primeng/dialog';
+import { RegisterweekupdateComponent } from './components/courseclass/registerweekupdate/registerweekupdate.component';
 
 
 @NgModule({
@@ -52,7 +55,8 @@ import {DialogModule} from 'primeng/dialog';
     TeacherUpdateComponent,
     RegisterweekComponent,
     LoginComponent,
-    LoginRegisterComponent
+    LoginRegisterComponent,
+    RegisterweekupdateComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,8 @@ import {DialogModule} from 'primeng/dialog';
     InputMaskModule,
     CheckboxModule,
     ConfirmPopupModule,
-    DialogModule
+    DialogModule,
+    PasswordModule
   ],
   providers: [
     AuthService,

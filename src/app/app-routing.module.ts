@@ -1,6 +1,6 @@
 import { CourseClassCreateComponent } from './components/courseclass/courseclass-create/courseclass-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CourseClassDeleteComponent } from './components/courseclass/courseclass-delete/courseclass-delete.component';
 import { CourseClassReadComponent } from './components/courseclass/courseclass-read/courseclass-read.component';
@@ -15,6 +15,8 @@ import { AllocationClassReadComponent } from './components/allocation-class-read
 import { LoginComponent } from './components/login/login.component';
 import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
 import { CourseClassCrudComponent } from './views/courseclass-crud/courseclass-crud.component';
+import { RegisterweekupdateComponent } from './components/courseclass/registerweekupdate/registerweekupdate.component';
+import { AuthGuard } from './_services/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -82,7 +84,13 @@ const routes: Routes = [
         path: 'turmas/modulo',
         component: RegisterweekComponent,
       },
+
+      {
+        path: 'turmas/atualizar/:id/modulo', 
+        component: RegisterweekupdateComponent,
+      }
     ],
+    canActivate: [AuthGuard]
   },
 ];
 
