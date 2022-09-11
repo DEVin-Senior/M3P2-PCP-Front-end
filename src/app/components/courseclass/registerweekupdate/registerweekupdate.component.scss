@@ -1,139 +1,126 @@
 .container {
-    height: 100%;
-    width: 100%;
-
-    position: relative;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 .area-title {
-    margin: 69px 0 29px 56px;
+  margin: 69px 0 29px 56px;
 }
 
 .area-title span {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 42px;
-
-    color: #374557;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+  color: #374557;
 }
 
 .content {
-    margin-left: 56px;
-
-    position: relative;
+  margin-left: 56px;
+  position: relative;
 }
 
 .p-accordion .p-accordion-header .p-accordion-header-link {
-    position: relative;
-    font-family: 'Raleway';
-    font-style: normal;
-
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 24px;
-
-    color: #53575D;
-
-    border-radius: 4px;
+  position: relative;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  color: #53575D;
+  border-radius: 4px;
 }
 
 .p-accordion .p-accordion-content {
-    position: relative;
-    padding: 1.25rem;
-    border: 1px solid #dee2e6;
-    background: #ffffff;
-    color: #495057;
-    border-top: 0;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
+  position: relative;
+  padding: 1.25rem;
+  border: 1px solid #dee2e6;
+  background: #ffffff;
+  color: #495057;
+  border-top: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
 .add-week {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 label {
-    margin-right: 25px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-
-    color: #53575D;
-
-    border-radius: 4px;
+  margin-right: 25px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #53575D;
+  border-radius: 4px;
 }
 
 input {
-    width: 282.49px;
-    height: 50px;
-
-    background: #FBFCFF;
-
-    border: 1px solid #53575D;
-    border-radius: 4px;
+  width: 282.49px;
+  height: 50px;
+  background: #FBFCFF;
+  border: 1px solid #53575D;
+  border-radius: 4px;
 }
 
 .p-button.p-button-success,
 .p-buttonset.p-button-success>.p-button,
 .p-splitbutton.p-button-success>.p-button {
-    margin-left: 10px;
-    margin-bottom: 5px;
-    align-items: center;
-    transition: all 0.4s ease;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  align-items: center;
+  transition: all 0.4s ease;
 }
 
 .p-button.p-button-danger,
 .p-buttonset.p-button-danger>.p-button,
 .p-splitbutton.p-button-danger>.p-button {
-    margin-left: 10px;
-    margin-bottom: 5px;
-    align-items: center;
-    transition: all 0.4s ease;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  align-items: center;
+  transition: all 0.4s ease;
 }
 
 .invisible {
-    display: none;
+  display: none;
 }
 
 .row-btn {
-    margin-top: 88px;
-
-    width: 100%;
-    height: 94.87px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 88px;
+  width: 100%;
+  height: 94.87px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .row-btn button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 24px;
+  width: 202px;
+  height: 49px;
+  font-size: 14px;
+  right: 0;
+  top: 0;
+  margin-right: 230px;
+  margin-top: 142px;
+  position: fixed;
+  background: #EF3A7F;
+  box-shadow: 0px 20px 50px rgba(55, 69, 87, 0.1);
+  border-radius: 20px;
+  border: none;
+  transition: 0.4s all ease;
+}
 
-    padding: 16px 24px;
-  
-    width: 252px;
-    height: 59px;
-
-    position: relative;
-  
-    background: #EF3A7F;
-  
-    box-shadow: 0px 20px 50px rgba(55, 69, 87, 0.1);
-    border-radius: 20px;
-    border: none;
-  
-    transition: 0.4s all ease;
-  }
-  
-  .row-btn button:hover {
-    transform: scale(1.1);
-    transition: 0.4s all ease;
-  }
+.row-btn button:hover {
+  transform: scale(1.1);
+  transition: 0.4s all ease;
+}

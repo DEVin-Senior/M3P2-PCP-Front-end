@@ -5,13 +5,28 @@ import { CourseClassReadDto } from './dto/courseclass-read.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, catchError, Observable, EMPTY } from 'rxjs';
-import { CourseClass } from './courseclass.model';
-import { Message, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseClassService {
+  courseClass: CourseClassCreateDto = {
+    name: '',
+    initialDate: '',
+    endDate: '',
+    stack: '',
+    matrixLink: '',
+    archive: false,
+    moduleEntityList: [{
+      name: '',
+      weekEntityList: [{
+        content: '',
+        initialDate: '',
+        paid: false
+      }]
+    }]
+  }
 
   baseUrl = '/api/turmas';
 
@@ -61,14 +76,6 @@ export class CourseClassService {
       archived: courseClass.archive
     };
     return this.http.patch(`${this.baseUrl}/arquivar`, body);
-  }
-
-  delete(id: number): Observable<CourseClassReadDto> {
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.delete<CourseClassReadDto>(url).pipe(
-      map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
-    );
   }
 
   errorHandler(e: any): Observable<any> {

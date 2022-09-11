@@ -102,4 +102,15 @@ describe('CourseClassCreateComponent', () => {
     const compile = fixture.debugElement.nativeElement;
     expect(compile.querySelector('h3').textContent).not.toContain('Cadastrar Professor');
   })
+
+  it(`${CourseClassCreateComponent.prototype.nextForm.name} should return true when validadorInputs is not called.`, () =>{
+    let spy = spyOn(component, 'validatorInputs');
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it(`${CourseClassCreateComponent.prototype.validatorInputs.name}  should return true when validadorInputs is called.`, () =>{
+    let spy = spyOn(component, 'validatorInputs');
+    component.validatorInputs();
+    expect(spy).toHaveBeenCalled();
+  });
 });
