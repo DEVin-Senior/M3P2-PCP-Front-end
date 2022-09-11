@@ -37,7 +37,6 @@ describe('CourseClassUpdateComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  //validatorInputs()
   it(`${CourseClassUpdateComponent.prototype.nextForm.name} should return true when validadorInputs is not called.`, () =>{
     let spy = spyOn(component, 'validatorInputs');
     expect(spy).not.toHaveBeenCalled();
@@ -57,19 +56,6 @@ describe('CourseClassUpdateComponent', () => {
     expect(component.validatorInputs()).not.toBeTrue();
   });
 
-  //cancel()
-  // it(`${CourseClassUpdateComponent.prototype.cancel.name} should return true when cancel is not called.`, () =>{
-  //   let spy = spyOn(component, 'cancel');
-  //   expect(spy).not.toHaveBeenCalled();
-  // });
-
-  // it(`${CourseClassUpdateComponent.prototype.cancel.name}  should return true when cancel is called.`, () =>{
-  //   let spy = spyOn(component, 'cancel');
-  //   component.cancel();
-  //   expect(spy).toHaveBeenCalled();
-  // });
-
-  //ngOnInit
   it(`${CourseClassUpdateComponent.prototype.ngOnInit.name} should return true when expected to not be true.`, () =>{
     const compile = fixture.debugElement.nativeElement;
     expect(compile.querySelector('h3').textContent).toContain('Editar Turma');

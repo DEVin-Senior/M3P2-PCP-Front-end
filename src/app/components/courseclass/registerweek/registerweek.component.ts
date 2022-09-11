@@ -31,7 +31,11 @@ export class RegisterweekComponent implements OnInit {
     }]
   }
 
-  constructor(private courseClassServiceDto: CourseClassService, private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) {
+  constructor(private courseClassServiceDto: CourseClassService, 
+    private courseClassService: CourseclassContextService, 
+    private confirmationService: ConfirmationService, 
+    private headerService: HeaderService, 
+    private router: Router) {
     headerService.headerData = {
       title: 'Turmas',
       routerUrl: '/layout/turmas/modulo'
@@ -44,11 +48,9 @@ export class RegisterweekComponent implements OnInit {
       message: 'Você gostaria de excluir?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        //this.messageService.add({severity:'info', summary:'Confirmed', detail:'You have accepted'});
         this.removeWeek(week, moduleIndex)
       },
       reject: () => {
-        //this.messageService.add({severity:'error', summary:'Rejected', detail:'You have rejected'});
       }
     });
   }

@@ -8,7 +8,6 @@ import { Message, MessageService } from 'primeng/api';
   providedIn: 'root'
 })
 export class EventService {
-  // baseUrl = '/api/historico/turmas/{idTurma}';
   baseUrl = '/api/historico';
 
   constructor(private http: HttpClient, private messageService: MessageService) { }

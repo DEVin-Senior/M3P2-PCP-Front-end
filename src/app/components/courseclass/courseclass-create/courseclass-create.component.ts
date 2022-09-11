@@ -160,8 +160,4 @@ export class CourseClassCreateComponent implements OnInit {
     }
     return false;
   }
-
-  /*cancel(): void {
-    this.router.navigate(['']);
-  }*/
 }
