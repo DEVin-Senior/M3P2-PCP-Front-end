@@ -19,6 +19,7 @@ describe('TeacherService', () => {
     skills: ["Java"],
     archived: false
   };
+  
   let mockResponseList = [
   {
     $id: 1,
@@ -49,10 +50,6 @@ describe('TeacherService', () => {
     httpMock = TestBed.inject(HttpTestingController);
   });
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(TeacherService);
-  });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
@@ -97,7 +94,7 @@ describe('TeacherService', () => {
     let teacher = mockResponseList[0];
     teacher.archived = true;
 
-    spyOn(httpClient, 'patch').and.returnValue(of(teacher));
+    spyOn(httpClient, 'put').and.returnValue(of(teacher));
 
     service.updateTeacher(teacher).subscribe(res => {
       res = teacher;
@@ -107,5 +104,4 @@ describe('TeacherService', () => {
     expect(teacher.archived).toEqual(true);
     httpMock.verify();
   });
-  
 });
