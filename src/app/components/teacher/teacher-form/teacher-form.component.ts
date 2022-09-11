@@ -1,24 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Input } from '@angular/core';
-import { TeacherService } from 'src/app/_services/teacher.service';
+import { TeacherService } from 'src/app/_services/teacher/teacher.service';
 import { IAlert } from 'src/app/_interfaces/alert/iAlert';
-import { ERROR, SUCCESS } from 'src/environments/environment';
-import { AlertService } from 'src/app/_shared/alert/alert.service';
 import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
+import { AlertService } from 'src/app/_shared/alert/alert.service';
+import { ERROR, ROTA_LISTA_DOCENTES, SUCCESS } from 'src/environments/environment';
 
 @Component({
   selector: 'app-teacher-form',
   templateUrl: './teacher-form.component.html',
-  styleUrls: ['./teacher-form.component.scss']
+  styleUrls: ['./teacher-form.component.scss'],
 })
 export class TeacherFormComponent implements OnInit {
   alertMessage!: IAlert;
   selectedStacksNames!: Array<any>;
 
   formTeacher!: FormGroup;
-  @Input() buttonText: string = "";
-  // TODO analizar se é possível passar por aqui um objeto teacher, para que no update possa ser reaproveitado esse componente
+
+  @Input() buttonText: string = '';
+
+  @Input() teacherToUpdate: any = {
+    id: '',
+    name: '',
+    phone: '',
+    email: '',
+    skills: [],
+    archived: false,
+  };
+
+  @Output() skillsToAddCheckboxesOnUpdate = new EventEmitter();
 
   stackList: Array<any> = [
     { id: 1, name: 'C#' },
@@ -30,17 +42,22 @@ export class TeacherFormComponent implements OnInit {
     { id: 7, name: 'HTML' },
     { id: 8, name: 'CSS' },
     { id: 9, name: 'JAVASCRIPT' },
-  ]
+  ];
 
-  constructor(private formBuilder: FormBuilder, private teacherService: TeacherService, private alertService: AlertService,) {
-  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private teacherService: TeacherService,
+    private alertService: AlertService,
+    private route: ActivatedRoute,
+    private redirectRouter: Router
+  ) {}
 
   ngOnInit(): void {
     this.formTeacher = new FormGroup({
       name: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      stacks: (new FormArray([]))
+      stacks: new FormArray([]),
     });
 
     this.addCheckboxes();
@@ -67,51 +84,39 @@ export class TeacherFormComponent implements OnInit {
     return this.formTeacher.get('archived')!;
   }
 
-  getStacks() {
-    this.selectedStacksNames = this.formTeacher.value.stacks
-      .map((checked: any, i: any) => checked ? this.stackList[i].name : null)
-      .filter((v: any) => v !== null);
-
-    this.selectedStacksNames = this.selectedStacksNames
-      .map((stack: any, i: any) => stack == 'C#' ? 'C_SHARP' : stack);
-
-    this.selectedStacksNames = this.selectedStacksNames
-      .map((stack: any, i: any) => stack == '.NET' ? 'DOT_NET' : stack);
-  }
-
-  salvar(): void {
-    this.getStacks();
-    this.postTeacher(this.createNewTeacher());
-  }
-
   addCheckboxes(): void {
-    this.stackList.forEach(() => this.stackFormArray.push(new FormControl(false)))
+    if (!this.isUpdate()){
+      this.stackList.forEach((skill: any) => {
+        this.stackFormArray.push(new FormControl(false));
+      });
+    } else {
+      this.skillsToAddCheckboxesOnUpdate.emit({skills: this.stackList, formTeacher: this.formTeacher});
+    }
   }
 
   get stackFormArray() {
     return this.formTeacher.controls['stacks'] as FormArray;
   }
 
-  postTeacher(iTeacher: ITeacher) {
-    if (this.formTeacher.valid) {
-      try {
-        this.teacherService.insertTeacher(iTeacher).subscribe({
-          next: (v) => this.messagePostTeacher(v),
-          error: (e) => this.messageErrorPostTeacher(),
-          complete: () => this.formTeacher.reset()
-        })
-      } catch (error) {
-        this.messageErrorPostTeacher()
-      }
-    } else {
-      this.alertMessage = {
-        title: 'Ocorreu um erro ao cadastrar o Docente',
-        message: 'Favor preencher todos os campos obrigatórios.',
-        typeAlert: ERROR,
-      };
-      this.alertService.showGenericAlert(this.alertMessage);
-    }
+  getStacks() {
+    this.selectedStacksNames = this.formTeacher.value.stacks
+      .map((checked: any, i: any) => (checked ? this.stackList[i].name : null))
+      .filter((v: any) => v !== null);
 
+    this.selectedStacksNames = this.teacherService.convertSkillFromStringToEnum(this.selectedStacksNames);
+  }
+
+  salvar(): void {
+    this.getStacks();
+    if (!this.isUpdate()) {
+      this.postTeacher(this.createNewTeacher());
+    } else {
+      this.putTeacher(this.createTeacherToUpdate());
+    }
+  }
+
+  isUpdate(): boolean {
+    return this.route.snapshot.params['id'] ? true : false;
   }
 
   createNewTeacher(): ITeacher {
@@ -120,8 +125,69 @@ export class TeacherFormComponent implements OnInit {
       phone: this.phone.value,
       email: this.email.value,
       skills: this.selectedStacksNames,
-      archived: false
+      archived: false,
     };
+  }
+
+  createTeacherToUpdate(): ITeacher {
+    return {
+      id: this.teacherToUpdate.id,
+      name: this.name.value,
+      phone: this.phone.value,
+      email: this.email.value,
+      skills: this.selectedStacksNames,
+      archived: false,
+    };
+  }
+
+  postTeacher(iTeacher: ITeacher): boolean {
+    if (!iTeacher || this.formTeacher.invalid) {
+      this.alertMessage = {
+        title: 'Ocorreu um erro ao cadastrar o Docente',
+        message: 'Favor preencher todos os campos obrigatórios.',
+        typeAlert: ERROR,
+      };
+      this.alertService.showGenericAlert(this.alertMessage);
+      return false;
+    }
+
+    try {
+      this.teacherService.insertTeacher(iTeacher).subscribe({
+        next: (v) => this.messagePostTeacher(v),
+        error: (e) => this.messageErrorPostTeacher(),
+        complete: () => this.redirectRouter.navigate([ROTA_LISTA_DOCENTES]),
+      });
+    } catch (error) {
+      this.messageErrorPostTeacher();
+      return false;
+    }
+
+    return true;
+  }
+
+  putTeacher(teacherToUpdate: ITeacher): boolean  {
+    if (!teacherToUpdate || this.formTeacher.invalid) {
+      this.alertMessage = {
+        title: 'Ocorreu um erro ao cadastrar o Docente',
+        message: 'Favor preencher todos os campos obrigatórios.',
+        typeAlert: ERROR,
+      };
+      this.alertService.showGenericAlert(this.alertMessage);
+      return false;
+    }
+
+    try {
+      this.teacherService.updateTeacher(teacherToUpdate).subscribe({
+        next: (v) => this.messagePostTeacher(v),
+        error: (e) => this.messageErrorPostTeacher(),
+        complete: () => this.redirectRouter.navigate([ROTA_LISTA_DOCENTES]),
+      });
+    } catch (error) {
+      this.messageErrorPostTeacher();
+      return false;
+    }
+
+    return true;
   }
 
   messagePostTeacher(result: any) {
@@ -132,7 +198,6 @@ export class TeacherFormComponent implements OnInit {
         typeAlert: SUCCESS,
       };
       this.alertService.showGenericAlert(this.alertMessage);
-
     } else {
       this.alertMessage = {
         title: 'Ocorreu um erro ao cadastrar o Docente',
@@ -150,5 +215,4 @@ export class TeacherFormComponent implements OnInit {
     };
     this.alertService.showGenericAlert(this.alertMessage);
   }
-
 }

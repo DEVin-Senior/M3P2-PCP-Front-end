@@ -1,4 +1,4 @@
 export interface CourseClassArchiveDto {
-    id?: number,
+    classId?: string,
     archive: boolean
 }

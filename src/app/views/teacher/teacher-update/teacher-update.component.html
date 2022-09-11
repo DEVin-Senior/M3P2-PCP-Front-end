@@ -1,6 +1,9 @@
-<div class="m-6" style="width: 75vw; height: 92vh;">
+<div class="m-6" style="width: 75vw; height: 92vh">
   <h2 class="mb-4 text-800">Editar Docente</h2>
 
-  <app-teacher-form [buttonText]="salvar"></app-teacher-form>
+  <app-teacher-form
+    [buttonText]="salvar"
+    [teacherToUpdate]="teacher"
+    (skillsToAddCheckboxesOnUpdate)="skillsBuilderToUpdate($event)"
+  ></app-teacher-form>
 </div>
-

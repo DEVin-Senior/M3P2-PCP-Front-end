@@ -17,4 +17,8 @@ export class SidebarComponent {
     this.primengConfig.ripple = true; 
   }
 
+  logOut(){
+    localStorage.removeItem('access_token');
+  }
+
 }
