@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MessageService } from 'primeng/api';
 import { CourseClassUpdateComponent } from './courseclass-update.component';
 
-describe('CourseClassUpdateComponent', () => {
+fdescribe('CourseClassUpdateComponent', () => {
   let component: CourseClassUpdateComponent;
   let fixture: ComponentFixture<CourseClassUpdateComponent>;
 
@@ -25,7 +25,6 @@ describe('CourseClassUpdateComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  //nextForm()
   it(`${CourseClassUpdateComponent.prototype.nextForm.name} should return true when nextForm is not called.`, () =>{
     let spy = spyOn(component, 'nextForm');
     expect(spy).not.toHaveBeenCalled();
@@ -65,5 +64,4 @@ describe('CourseClassUpdateComponent', () => {
     const compile = fixture.debugElement.nativeElement;
     expect(compile.querySelector('h3').textContent).not.toContain('Editar Professor');
   });
-
 });
