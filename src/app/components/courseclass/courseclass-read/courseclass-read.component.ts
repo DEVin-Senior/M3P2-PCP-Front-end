@@ -39,9 +39,7 @@ export class CourseClassReadComponent {
   archive(courseId: number, courseArchive: boolean) {
     this.courseClassArchive.classId = courseId.toString();
     this.courseClassArchive.archive = !courseArchive;
-
-    this.service.archive(this.courseClassArchive).subscribe((response: any) => location.reload());
-    
+    this.service.archive(this.courseClassArchive).subscribe((response: any) => location.reload()); 
   }
 
 }

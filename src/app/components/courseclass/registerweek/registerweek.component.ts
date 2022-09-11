@@ -2,7 +2,7 @@ import { CourseClassService } from './../courseclass.service';
 import { Component, OnInit } from '@angular/core';
 import { CourseclassContextService } from '../courseclass-context.service';
 import { CourseClassCreateDto } from '../dto/courseclass-create.model';
-import {ConfirmationService, MessageService} from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { HeaderService } from 'src/app/templates/header/header.service';
 
@@ -31,7 +31,7 @@ export class RegisterweekComponent implements OnInit {
     }]
   }
 
-  constructor(private courseClassServiceDto: CourseClassService, private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) { 
+  constructor(private courseClassServiceDto: CourseClassService, private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) {
     headerService.headerData = {
       title: 'Turmas',
       routerUrl: '/layout/turmas/modulo'
@@ -40,48 +40,40 @@ export class RegisterweekComponent implements OnInit {
 
   confirm(event: Event, week: any, moduleIndex: number) {
     this.confirmationService.confirm({
-        target: event.target as EventTarget,
-        message: 'Você gostaria de excluir?',
-        icon: 'pi pi-exclamation-triangle',
-        accept: () => {
-            //this.messageService.add({severity:'info', summary:'Confirmed', detail:'You have accepted'});
-            this.removeWeek(week, moduleIndex)
-        },
-        reject: () => {
-            //this.messageService.add({severity:'error', summary:'Rejected', detail:'You have rejected'});
-        }
+      target: event.target as EventTarget,
+      message: 'Você gostaria de excluir?',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        //this.messageService.add({severity:'info', summary:'Confirmed', detail:'You have accepted'});
+        this.removeWeek(week, moduleIndex)
+      },
+      reject: () => {
+        //this.messageService.add({severity:'error', summary:'Rejected', detail:'You have rejected'});
+      }
     });
-
-    
-}
+  }
 
   ngOnInit(): void {
     this.courseClassDto = this.courseClassService.getCourseClass();
-    // this.courseClassDto = this.courseClassDto.map( (course) => {
-    //   course.weeks = [{content:""}] as any;
-    //   return course;
-    // })
-    this.courseClassDto.moduleEntityList.forEach((modulo, index) => {
-      // if(index === 0){
-      //   modulo.weekEntityList.forEach((week) => {
-      //     week.initialDate = this.courseClassDto.initialDate
-      //   })
-          modulo.weekEntityList.forEach((week) => {
+
+    if (this.courseClassDto.name.trim() != '' && this.courseClassDto.matrixLink.trim() != '' && this.courseClassDto.stack.trim() != '') {
+      this.courseClassDto.moduleEntityList.forEach((modulo, index) => {
+
+        modulo.weekEntityList.forEach((week) => {
           week.initialDate = this.courseClassDto.initialDate
         })
-      //}
-    })
-    console.log(this.courseClassDto);
+      })
+    } else {
+      this.router.navigate(['/layout/turmas/adicionar']);
+    }
   }
 
   addWeek(moduleIndex: number, content: string, i: number) {
     const module = this.courseClassDto.moduleEntityList.findIndex((m, index) => {
       return index == moduleIndex;
     })
-    
 
     this.courseClassDto.moduleEntityList.forEach((course, index) => {
-      //course.weekEntityList[index - 1].initialDate;
       if (index == moduleIndex) {
         course.weekEntityList.push({
           content: content,
@@ -89,15 +81,12 @@ export class RegisterweekComponent implements OnInit {
           paid: false
         })
       }
-
       return course;
     })
-    console.log(this.courseClassDto);
   }
 
   removeWeek(week: any, moduleIndex: number) {
     this.courseClassDto.moduleEntityList.forEach((course, index) => {
-      console.log(week);
 
       if (index == moduleIndex) {
         course.weekEntityList.splice(course.weekEntityList.indexOf(week), 1);
@@ -106,10 +95,8 @@ export class RegisterweekComponent implements OnInit {
   }
 
   saveModule() {
-    //localStorage.setItem('courseClassDto', JSON.stringify(this.courseClassDto));
     this.courseClassServiceDto.create(this.courseClassDto).subscribe(() => {
       this.router.navigate(['/layout/turmas']);
     });
-
   }
 }

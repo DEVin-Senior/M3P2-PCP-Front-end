@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { CourseClassCreateDto } from './dto/courseclass-create.model';
+import { CourseClass } from './courseclass.model';
+import { CourseClassUpdateDto } from './dto/courseclass-update.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CourseclassContextService {
+export class CourseclassUpdateContextService {
 
-  courseClassDto: CourseClassCreateDto = {
+  courseClassUpdateDto: CourseClassUpdateDto = {
     name: '',
     initialDate: '',
     endDate: '',
@@ -25,11 +26,11 @@ export class CourseclassContextService {
 
   constructor() { }
 
-  setCourseClass(courseClassDto: CourseClassCreateDto) {
-    this.courseClassDto = courseClassDto;
+  setCourseClass(courseClassUpdateDto: CourseClassUpdateDto) {
+    this.courseClassUpdateDto = courseClassUpdateDto;
   }
 
   getCourseClass() {
-    return this.courseClassDto;
+    return this.courseClassUpdateDto;
   }
 }
