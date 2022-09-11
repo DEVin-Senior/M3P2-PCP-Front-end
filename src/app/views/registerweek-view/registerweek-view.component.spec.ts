@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RegisterweekComponent } from 'src/app/components/courseclass/registerweek/registerweek.component';
 
 import { RegisterweekViewComponent } from './registerweek-view.component';
 
