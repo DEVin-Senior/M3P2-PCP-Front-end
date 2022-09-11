@@ -31,7 +31,7 @@ export class RegisterweekupdateComponent implements OnInit {
     }]
   }
 
-  constructor(private courseClassServiceDto: CourseClassService, private courseclassUpdateContextService: CourseclassUpdateContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) { 
+  constructor(private courseClassServiceDto: CourseClassService, private courseclassUpdateContextService: CourseclassUpdateContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) {
     headerService.headerData = {
       title: 'Turmas',
       routerUrl: '/layout/turmas/modulo'
@@ -43,31 +43,28 @@ export class RegisterweekupdateComponent implements OnInit {
         target: event.target as EventTarget,
         message: 'Você gostaria de excluir?',
         icon: 'pi pi-exclamation-triangle',
-        accept: () => {           
+        accept: () => {
             this.removeWeek(week, moduleIndex)
         },
         reject: () => {
-           
+
         }
     });
-
-
 }
 
   ngOnInit(): void {
-    this.courseClassDto = this.courseclassUpdateContextService.getCourseClass(); 
-    this.courseClassDto.moduleEntityList.forEach((modulo, index) => {     
+    this.courseClassDto = this.courseclassUpdateContextService.getCourseClass();
+    this.courseClassDto.moduleEntityList.forEach((modulo, index) => {
           modulo.weekEntityList.forEach((week) => {
           week.initialDate = this.courseClassDto.initialDate
-        })      
-    })    
+        })
+    })
   }
 
   addWeek(moduleIndex: number, content: string, i: number) {
     const module = this.courseClassDto.moduleEntityList.findIndex((m, index) => {
       return index == moduleIndex;
     })
-
 
     this.courseClassDto.moduleEntityList.forEach((course, index) => {
       if (index == moduleIndex) {
@@ -79,11 +76,11 @@ export class RegisterweekupdateComponent implements OnInit {
       }
 
       return course;
-    })    
+    })
   }
 
   removeWeek(week: any, moduleIndex: number) {
-    this.courseClassDto.moduleEntityList.forEach((course, index) => {     
+    this.courseClassDto.moduleEntityList.forEach((course, index) => {
 
       if (index == moduleIndex) {
         course.weekEntityList.splice(course.weekEntityList.indexOf(week), 1);
@@ -91,8 +88,8 @@ export class RegisterweekupdateComponent implements OnInit {
     })
   }
 
-  saveModule() {    
-     console.log(this.courseClassDto);      
+  saveModule() {
+     console.log(this.courseClassDto);
       this.courseClassServiceDto.update(this.courseClassDto).subscribe(() => {
       this.router.navigate(['/layout/turmas']);
     });
