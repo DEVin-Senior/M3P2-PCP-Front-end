@@ -41,10 +41,6 @@ export class AuthService {
     return this.isLoggedIn;
   }
 
-  logOut(){
-    localStorage.removeItem('access_token');
-  }
-
   saveUser(user: User) : Observable<any>{
     console.log(`Name: ${user.name} User AUTHSERVICE: ${user.email}, Password: ${user.password}`);
       let bodyString = JSON.stringify(user);
