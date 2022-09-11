@@ -30,7 +30,7 @@ export class RegisterweekupdateComponent implements OnInit {
     }]
   }
 
-  constructor(private courseClassServiceDto: CourseClassService, private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) { 
+  constructor(private courseClassServiceDto: CourseClassService, private courseClassService: CourseclassContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) {
     headerService.headerData = {
       title: 'Turmas',
       routerUrl: '/layout/turmas/modulo'
@@ -51,7 +51,7 @@ export class RegisterweekupdateComponent implements OnInit {
         }
     });
 
-    
+
 }
 
   ngOnInit(): void {
@@ -77,7 +77,7 @@ export class RegisterweekupdateComponent implements OnInit {
     const module = this.courseClassDto.moduleEntityList.findIndex((m, index) => {
       return index == moduleIndex;
     })
-    
+
 
     this.courseClassDto.moduleEntityList.forEach((course, index) => {
       //course.weekEntityList[index - 1].initialDate;
@@ -109,6 +109,5 @@ export class RegisterweekupdateComponent implements OnInit {
     this.courseClassServiceDto.create(this.courseClassDto).subscribe(() => {
       this.router.navigate(['/layout/turmas']);
     });
-
   }
 }

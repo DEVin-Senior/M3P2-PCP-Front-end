@@ -9,12 +9,15 @@
         <div class="area-name">
           <label>Nome</label> <br />
           <input type="text" pInputText placeholder="Nome da turma" [(ngModel)]="courseClassDto.name" />
+          <small id="name-error" class="p-error block not-required">Nome da Turma is not available.</small>
         </div>
       </div>
+
       <div class="div-two">
         <div class="area-link">
           <label>Link da Matriz</label> <br />
           <input type="text" pInputText placeholder="Link da Matriz" [(ngModel)]="courseClassDto.matrixLink" />
+          <small id="matrizname-error" class="p-error block not-required">Link da Matriz is not available.</small>
         </div>
       </div>
     </div>
@@ -24,6 +27,7 @@
         <div class="area-stack">
           <label>Stack/Linguagens</label> <br />
           <input type="text" pInputText placeholder="Front-End/Back-End" [(ngModel)]="courseClassDto.stack" />
+          <small id="stack-error" class="p-error block not-required">Stack is not available.</small>
         </div>
       </div>
     </div>
@@ -33,12 +37,15 @@
         <div class="date-start">
           <label>Início</label> <br />
           <p-calendar [showIcon]="true" inputId="icon" dateFormat="dd/mm/yy" styleClass="calendar" [(ngModel)]="courseClassDto.initialDate" ></p-calendar>
+          <small id="initial-error" class="p-error block not-required">Initial Date is not available.</small>
         </div>
       </div>
+
       <div class="div-five">
         <div class="date-end">
           <label>Fim</label> <br />
           <p-calendar [showIcon]="true" inputId="icon" dateFormat="dd/mm/yy" [(ngModel)]="courseClassDto.endDate"></p-calendar>
+          <small id="end-error" class="p-error block not-required">End Date is not available.</small>
         </div>
       </div>
     </div>
