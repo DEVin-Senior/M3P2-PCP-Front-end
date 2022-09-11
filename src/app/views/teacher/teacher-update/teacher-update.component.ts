@@ -30,7 +30,7 @@ export class TeacherUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getTeacherToUpdate();
+    this.getTeacherToUpdate(this.getTeacherId());
   }
 
   public get teacher(): any {
@@ -41,29 +41,29 @@ export class TeacherUpdateComponent implements OnInit {
     return this.skillsFormControl.formTeacher.controls['stacks'] as FormArray;
   }
 
-  public skillsBuilderToUpdate(evento: any) {
+  skillsBuilderToUpdate(evento: any) {
     this.skillsFormControl.skills = evento.skills;
     this.skillsFormControl.formTeacher = evento.formTeacher;
   }
 
-  private getTeacherId(): string {
+  getTeacherId(): string {
     return this.route.snapshot.params['id'];
   }
 
-  private async getTeacherToUpdate() {
-    if (!this.getTeacherId()) {
+  async getTeacherToUpdate(teacherId: string) {
+    if (teacherId === '' || teacherId === undefined || !teacherId) {
       throw new Error(`Could not get teacher because ID is null`);
     }
 
     this.teacherService
-      .getTeacherById(this.getTeacherId())
+      .getTeacherById(teacherId)
       .subscribe((teacher: ITeacher) => {
         this.mergeTeacher(teacher);
         this.addCheckboxes(teacher.skills);
       });
   }
 
-  private mergeTeacher(teacherFinded: ITeacher) {
+  mergeTeacher(teacherFinded: any) {
     if (!teacherFinded) {
       throw new Error('Teacher not found');
     }
@@ -76,7 +76,7 @@ export class TeacherUpdateComponent implements OnInit {
     this.teacher.archived = teacherFinded.archived;
   }
 
-  private addCheckboxes(teacherSkills: any) {
+  addCheckboxes(teacherSkills: any) {
     if (!teacherSkills) {
       throw new Error("The teacher's skills not found");
     }
@@ -88,7 +88,7 @@ export class TeacherUpdateComponent implements OnInit {
     });
   }
 
-  private getSkillFormControl(skillName: string, teacherSkills: any): FormControl {
+ getSkillFormControl(skillName: string, teacherSkills: any): FormControl {
     if (teacherSkills.length === 0) {
       return new FormControl(false);
     }
