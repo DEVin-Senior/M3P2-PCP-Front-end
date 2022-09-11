@@ -16,6 +16,7 @@ header {
 
 .table-area {
     width: 100%;
+    height: 450px;
     border-collapse: collapse;
     padding-right: 230px;
 }
@@ -79,14 +80,20 @@ button {
 
 .add-button {
     background-color: #EF3A7F;
-    padding: 16px 50px;
+    padding: 16px 24px;
     border-radius: 15px;
     position: fixed;
+    width: 252px;
+    height: 59px;
+    font-size: 17px;
     right: 0;
-    margin-top: 200px;
-    margin-right: 230px;
+    bottom: 0;
+    margin-right: 250px;
+    margin-bottom: 100px;
 }
 
 .add-button:hover {
+    transform: scale(1.1);
+    transition: 0.4s all ease;
     background-color: #cf2264;
 }
