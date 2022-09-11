@@ -12,7 +12,7 @@ import {CourseClassUpdateDto} from '../dto/courseclass-update.model'
   styleUrls: ['./courseclass-update.component.scss']
 })
 export class CourseClassUpdateComponent implements OnInit {
-
+  
   courseClass: CourseClassUpdateDto =   {
     name: '',
     initialDate: '',
@@ -30,25 +30,38 @@ export class CourseClassUpdateComponent implements OnInit {
     }]
   };
 
-  quatityModule!: SelectItem[];
-  constructor(private classCourseService: CourseClassService, private router: Router, private route: ActivatedRoute) { 
-    this.quatityModule = [
-      { label: '1', value: 1 },
-      { label: '2', value: 2 },
-      { label: '3', value: 3 },
-      { label: '4', value: 4 }
-    ]
-  }
-  
-  ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend
-    const id = this.route.snapshot.paramMap.get('id');
+   constructor(
+    private classCourseService: CourseClassService,
+    private router: Router,
+    private route: ActivatedRoute    
+  ) { }
+
+  ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend 
+    const id = this.route.snapshot.paramMap.get('id');    
     this.classCourseService.readById(Number(id)).subscribe((course) => {
-      this.courseClass = course;
-      console.log(course.endDate);
       
-    });   
+    let year = course.initialDate.split("-")[0];
+    let month = course.initialDate.split("-")[1];
+    let day = course.initialDate.split("-")[2];
+    let initialDate = `${day}/${month}/${year}`;
+    course.initialDate=initialDate; 
+
+    year = course.endDate.split("-")[0];
+    month = course.endDate.split("-")[1];
+    day = course.endDate.split("-")[2];
+    let endDate = `${day}/${month}/${year}`;
+    course.endDate=endDate; 
+
+
+    console.log(this.courseClass);
+      
+    this.courseClass = course;
+    });
   }
 
+  nextForm() {    
+    this.router.navigate(['/layout/turmas/atualizar/' + this.route.snapshot.paramMap.get('id') + '/modulo']);
+  }
  /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
     return true
   }

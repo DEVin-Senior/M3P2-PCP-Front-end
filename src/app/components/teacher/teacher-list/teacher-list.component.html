@@ -21,11 +21,11 @@
                     <td>{{teacher.skills}}</td>
                     <td>
                         <div class="buttons">
-                            <button [routerLink]="['../docente/atualizar', teacher.id]"  class="edit">Editar</button>
+                            <button [disabled]="teacher.archived" [routerLink]="['../docente/atualizar', teacher.id]"  class="edit">Editar</button>
                             <button  class="archive" (click)="setArchived(teacher.id, teacher.archived)">
                                 <span *ngIf="!teacher.archived">Arquivar</span>
                                 <span *ngIf="teacher.archived">Desarquivar</span>
-                            </button>  
+                            </button>
                         </div>
                     </td>
                 </tr>

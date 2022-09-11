@@ -179,3 +179,11 @@
     transform: scale(1.1);
     transition: 0.4s all ease;
   }
+
+  .not-required {
+    visibility: hidden;
+  }
+
+  .required {
+    visibility: visible;
+  }

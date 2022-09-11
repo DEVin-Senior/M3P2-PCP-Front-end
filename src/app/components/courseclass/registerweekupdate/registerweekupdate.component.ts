@@ -1,19 +1,18 @@
-import { CourseClassService } from './../courseclass.service';
 import { Component, OnInit } from '@angular/core';
+import { CourseClassService } from './../courseclass.service';
 import { CourseclassContextService } from '../courseclass-context.service';
 import { CourseClassCreateDto } from '../dto/courseclass-create.model';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import { Router } from '@angular/router';
 import { HeaderService } from 'src/app/templates/header/header.service';
 
-@Component({
-  selector: 'app-registerweek',
-  templateUrl: './registerweek.component.html',
-  styleUrls: ['./registerweek.component.scss'],
-  providers: [ConfirmationService, MessageService]
-})
-export class RegisterweekComponent implements OnInit {
 
+@Component({
+  selector: 'app-registerweekupdate',
+  templateUrl: './registerweekupdate.component.html',
+  styleUrls: ['./registerweekupdate.component.scss']
+})
+export class RegisterweekupdateComponent implements OnInit {
   courseClassDto: CourseClassCreateDto = {
     name: '',
     initialDate: '',
@@ -56,27 +55,24 @@ export class RegisterweekComponent implements OnInit {
 }
 
   ngOnInit(): void {
+    console.log(typeof new Date());
+    
     this.courseClassDto = this.courseClassService.getCourseClass();
     // this.courseClassDto = this.courseClassDto.map( (course) => {
     //   course.weeks = [{content:""}] as any;
     //   return course;
     // })
-    if(this.courseClassDto.name.trim() != '' && this.courseClassDto.matrixLink.trim() != '' && this.courseClassDto.stack.trim() != ''){
-      this.courseClassDto.moduleEntityList.forEach((modulo, index) => {
-        // if(index === 0){
-        //   modulo.weekEntityList.forEach((week) => {
-        //     week.initialDate = this.courseClassDto.initialDate
-        //   })
-            modulo.weekEntityList.forEach((week) => {
-            week.initialDate = this.courseClassDto.initialDate
-          })
-        //}
-      })
-      console.log(this.courseClassDto);
-    }else{
-      this.router.navigate(['/layout/turmas/adicionar']);
-    }
-    
+    this.courseClassDto.moduleEntityList.forEach((modulo, index) => {
+      // if(index === 0){
+      //   modulo.weekEntityList.forEach((week) => {
+      //     week.initialDate = this.courseClassDto.initialDate
+      //   })
+          modulo.weekEntityList.forEach((week) => {
+          week.initialDate = this.courseClassDto.initialDate
+        })
+      //}
+    })
+    console.log(this.courseClassDto);
   }
 
   addWeek(moduleIndex: number, content: string, i: number) {

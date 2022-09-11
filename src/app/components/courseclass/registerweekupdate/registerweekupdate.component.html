@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="area-title">
+      <span>Atualizar Semanas dos Módulos</span>
+    </div>
+  
+    <div class="content">
+      <p-accordion [multiple]="true" [style]="{ width: '1463px' }">
+        <p-accordionTab
+          header="Módulo {{ moduleIndex + 1 }}"
+          [style]="{
+            'font-weight': '700',
+            'font-size': '20px',
+            'line-height': '24px'
+          }"
+          *ngFor="
+            let module of courseClassDto.moduleEntityList;
+            let moduleIndex = index
+          "
+        >
+          <div
+            class="add-week"
+            *ngFor="let week of module.weekEntityList; let i = index"
+          >
+            <label>Semana {{ i + 1 }}</label>
+            <input
+              type="text"
+              pInputText
+              class="inpute"
+              placeholder="Conteúdo"
+              [(ngModel)]="week.content"
+              required="true"
+            />
+  
+            <button
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-plus"
+              class="p-button-rounded p-button-success {{
+                i > 0 ? 'invisible' : ''
+              }}"
+              (click)="addWeek(moduleIndex, week.content, i)"
+            ></button>
+  
+            <p-confirmPopup></p-confirmPopup>
+            <button
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-trash"
+              class="p-button-rounded p-button-danger {{
+                i == 0 ? 'invisible' : ' '
+              }}"
+              (click)="confirm($event, week, moduleIndex)"
+            ></button>
+          </div>
+        </p-accordionTab>
+      </p-accordion>
+  
+      <div class="row-btn">
+        <button
+          pButton
+          type="button"
+          label="Salvar"
+          (click)="saveModule()"
+        ></button>
+      </div>
+  
+    </div>
+  </div>
+  

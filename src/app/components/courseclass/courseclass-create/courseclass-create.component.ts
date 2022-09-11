@@ -56,6 +56,8 @@ export class CourseClassCreateComponent implements OnInit {
   ngOnInit(): void {   
   }
 
+  
+
 nextForm() {
   //TODO: create another method for the below code
   if(!this.regExp.test(this.courseClassDto.matrixLink.trim())) {
@@ -85,7 +87,6 @@ nextForm() {
   }
     
   }
-
   /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
      return true
    }

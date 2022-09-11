@@ -45,7 +45,7 @@
                 </tr>
             </ng-template>
             <ng-template let-course pTemplate="body">
-                <tr class="{{(course.archive)? 'archived' : ''}}">
+                <tr [ngClass]="{'bg-bluegray-300':course.archive}">
                   <td>{{ course.id }}</td>
                   <td>{{ course.name }}</td>
                   <td>{{ course.initialDate }}</td>

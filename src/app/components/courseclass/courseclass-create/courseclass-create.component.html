@@ -33,6 +33,7 @@
         <div class="date-start">
           <label>Início</label> <br />
           <p-calendar [showIcon]="true" inputId="icon" dateFormat="dd/mm/yy" styleClass="calendar" [(ngModel)]="courseClassDto.initialDate" ></p-calendar>
+          <small id="initial-error" class="p-error block not-required">Data inicial é necessário.</small>
         </div>
       </div>
       <div class="div-five">
