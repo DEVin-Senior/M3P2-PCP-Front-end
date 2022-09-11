@@ -1,4 +1,4 @@
-<h1 align="center"> Projeto PCP-Lab365 Backend </h1>
+<h1 align="center"> Projeto PCP-Lab365 Frontend </h1>
 <h2 align="center"> 💻 Projeto avaliativo 2 do terceiro módulo do curso DevInHouse Senai / Senior Sistemas. 💻</h2>
 
 <h3 align="center">***********🔧 INSTRUçÕES 🔧***********</h3>
