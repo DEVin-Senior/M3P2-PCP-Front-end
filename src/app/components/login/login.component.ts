@@ -9,15 +9,16 @@ import { User } from '../user/user.model';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
+
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) { }
 
   value1: string = '';
 
   value2: string = '';
 
   onClickCadastrar() {
-    this.router.navigate(['/login/register']);
+    this.router.navigate(['login/register']);
   }
 
   cancelMessages: boolean = true;
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   user: User = new User();
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onSubmit() {
     this.authService.login(this.user.email, this.user.password).subscribe(
@@ -40,11 +41,12 @@ export class LoginComponent implements OnInit {
           this.loginError = false;
           this.successMessage = 'Bem vindo!';
         }
-        this.router.navigate(['layout/home']);
-      },
-      (errorResponse) => {
+        console.log("Token: " + JSON.stringify(response));
+        console.log(response);
+        this.router.navigate(['/layout/home'])
+      }, errorResponse => {
         this.loginError = true;
       }
-    );
+    )
   }
 }

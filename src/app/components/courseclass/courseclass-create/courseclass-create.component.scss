@@ -178,4 +178,13 @@ input {
 .row-five button:hover {
   transform: scale(1.1);
   transition: 0.4s all ease;
+  background-color: #cf2264;
+}
+
+.not-required {
+  visibility: hidden;
+}
+
+.required {
+  visibility: visible;
 }
