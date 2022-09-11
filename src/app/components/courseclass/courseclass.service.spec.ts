@@ -1,16 +1,22 @@
-// import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { CourseClassService } from './courseclass.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
+import { MessagesModule } from 'primeng/messages';
 
-// import { CourseClassService } from './courseclass.service';
+describe('CourseClassService', () => {
+  let service: CourseClassService;
 
-// describe('CourseClassService', () => {
-//   let service: CourseClassService;
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule, MessagesModule],
+      providers: [MessageService],
+      schemas: []
+    });
+    service = TestBed.inject(CourseClassService);
+  });
 
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({});
-//     service = TestBed.inject(CourseClassService);
-//   });
-
-//   it('should be created', () => {
-//     expect(service).toBeTruthy();
-//   });
-// });
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});

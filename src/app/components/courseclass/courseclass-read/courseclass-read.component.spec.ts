@@ -1,23 +1,27 @@
-// import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MessageService } from 'primeng/api';
+import { MessagesModule } from 'primeng/messages';
+import { CourseClassReadComponent } from './courseclass-read.component';
 
-// import { CourseClassReadComponent } from './courseclass-read.component';
+describe('CourseClassReadComponent', () => {
+  let component: CourseClassReadComponent;
+  let fixture: ComponentFixture<CourseClassReadComponent>;
 
-// describe('CourseClassReadComponent', () => {
-//   let component: CourseClassReadComponent;
-//   let fixture: ComponentFixture<CourseClassReadComponent>;
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ CourseClassReadComponent ],
+      imports: [HttpClientModule, MessagesModule],
+      providers: [HttpClient, MessageService, HttpHandler]
+    })
+    .compileComponents();
 
-//   beforeEach(async () => {
-//     await TestBed.configureTestingModule({
-//       declarations: [ CourseClassReadComponent ]
-//     })
-//     .compileComponents();
+    fixture = TestBed.createComponent(CourseClassReadComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-//     fixture = TestBed.createComponent(CourseClassReadComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
-
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
