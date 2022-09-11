@@ -52,8 +52,6 @@ export class CourseClassCreateComponent implements OnInit {
   ngOnInit(): void { }
 
   nextForm() {
-    
-    //!this.regExp.test(this.courseClassDto.matrixLink.trim())
     if (this.validatorInputs()){
       if (this.selectedModule != 1) {
         for (let i = this.selectedModule - 1; i > 0; i--) {
