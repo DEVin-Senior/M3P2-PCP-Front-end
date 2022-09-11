@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from 'src/app/templates/header/header.service';
 import { IPatchTeacher, ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
-import { TeacherService } from 'src/app/_services/teacher.service';
+import { TeacherService } from 'src/app/_services/teacher/teacher.service';
+
 
 
 @Component({
