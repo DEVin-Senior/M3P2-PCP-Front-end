@@ -99,4 +99,6 @@ export class RegisterweekComponent implements OnInit {
       this.router.navigate(['/layout/turmas']);
     });
   }
+
+  
 }
