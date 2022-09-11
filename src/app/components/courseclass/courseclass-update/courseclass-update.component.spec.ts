@@ -58,16 +58,16 @@ fdescribe('CourseClassUpdateComponent', () => {
   });
 
   //cancel()
-  it(`${CourseClassUpdateComponent.prototype.cancel.name} should return true when cancel is not called.`, () =>{
-    let spy = spyOn(component, 'cancel');
-    expect(spy).not.toHaveBeenCalled();
-  });
+  // it(`${CourseClassUpdateComponent.prototype.cancel.name} should return true when cancel is not called.`, () =>{
+  //   let spy = spyOn(component, 'cancel');
+  //   expect(spy).not.toHaveBeenCalled();
+  // });
 
-  it(`${CourseClassUpdateComponent.prototype.cancel.name}  should return true when cancel is called.`, () =>{
-    let spy = spyOn(component, 'cancel');
-    component.cancel();
-    expect(spy).toHaveBeenCalled();
-  });
+  // it(`${CourseClassUpdateComponent.prototype.cancel.name}  should return true when cancel is called.`, () =>{
+  //   let spy = spyOn(component, 'cancel');
+  //   component.cancel();
+  //   expect(spy).toHaveBeenCalled();
+  // });
 
   //ngOnInit
   it(`${CourseClassUpdateComponent.prototype.ngOnInit.name} should return true when expected to not be true.`, () =>{
