@@ -6,7 +6,7 @@ import { CourseClassCreateDto } from '../dto/courseclass-create.model';
 import { CourseClassService } from '../courseclass.service';
 import { HeaderService } from 'src/app/templates/header/header.service';
 import { IAlert } from 'src/app/_interfaces/alert/iAlert';
-import { ERROR, WARNING } from 'src/environments/environment';
+import { WARNING } from 'src/environments/environment';
 import { AlertService } from 'src/app/_shared/alert/alert.service';
 
 @Component({
@@ -40,10 +40,10 @@ export class CourseClassCreateComponent implements OnInit {
   numberOfWeek: number = 0;
   regExp: RegExp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
 
-  constructor(private courseClassService: CourseClassService, 
-    private headerService: HeaderService, 
-    private router: Router, 
-    private courseClassContextService: CourseclassContextService, 
+  constructor(private courseClassService: CourseClassService,
+    private headerService: HeaderService,
+    private router: Router,
+    private courseClassContextService: CourseclassContextService,
     private alertService: AlertService) {
     this.quatityModule = [
       { label: '1', value: 1 },
@@ -91,7 +91,7 @@ export class CourseClassCreateComponent implements OnInit {
     }
   }
 
-  validatorInputs(): boolean {    
+  validatorInputs(): boolean {
     const nameError = document.getElementById('name-error');
     const matrixNameError = document.getElementById('matrizname-error');
     const stackError = document.getElementById('stack-error');
@@ -160,4 +160,8 @@ export class CourseClassCreateComponent implements OnInit {
     }
     return false;
   }
+
+  /*cancel(): void {
+    this.router.navigate(['']);
+  }*/
 }
