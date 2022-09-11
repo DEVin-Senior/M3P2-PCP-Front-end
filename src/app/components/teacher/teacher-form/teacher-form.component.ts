@@ -2,7 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Input } from '@angular/core';
-import { TeacherService } from 'src/app/_services/teacher.service';
+import { TeacherService } from 'src/app/_services/teacher/teacher.service';
 import { IAlert } from 'src/app/_interfaces/alert/iAlert';
 import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
 import { AlertService } from 'src/app/_shared/alert/alert.service';
@@ -140,7 +140,7 @@ export class TeacherFormComponent implements OnInit {
     };
   }
 
-  postTeacher(iTeacher: ITeacher) {
+  postTeacher(iTeacher: ITeacher): boolean {
     if (!iTeacher || this.formTeacher.invalid) {
       this.alertMessage = {
         title: 'Ocorreu um erro ao cadastrar o Docente',
@@ -148,7 +148,7 @@ export class TeacherFormComponent implements OnInit {
         typeAlert: ERROR,
       };
       this.alertService.showGenericAlert(this.alertMessage);
-      return;
+      return false;
     }
 
     try {
@@ -159,10 +159,13 @@ export class TeacherFormComponent implements OnInit {
       });
     } catch (error) {
       this.messageErrorPostTeacher();
+      return false;
     }
+
+    return true;
   }
 
-  putTeacher(teacherToUpdate: ITeacher) {
+  putTeacher(teacherToUpdate: ITeacher): boolean  {
     if (!teacherToUpdate || this.formTeacher.invalid) {
       this.alertMessage = {
         title: 'Ocorreu um erro ao cadastrar o Docente',
@@ -170,7 +173,7 @@ export class TeacherFormComponent implements OnInit {
         typeAlert: ERROR,
       };
       this.alertService.showGenericAlert(this.alertMessage);
-      return;
+      return false;
     }
 
     try {
@@ -181,7 +184,10 @@ export class TeacherFormComponent implements OnInit {
       });
     } catch (error) {
       this.messageErrorPostTeacher();
+      return false;
     }
+
+    return true;
   }
 
   messagePostTeacher(result: any) {

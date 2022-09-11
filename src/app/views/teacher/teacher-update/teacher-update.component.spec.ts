@@ -5,7 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { ITeacher } from 'src/app/_interfaces/teacher/iTeacher';
-import { TeacherService } from 'src/app/_services/teacher.service';
+import { TeacherService } from 'src/app/_services/teacher/teacher.service';
+
 import { TeacherUpdateComponent } from './teacher-update.component';
 
 describe('TeacherUpdateComponent', () => {
