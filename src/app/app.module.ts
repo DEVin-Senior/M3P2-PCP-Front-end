@@ -27,6 +27,9 @@ import { LoginComponent } from './components/login/login.component';
 import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-form.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherUpdateComponent } from './views/teacher/teacher-update/teacher-update.component';
+import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
+import { AllocationClassReadComponent } from './components/allocation-class-read/allocation-class-read.component';
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './_services/auth/auth.service';
 import { TokenInterceptor } from './_services/interceptor/token.interceptor';
 import { MessageService } from 'primeng/api';
@@ -49,6 +52,7 @@ import { AppRoutingModule } from './app-routing.module';
     RegisterweekComponent,
     LoginComponent,
     LoginRegisterComponent,
+    AllocateTeacherComponent,
     RegisterweekupdateComponent
   ],
   imports: [
