@@ -8,8 +8,7 @@ Link repositório: https://github.com/DEVin-Senior/M3P2-PCP-Front-end
 ### Execução
 
 Orientações para execução do programa:
-- Após clonar o repositório, execute o comando ***npm install INSTALL***
-- Instalar o autenticador de token ***npm install --save @auth0/angular-jwt***
+- Após clonar o repositório, execute o comando ***npm install***
 - Após a instalação das dependências, execute o comando ***npm run start***
 
 Obs: executar também o backend, link do repositório: https://github.com/DEVin-Senior/M3P2-PCP-Back-end
