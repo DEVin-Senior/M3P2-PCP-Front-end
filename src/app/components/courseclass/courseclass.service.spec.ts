@@ -6,7 +6,7 @@ import { MessagesModule } from 'primeng/messages';
 import { CourseClassCreateDto } from './dto/courseclass-create.model';
 import { CourseClassUpdateDto } from './dto/courseclass-update.model';
 
-fdescribe('CourseClassService', () => {
+describe('CourseClassService', () => {
   let service: CourseClassService;
   let http: HttpClient;
 
