@@ -25,9 +25,13 @@ No terminal Gitbash dentro do Visual Studio Code, para instalar e iniciar a apli
 
 Usando o comando:
 
-npm i ou npm install = instala o projeto.
+npm i --force ou npm install --force = instala o projeto.
 
-Aguarde terminar a instalação o projeto e inicie a aplicação com o comando:
+Aguarde terminar a intalação do projeto e instale o autenticador de token JWT.
+
+npm install --save @auth0/angular-jwt = Instala o autenticador 
+
+Aguarde terminar a instalação e inicie a aplicação com o comando:
 
 npm run start = inicia o projeto já instalado com Angular e executa com a configuração do proxy de comunicação com o backend.
 

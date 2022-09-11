@@ -2,45 +2,50 @@
     <header>
       <h3>Editar Turma</h3>
     </header>
-  
+
     <div class="form-area">
       <div class="row-one">
         <div class="div-one">
           <div class="area-name">
             <label>Nome</label> <br />
             <input type="text" pInputText placeholder="Nome da turma"  [(ngModel)]="courseClass.name"/>
-            <small id="name-error" class="p-error block not-required">Nome é necessário.</small>
+            <small id="name-error" class="p-error block not-required">Nome da Turma inválido.</small>
           </div>
         </div>
+
         <div class="div-two">
           <div class="area-link">
             <label>Link da Matriz</label> <br />
             <input type="text" pInputText placeholder="Link da Matriz" [(ngModel)]="courseClass.matrixLink"/>
+            <small id="matrizname-error" class="p-error block not-required">Link da Matriz inválido.</small>
           </div>
         </div>
       </div>
-  
+
       <div class="row-two">
         <div class="div-three">
           <div class="area-stack">
             <label>Stack/Linguagens</label> <br />
             <input type="text" pInputText placeholder="Front-End/Back-End"  [(ngModel)]="courseClass.stack"/>
+            <small id="stack-error" class="p-error block not-required">Stack inválido.</small>
           </div>
         </div>
       </div>
-  
+
       <div class="row-three">
         <div class="div-four">
           <div class="date-start">
             <label>Início</label> <br />
             <p-calendar [showIcon]="true" [(ngModel)]="courseClass.initialDate" inputId="icon" dateFormat="dd/mm/yy" styleClass="calendar"></p-calendar>
-            <small id="initial-error" class="p-error block not-required">Data inicial é necessária.</small>
+            <small id="initial-error" class="p-error block not-required">Data inicial inválido.</small>
           </div>
         </div>
+
         <div class="div-five">
           <div class="date-end">
             <label>Fim</label> <br />
             <p-calendar [showIcon]="true" [(ngModel)]="courseClass.endDate"  inputId="icon" dateFormat="dd/mm/yy"></p-calendar>
+            <small id="end-error" class="p-error block not-required">Data Final inválida.</small>
           </div>
         </div>
       </div>
