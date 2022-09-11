@@ -17,11 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { HomeCreateComponent } from './components/home-create/home-create.component';
 import { HomeComponent } from './views/home/home.component';
-import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputMaskModule } from 'primeng/inputmask';
-import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
 import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
 import { LoginComponent } from './components/login/login.component';
 import { TeacherFormComponent } from './components/teacher/teacher-form/teacher-form.component';
@@ -39,6 +37,8 @@ import {DialogModule} from 'primeng/dialog';
 import { RegisterweekupdateComponent } from './components/courseclass/registerweekupdate/registerweekupdate.component';
 import { WeekService } from './_services/week/week-service';
 import { AppRoutingModule } from './app-routing.module';
+import { AllocationService } from './_services/allocation/allocation-service';
+import { AllocateTeacherComponent } from './components/allocate-teacher/allocate-teacher/allocate-teacher.component';
 
 
 @NgModule({

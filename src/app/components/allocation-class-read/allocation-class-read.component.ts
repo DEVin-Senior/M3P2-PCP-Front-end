@@ -48,7 +48,7 @@ export class AllocationClassReadComponent implements OnInit {
   }
 
   allocateTeacher(id : string){
-    this.router.navigate(['layout/adicionar'])
+    /* this.router.navigate(['layout/alocar']) */
   }
 
 }

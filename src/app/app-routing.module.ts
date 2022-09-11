@@ -16,6 +16,7 @@ import { LoginRegisterComponent } from './components/login/login-register/login-
 import { CourseClassCrudComponent } from './views/courseclass-crud/courseclass-crud.component';
 import { RegisterweekupdateComponent } from './components/courseclass/registerweekupdate/registerweekupdate.component';
 import { AuthGuard } from './_services/guard/auth.guard';
+import { AllocateTeacherComponent } from './components/allocate-teacher/allocate-teacher/allocate-teacher.component';
 
 const routes: Routes = [
   {
@@ -74,7 +75,10 @@ const routes: Routes = [
        path: 'alocacoes',
        component: AllocationClassReadComponent,
       },
-
+      {
+        path: 'alocar/:id',
+        component: AllocateTeacherComponent,
+      },
       {
         path: 'turmas/modulo',
         component: RegisterweekComponent,

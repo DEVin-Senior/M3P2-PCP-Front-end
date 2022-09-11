@@ -28,7 +28,7 @@
                     <td>{{allocation.weeksTeachersNames[5]}}</td>
                     <td>
                         <div class="buttons" >
-                            <button  (click)="allocateTeacher(allocation.idClass)"  class="history">Alocar Docente</button>
+                            <button [routerLink]="['../alocar', allocation.idClass]"    class="history">Alocar Docente</button>
                         </div>
                     </td>
                 </tr>
