@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Week } from './interfaces/week';
+import { Week } from '../../_interfaces/week/iWeek';
 import { WeekData } from './data/week-data';
 import { HeaderService } from 'src/app/templates/header/header.service';
+import { WeekService } from 'src/app/_services/week/week-service';
 
 @Component({
   selector: 'app-home-create',
@@ -9,11 +10,12 @@ import { HeaderService } from 'src/app/templates/header/header.service';
   styleUrls: ['./home-create.component.scss'],
 })
 export class HomeCreateComponent implements OnInit {
-  weeks: Week[] =  WeekData;
+  public weeks: Week | any;
+
   first = 0;
   rows = 10;
 
-  constructor(private headerService: HeaderService) {
+  constructor(private headerService: HeaderService, private weekService: WeekService) {
     headerService.headerData = {
       title: 'DashBoard',
       routerUrl: 'layout/home'
@@ -21,6 +23,10 @@ export class HomeCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.weekService.getWeekDashboard().subscribe(
+      res => this.weeks = res,
+      error => error
+    )
   }
 
   next() {
