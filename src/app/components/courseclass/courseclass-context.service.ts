@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { CourseClass } from './courseclass.model';
 import { CourseClassCreateDto } from './dto/courseclass-create.model';
 
 @Injectable({

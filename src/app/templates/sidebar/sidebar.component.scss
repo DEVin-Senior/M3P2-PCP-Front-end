@@ -33,6 +33,8 @@ img{
     width: 252px;
     padding: 16px 0px 16px 24px;
     border-radius: 20px;
+    position: relative;
+    bottom: 0;
 }
 
 .sidebar .selector:hover {
@@ -58,7 +60,7 @@ a {
 }
 
 .logout {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     margin-bottom: 20px;
     width: 252px;
