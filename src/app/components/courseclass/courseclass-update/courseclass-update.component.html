@@ -9,7 +9,7 @@
           <div class="area-name">
             <label>Nome</label> <br />
             <input type="text" pInputText placeholder="Nome da turma"  [(ngModel)]="courseClass.name"/>
-            <small id="name-error" class="p-error block not-required">Nome da Turma is not available.</small>
+            <small id="name-error" class="p-error block not-required">Nome da Turma inválido.</small>
           </div>
         </div>
 
@@ -17,7 +17,7 @@
           <div class="area-link">
             <label>Link da Matriz</label> <br />
             <input type="text" pInputText placeholder="Link da Matriz" [(ngModel)]="courseClass.matrixLink"/>
-            <small id="matrizname-error" class="p-error block not-required">Link da Matriz is not available.</small>
+            <small id="matrizname-error" class="p-error block not-required">Link da Matriz inválido.</small>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
           <div class="area-stack">
             <label>Stack/Linguagens</label> <br />
             <input type="text" pInputText placeholder="Front-End/Back-End"  [(ngModel)]="courseClass.stack"/>
-            <small id="stack-error" class="p-error block not-required">Stack is not available.</small>
+            <small id="stack-error" class="p-error block not-required">Stack inválido.</small>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@
           <div class="date-start">
             <label>Início</label> <br />
             <p-calendar [showIcon]="true" [(ngModel)]="courseClass.initialDate" inputId="icon" dateFormat="dd/mm/yy" styleClass="calendar"></p-calendar>
-            <small id="initial-error" class="p-error block not-required">Initial Date is not available.</small>
+            <small id="initial-error" class="p-error block not-required">Data inicial inválido.</small>
           </div>
         </div>
 
@@ -45,11 +45,10 @@
           <div class="date-end">
             <label>Fim</label> <br />
             <p-calendar [showIcon]="true" [(ngModel)]="courseClass.endDate"  inputId="icon" dateFormat="dd/mm/yy"></p-calendar>
-            <small id="end-error" class="p-error block not-required">End Date is not available.</small>
+            <small id="end-error" class="p-error block not-required">Data Final inválida.</small>
           </div>
         </div>
       </div>
-
       <div class="row five">
         <div class="row-five">
           <button pButton type="button" label="Avançar" (click)="nextForm()"></button>

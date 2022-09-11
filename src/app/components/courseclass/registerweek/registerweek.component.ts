@@ -61,17 +61,22 @@ export class RegisterweekComponent implements OnInit {
     //   course.weeks = [{content:""}] as any;
     //   return course;
     // })
-    this.courseClassDto.moduleEntityList.forEach((modulo, index) => {
-      // if(index === 0){
-      //   modulo.weekEntityList.forEach((week) => {
-      //     week.initialDate = this.courseClassDto.initialDate
-      //   })
-          modulo.weekEntityList.forEach((week) => {
-          week.initialDate = this.courseClassDto.initialDate
-        })
-      //}
-    })
-    console.log(this.courseClassDto);
+    if(this.courseClassDto.name.trim() != '' && this.courseClassDto.matrixLink.trim() != '' && this.courseClassDto.stack.trim() != ''){
+      this.courseClassDto.moduleEntityList.forEach((modulo, index) => {
+        // if(index === 0){
+        //   modulo.weekEntityList.forEach((week) => {
+        //     week.initialDate = this.courseClassDto.initialDate
+        //   })
+            modulo.weekEntityList.forEach((week) => {
+            week.initialDate = this.courseClassDto.initialDate
+          })
+        //}
+      })
+      console.log(this.courseClassDto);
+    }else{
+      this.router.navigate(['/layout/turmas/adicionar']);
+    }
+    
   }
 
   addWeek(moduleIndex: number, content: string, i: number) {

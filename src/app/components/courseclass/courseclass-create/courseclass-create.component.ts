@@ -34,6 +34,7 @@ export class CourseClassCreateComponent implements OnInit {
   quatityModule: SelectItem[];
   selectedModule: number = 0;
   numberOfWeek: number = 0;
+  regExp: RegExp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
 
   constructor(private courseClassService: CourseClassService, private headerService: HeaderService, private router: Router, private courseClassContextService: CourseclassContextService) {
     this.quatityModule = [
@@ -99,7 +100,7 @@ export class CourseClassCreateComponent implements OnInit {
     }
 
     if(matrixNameError != null){
-      if(this.courseClassDto.matrixLink.trim() != ''){
+      if(this.courseClassDto.matrixLink.trim() != '' && this.regExp.test(this.courseClassDto.matrixLink.trim())){
         matrixNameError.classList.add('not-required');
         countValidInputs++;
         matrixNameError.classList.remove('required');
@@ -121,7 +122,7 @@ export class CourseClassCreateComponent implements OnInit {
     }
 
     if(initialError != null){
-      if(this.courseClassDto.initialDate === null){
+      if(this.courseClassDto.initialDate === null || this.courseClassDto.initialDate === undefined){
         initialError.classList.add('required');
         initialError.classList.remove('not-required');
       }else{
@@ -132,7 +133,7 @@ export class CourseClassCreateComponent implements OnInit {
     }
 
     if(endError != null){
-      if(this.courseClassDto.endDate === null){
+      if(this.courseClassDto.endDate === null || this.courseClassDto.endDate === undefined){
         endError.classList.add('required');
         endError.classList.remove('not-required');
       }else{
