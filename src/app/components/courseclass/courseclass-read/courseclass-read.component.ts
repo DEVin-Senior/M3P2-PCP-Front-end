@@ -1,4 +1,3 @@
-import { CourseClassUpdateDto } from './../dto/courseclass-update.model';
 import { CourseClassArchiveDto } from './../dto/courseclass-archive.model';
 import { content } from './../dto/event-read.model';
 import { CourseClassService } from './../courseclass.service';

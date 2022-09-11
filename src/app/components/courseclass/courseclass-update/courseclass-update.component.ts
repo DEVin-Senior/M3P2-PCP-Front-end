@@ -44,7 +44,7 @@ export class CourseClassUpdateComponent implements OnInit {
     private alertService: AlertService
   ) { }
 
-  ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend
+  ngOnInit(): void { 
     const id = this.route.snapshot.paramMap.get('id');
     this.classCourseService.readById(Number(id)).subscribe((course) => {
 

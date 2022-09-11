@@ -31,7 +31,11 @@ export class RegisterweekupdateComponent implements OnInit {
     }]
   }
 
-  constructor(private courseClassServiceDto: CourseClassService, private courseclassUpdateContextService: CourseclassUpdateContextService, private confirmationService: ConfirmationService, private headerService: HeaderService, private router: Router) {
+  constructor(private courseClassServiceDto: CourseClassService, 
+    private courseclassUpdateContextService: CourseclassUpdateContextService, 
+    private confirmationService: ConfirmationService, 
+    private headerService: HeaderService, 
+    private router: Router) {
     headerService.headerData = {
       title: 'Turmas',
       routerUrl: '/layout/turmas/modulo'
