@@ -13,7 +13,7 @@ import {CourseClassUpdateDto} from '../dto/courseclass-update.model'
   styleUrls: ['./courseclass-update.component.scss']
 })
 export class CourseClassUpdateComponent implements OnInit {
-  
+
   regExp: RegExp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
   globalInitialdate:any;
   globalEndDate:any;
@@ -45,30 +45,29 @@ export class CourseClassUpdateComponent implements OnInit {
   ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend
     const id = this.route.snapshot.paramMap.get('id');
     this.classCourseService.readById(Number(id)).subscribe((course) => {
-    
-   this.globalInitialdate = course.initialDate;
-   this.globalEndDate = course.endDate;
+
+    this.globalInitialdate = course.initialDate;
+    this.globalEndDate = course.endDate;
 
     let year = course.initialDate.split("-")[0];
     let month = course.initialDate.split("-")[1];
     let day = course.initialDate.split("-")[2];
     let initialDate = `${day}/${month}/${year}`;
-    course.initialDate=initialDate; 
-    
+    course.initialDate=initialDate;
+
     year = course.endDate.split("-")[0];
     month = course.endDate.split("-")[1];
     day = course.endDate.split("-")[2];
     let endDate = `${day}/${month}/${year}`;
-    course.endDate=endDate; 
-
+    course.endDate=endDate;
 
     console.log(this.courseClass);
-      
+
     this.courseClass = course;
     });
   }
 
-  nextForm() {    
+  nextForm() {
    if(this.validatorInputs()){
     if(typeof this.courseClass.initialDate === "string"){
       this.courseClass.initialDate = this.globalInitialdate;
@@ -77,13 +76,11 @@ export class CourseClassUpdateComponent implements OnInit {
       this.courseClass.endDate = this.globalEndDate;
     }
     this.courseClass.id= Number(this.route.snapshot.paramMap.get('id'));
-    this.courseclassUpdateContextService.setCourseClass(this.courseClass);    
+    this.courseclassUpdateContextService.setCourseClass(this.courseClass);
     this.router.navigate(['/layout/turmas/atualizar/' + this.route.snapshot.paramMap.get('id') + '/modulo']);
    }else{
     this.classCourseService.errorHandler;
    }
-
-   
   }
 
   validatorInputs(): boolean {
@@ -155,7 +152,8 @@ export class CourseClassUpdateComponent implements OnInit {
     }
     return false;
   }
-cancel(): void{
+
+  cancel(): void{
     this.router.navigate(['']);
   }
 }

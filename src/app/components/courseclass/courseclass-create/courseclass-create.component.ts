@@ -67,7 +67,6 @@ export class CourseClassCreateComponent implements OnInit {
       }
 
       this.numberOfWeek = this.courseClassDto.moduleEntityList.length;
-      // console.log(typeof this.numberOfWeek);
       console.log(typeof this.courseClassDto.moduleEntityList.length);
       this.numberOfWeek = this.selectedModule;
       console.log(this.selectedModule);
@@ -149,19 +148,7 @@ export class CourseClassCreateComponent implements OnInit {
     return false;
   }
 
-
-  /*createCourseClass(): void {
-     // if (this.validatorInputs() == true) {
-     //   this.courseClassService.create(this.courseClass).subscribe(() => {
-     //     this.courseClassService.msgSuccess();
-     //     this.router.navigate(['']);
-     //   });
-     // } else {
-     //   this.courseClassService.msgErrorHandler();
-     // }
-  }
-
-  cancel(): void {
+  /*cancel(): void {
     this.router.navigate(['']);
   }*/
 }
