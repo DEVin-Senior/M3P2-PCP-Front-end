@@ -18,13 +18,13 @@
             </ng-template>
             <ng-template pTemplate="body" let-week>
                 <tr>
-                    <td>{{week.turma}}</td>
-                    <td>{{week.conteudo}}</td>
-                    <td>{{week.docente}}</td>
-                    <td><a href="#">Link</a></td>
-                    <td>{{week.modulo}}</td>
+                    <td>{{week.className}}</td>
+                    <td>{{week.stack}}</td>
+                    <td>{{week.teachername}}</td>
+                    <td><a href={{week.matrixLink}}>Link</a></td>
+                    <td>{{week.modulename}}</td>
                     <td>
-                        <input type="checkbox">
+                        <input type="checkbox" value={{week.paid}}>
                     </td>
                     <td>
                     <div class="table-home-buttons">

@@ -7,7 +7,8 @@
 
     <div *ngIf="eventList | async as eventList"  class="table-in-modal">
         <p-table
-            [value]="eventList" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            [value]="eventList" styleClass="p-datatable-gridlines" [paginator]="true" [rows]="5" [showCurrentPageReport]="true" responsiveLayout="scroll"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Tipo</th>
@@ -33,7 +34,8 @@
     </p-dialog>
     <div *ngIf="courseClassReadDto$ | async as courseClassReadDto"  class="table-area">
         <p-table
-            [value]="courseClassReadDto" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            [value]="courseClassReadDto" styleClass="p-datatable-gridlines" responsiveLayout="scroll" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Id</th>
@@ -45,7 +47,7 @@
                 </tr>
             </ng-template>
             <ng-template let-course pTemplate="body">
-                <tr>
+                <tr [ngClass]="{'bg-bluegray-300':course.archive}">
                   <td>{{ course.id }}</td>
                   <td>{{ course.name }}</td>
                   <td>{{ course.initialDate }}</td>
