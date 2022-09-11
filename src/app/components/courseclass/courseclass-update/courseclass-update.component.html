@@ -32,7 +32,7 @@
         <div class="div-four">
           <div class="date-start">
             <label>Início</label> <br />
-            <p-calendar [showIcon]="true" inputId="icon" dateFormat="dd/mm/yy" styleClass="calendar"></p-calendar>
+            <p-calendar [showIcon]="true" inputId="icon" dateFormat="dd/mm/yy" styleClass="calendar"  placeholder="{{courseClass.endDate}}" [(ngModel)]="courseClass.endDate"></p-calendar>
           </div>
         </div>
         <div class="div-five">
@@ -45,7 +45,7 @@
   
       <div class="row-four">
         <span>Total de módulos: </span>
-        <p-dropdown optionLabel="name"></p-dropdown>
+        <p-dropdown optionLabel="name" [options]="quatityModule" [(ngModel)]="courseClass.moduleEntityList.length"></p-dropdown>
       </div>
   
       <div class="row five">

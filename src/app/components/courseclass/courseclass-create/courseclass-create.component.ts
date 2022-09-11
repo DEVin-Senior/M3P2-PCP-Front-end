@@ -38,6 +38,7 @@ export class CourseClassCreateComponent implements OnInit {
   quatityModule: SelectItem[];
   selectedModule: number = 0;
   numberOfWeek: number = 0;
+  regExp: RegExp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
 
   constructor(/*private courseClassService: CourseClassService,*/ private headerService: HeaderService, private router: Router, private courseClassContextService: CourseclassContextService) {
     this.quatityModule = [
@@ -52,11 +53,14 @@ export class CourseClassCreateComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-
+  ngOnInit(): void {   
   }
 
 nextForm() {
+  //TODO: create another method for the below code
+  if(!this.regExp.test(this.courseClassDto.matrixLink.trim())) {
+    alert("invalid link... starts with (http:// or https://)");
+  }else{
     if (this.selectedModule != 1) {
       for (let i = this.selectedModule - 1; i > 0; i--) {
         this.courseClassDto.moduleEntityList.push({
@@ -78,6 +82,8 @@ nextForm() {
     
     this.courseClassContextService.setCourseClass(this.courseClassDto);
     this.router.navigate(['/layout/turmas/modulo']);
+  }
+    
   }
 
   /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass

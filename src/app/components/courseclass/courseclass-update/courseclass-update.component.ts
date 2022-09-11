@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SelectItem } from 'primeng/api';
+import { Observable } from 'rxjs';
 import { CourseClassService } from '../courseclass.service';
+import { CourseClassReadDto } from '../dto/courseclass-read.model';
 import {CourseClassUpdateDto} from '../dto/courseclass-update.model'
 
 @Component({
@@ -27,18 +30,23 @@ export class CourseClassUpdateComponent implements OnInit {
     }]
   };
 
-  constructor(
-    /*private classCourseService: CourseClassService,
-    private router: Router,
-    private route: ActivatedRoute*/
-  ) { }
-
-  ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend
+  quatityModule!: SelectItem[];
+  constructor(private classCourseService: CourseClassService, private router: Router, private route: ActivatedRoute) { 
+    this.quatityModule = [
+      { label: '1', value: 1 },
+      { label: '2', value: 2 },
+      { label: '3', value: 3 },
+      { label: '4', value: 4 }
+    ]
+  }
   
-   /*const id = +this.route.snapshot.paramMap.get('id');
-    this.classCourseService.readById(id).subscribe((courseClass) => {
-      this.courseClass = courseClass;
-    });*/
+  ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend
+    const id = this.route.snapshot.paramMap.get('id');
+    this.classCourseService.readById(Number(id)).subscribe((course) => {
+      this.courseClass = course;
+      console.log(course.endDate);
+      
+    });   
   }
 
  /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
