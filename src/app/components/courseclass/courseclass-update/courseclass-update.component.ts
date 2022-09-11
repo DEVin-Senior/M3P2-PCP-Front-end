@@ -129,7 +129,7 @@ export class CourseClassUpdateComponent implements OnInit {
     }
 
     if(initialError != null){
-      if(this.courseClass.initialDate === null || this.courseClass.initialDate === undefined){
+      if(this.courseClass.initialDate === null || this.courseClass.endDate === ''){
         initialError.classList.add('required');
         initialError.classList.remove('not-required');
       }else{
@@ -140,7 +140,7 @@ export class CourseClassUpdateComponent implements OnInit {
     }
 
     if(endError != null){
-      if(this.courseClass.endDate === null || this.courseClass.endDate === undefined){
+      if(this.courseClass.endDate === null || this.courseClass.endDate === ''){
         endError.classList.add('required');
         endError.classList.remove('not-required');
       }else{

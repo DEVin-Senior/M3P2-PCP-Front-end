@@ -78,7 +78,7 @@ export class CourseClassCreateComponent implements OnInit {
     }
   }
 
-  validatorInputs(): boolean {
+  validatorInputs(): boolean {    
     const nameError = document.getElementById('name-error');
     const matrixNameError = document.getElementById('matrizname-error');
     const stackError = document.getElementById('stack-error');
@@ -121,7 +121,7 @@ export class CourseClassCreateComponent implements OnInit {
     }
 
     if(initialError != null){
-      if(this.courseClassDto.initialDate === null || this.courseClassDto.initialDate === undefined){
+      if(this.courseClassDto.initialDate === null || this.courseClassDto.initialDate === ''){
         initialError.classList.add('required');
         initialError.classList.remove('not-required');
       }else{
@@ -132,7 +132,7 @@ export class CourseClassCreateComponent implements OnInit {
     }
 
     if(endError != null){
-      if(this.courseClassDto.endDate === null || this.courseClassDto.endDate === undefined){
+      if(this.courseClassDto.endDate === null || this.courseClassDto.initialDate === ''){
         endError.classList.add('required');
         endError.classList.remove('not-required');
       }else{
