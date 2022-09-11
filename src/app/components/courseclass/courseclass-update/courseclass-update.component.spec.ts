@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MessageService } from 'primeng/api';
 import { CourseClassUpdateComponent } from './courseclass-update.component';
 
-describe('CourseClassUpdateComponent', () => {
+fdescribe('CourseClassUpdateComponent', () => {
   let component: CourseClassUpdateComponent;
   let fixture: ComponentFixture<CourseClassUpdateComponent>;
 
@@ -24,4 +24,60 @@ describe('CourseClassUpdateComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //nextForm()
+  it(`${CourseClassUpdateComponent.prototype.nextForm.name} should return true when nextForm is not called.`, () =>{
+    let spy = spyOn(component, 'nextForm');
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it(`${CourseClassUpdateComponent.prototype.nextForm.name} should return true when nextForm is called.`, () =>{
+    let spy = spyOn(component, 'nextForm');
+    component.nextForm();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  //validatorInputs()
+  it(`${CourseClassUpdateComponent.prototype.nextForm.name} should return true when validadorInputs is not called.`, () =>{
+    let spy = spyOn(component, 'validatorInputs');
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it(`${CourseClassUpdateComponent.prototype.validatorInputs.name}  should return true when validadorInputs is called.`, () =>{
+    let spy = spyOn(component, 'validatorInputs');
+    component.validatorInputs();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it(`${CourseClassUpdateComponent.prototype.validatorInputs.name} should return true when expected to be false.`, () =>{
+    expect(component.validatorInputs()).toBeFalse();
+  });
+
+  it(`${CourseClassUpdateComponent.prototype.validatorInputs.name} should return true when expected to not be true.`, () =>{
+    expect(component.validatorInputs()).not.toBeTrue();
+  });
+
+  //cancel()
+  // it(`${CourseClassUpdateComponent.prototype.cancel.name} should return true when cancel is not called.`, () =>{
+  //   let spy = spyOn(component, 'cancel');
+  //   expect(spy).not.toHaveBeenCalled();
+  // });
+
+  // it(`${CourseClassUpdateComponent.prototype.cancel.name}  should return true when cancel is called.`, () =>{
+  //   let spy = spyOn(component, 'cancel');
+  //   component.cancel();
+  //   expect(spy).toHaveBeenCalled();
+  // });
+
+  //ngOnInit
+  it(`${CourseClassUpdateComponent.prototype.ngOnInit.name} should return true when expected to not be true.`, () =>{
+    const compile = fixture.debugElement.nativeElement;
+    expect(compile.querySelector('h3').textContent).toContain('Editar Turma');
+  });
+
+  it(`${CourseClassUpdateComponent.prototype.ngOnInit.name} should return true when expected to not be true.`, () =>{
+    const compile = fixture.debugElement.nativeElement;
+    expect(compile.querySelector('h3').textContent).not.toContain('Editar Professor');
+  });
+
 });
