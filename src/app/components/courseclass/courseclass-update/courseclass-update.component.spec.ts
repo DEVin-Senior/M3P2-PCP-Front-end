@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MessageService } from 'primeng/api';
 import { CourseClassUpdateComponent } from './courseclass-update.component';
 
-fdescribe('CourseClassUpdateComponent', () => {
+describe('CourseClassUpdateComponent', () => {
   let component: CourseClassUpdateComponent;
   let fixture: ComponentFixture<CourseClassUpdateComponent>;
 
