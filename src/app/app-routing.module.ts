@@ -16,6 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
 import { CourseClassCrudComponent } from './views/courseclass-crud/courseclass-crud.component';
 import { RegisterweekupdateComponent } from './components/courseclass/registerweekupdate/registerweekupdate.component';
+import { AuthGuard } from './_services/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -89,6 +90,7 @@ const routes: Routes = [
         component: RegisterweekupdateComponent,
       }
     ],
+    canActivate: [AuthGuard]
   },
 ];
 
