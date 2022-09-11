@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/components/user/user.model';
 import { environment } from 'src/environments/environment';
@@ -13,7 +14,7 @@ export class AuthService {
   tokenFullUrl : string = environment.apiBaseURL + environment.tokenUrl;
   clientId: string = environment.clientId;
   clientSecret: string = environment.clientSecret;
-
+  jwtHelper: JwtHelperService = new JwtHelperService();
   isLoggedIn = false;
 
   user: User = new User();
@@ -22,7 +23,21 @@ export class AuthService {
     private http: HttpClient, 
   ) { }
 
+  getToken(){
+    const tokenString = localStorage.getItem('access_token');
+    if(tokenString){
+      const token = JSON.parse(tokenString).access_token;
+      return token;
+    }
+    return null;
+  }
+
   isAuthenticated(): boolean {
+    const token = this.getToken();
+    if(token){
+      const isExpired = this.jwtHelper.isTokenExpired(token);
+      return !isExpired;
+    }
     return this.isLoggedIn;
   }
 
