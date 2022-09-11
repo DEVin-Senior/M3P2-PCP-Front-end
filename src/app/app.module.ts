@@ -1,10 +1,8 @@
 import { LayoutDefaultModule } from './layouts/layout-default/layout-default.module';
 import { LayoutFullwidthModule } from './layouts/layout-fullwidth/layout-fullwidth.module';
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
@@ -14,18 +12,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { PasswordModule } from 'primeng/password';
-
-
-import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { HomeCreateComponent } from './components/home-create/home-create.component';
-import { WeekService } from './components/home-create/service/week-service';
 import { HomeComponent } from './views/home/home.component';
-
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -43,6 +34,8 @@ import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {ConfirmationService} from 'primeng/api';
 import {DialogModule} from 'primeng/dialog';
 import { RegisterweekupdateComponent } from './components/courseclass/registerweekupdate/registerweekupdate.component';
+import { WeekService } from './_services/week/week-service';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
