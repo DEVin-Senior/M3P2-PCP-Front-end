@@ -51,7 +51,7 @@ export class RegisterweekupdateComponent implements OnInit {
         }
     });
 
-    
+
 }
 
   ngOnInit(): void {
@@ -67,7 +67,7 @@ export class RegisterweekupdateComponent implements OnInit {
     const module = this.courseClassDto.moduleEntityList.findIndex((m, index) => {
       return index == moduleIndex;
     })
-    
+
 
     this.courseClassDto.moduleEntityList.forEach((course, index) => {
       if (index == moduleIndex) {

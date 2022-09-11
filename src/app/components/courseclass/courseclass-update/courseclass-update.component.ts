@@ -19,9 +19,9 @@ export class CourseClassUpdateComponent implements OnInit {
     name: '',
     initialDate: '',
     endDate: '',
-    stack:'',    
+    stack:'',
     matrixLink: '',
-    archive:false,
+    archive: false,
     moduleEntityList: [{
       name: '',
       weekEntityList: [{
@@ -36,11 +36,11 @@ export class CourseClassUpdateComponent implements OnInit {
     private courseclassUpdateContextService : CourseclassUpdateContextService,
     private classCourseService: CourseClassService,
     private router: Router,
-    private route: ActivatedRoute    
+    private route: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend 
-    const id = this.route.snapshot.paramMap.get('id');    
+  ngOnInit(): void {  //ngOnInit está comentado aguardando configuração de backend
+    const id = this.route.snapshot.paramMap.get('id');
     this.classCourseService.readById(Number(id)).subscribe((course) => {
     
    this.globalInitialdate = course.initialDate;
@@ -66,6 +66,7 @@ export class CourseClassUpdateComponent implements OnInit {
   }
 
   nextForm() {    
+   if(this.validatorInputs()){
     if(typeof this.courseClass.initialDate === "string"){
       this.courseClass.initialDate = this.globalInitialdate;
     }
@@ -75,24 +76,82 @@ export class CourseClassUpdateComponent implements OnInit {
     this.courseClass.id= Number(this.route.snapshot.paramMap.get('id'));
     this.courseclassUpdateContextService.setCourseClass(this.courseClass);    
     this.router.navigate(['/layout/turmas/atualizar/' + this.route.snapshot.paramMap.get('id') + '/modulo']);
-  }
- /* validatorInputs(): boolean { //Necessário alteração do método apenas para validação do updateCourseClass
-    return true
+   }else{
+    this.classCourseService.errorHandler;
+   }
+
+   
   }
 
-  updateCourseClass(): void {
-    if(this.validatorInputs() == true){
-      this.classCourseService.update(this.courseClass).subscribe(() => {
-        this.classCourseService.msgSuccess();
-        this.router.navigate(['']);
-      });
-    }else{
-      this.classCourseService.msgErrorHandler();
+  validatorInputs(): boolean {
+    const nameError = document.getElementById('name-error');
+    const matrixNameError = document.getElementById('matrizname-error');
+    const stackError = document.getElementById('stack-error');
+    const initialError = document.getElementById('initial-error');
+    const endError = document.getElementById('end-error');
+
+    let countValidInputs = 0;
+
+    if(nameError != null){
+      if(this.courseClass.name.trim() != ''){
+        nameError.classList.add('not-required');
+        countValidInputs++;
+        nameError.classList.remove('required');
+      }else{
+        nameError.classList.remove('not-required');
+        nameError.classList.add('required');
+      }
     }
-  }
-  
-  cancel(): void{
-    this.router.navigate(['']);
-  }*/
 
+    if(matrixNameError != null){
+      if(this.courseClass.matrixLink.trim() != ''){
+        matrixNameError.classList.add('not-required');
+        countValidInputs++;
+        matrixNameError.classList.remove('required');
+      }else{
+        matrixNameError.classList.remove('not-required');
+        matrixNameError.classList.add('required');
+      }
+    }
+if(stackError != null){
+      if(this.courseClass.stack.trim() != ''){
+        stackError.classList.add('not-required');
+        countValidInputs++;
+        stackError.classList.remove('required');
+      }else{
+        stackError.classList.remove('not-required');
+        stackError.classList.add('required');
+      }
+    }
+
+    if(initialError != null){
+      if(this.courseClass.initialDate === null){
+        initialError.classList.add('required');
+        initialError.classList.remove('not-required');
+      }else{
+        initialError.classList.add('not-required');
+        countValidInputs++;
+        initialError.classList.remove('required');
+      }
+    }
+
+    if(endError != null){
+      if(this.courseClass.endDate === null){
+        endError.classList.add('required');
+        endError.classList.remove('not-required');
+      }else{
+        endError.classList.add('not-required');
+        countValidInputs++;
+        endError.classList.remove('required');
+      }
+    }
+
+    if(countValidInputs === 5){
+      return true;
+    }
+    return false;
+  }
+cancel(): void{
+    this.router.navigate(['']);
+  }
 }
