@@ -37,4 +37,4 @@ Obs: executar também o backend, link do repositório: https://github.com/DEVin-
 
 <br>
 <p align="center"> ✒️ Autores ✒️ </p>
-<p align="center"><a href="#"><img align="center" width="700" height="350"  src="img/Desenvolvedores.jpg" /></a></p>
+<p align="center"><a href="#"><img align="center" width="700" height="350"  src="src\assets\img\Desenvolvedores.jpg" /></a></p>
