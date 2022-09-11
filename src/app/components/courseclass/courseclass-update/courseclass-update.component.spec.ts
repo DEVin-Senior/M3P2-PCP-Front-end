@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CourseClassUpdateComponent } from './courseclass-update.component';
 
-describe('CourseClassUpdateComponent', () => {
+fdescribe('CourseClassUpdateComponent', () => {
   let component: CourseClassUpdateComponent;
   let fixture: ComponentFixture<CourseClassUpdateComponent>;
 
