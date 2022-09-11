@@ -10,13 +10,13 @@ import { HomeComponent } from './views/home/home.component';
 import { TeacherCreateComponent } from './views/teacher/teacher-create/teacher-create.component';
 import { TeacherListComponent } from './components/teacher/teacher-list/teacher-list.component';
 import { RegisterweekComponent } from './components/courseclass/registerweek/registerweek.component';
-import { AllocationClassCreateComponent } from './components/allocation-class-create/allocation-class-create.component';
 import { AllocationClassReadComponent } from './components/allocation-class-read/allocation-class-read.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginRegisterComponent } from './components/login/login-register/login-register.component';
 import { CourseClassCrudComponent } from './views/courseclass-crud/courseclass-crud.component';
 import { RegisterweekupdateComponent } from './components/courseclass/registerweekupdate/registerweekupdate.component';
 import { AuthGuard } from './_services/guard/auth.guard';
+import { AllocateTeacherComponent } from './components/allocate-teacher/allocate-teacher/allocate-teacher.component';
 
 const routes: Routes = [
   {
@@ -76,10 +76,9 @@ const routes: Routes = [
        component: AllocationClassReadComponent,
       },
       {
-        path: 'alocacoes/adicionar/:id',
-        component: AllocationClassCreateComponent,
+        path: 'alocar/:id',
+        component: AllocateTeacherComponent,
       },
-
       {
         path: 'turmas/modulo',
         component: RegisterweekComponent,
